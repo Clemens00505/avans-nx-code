@@ -16353,6 +16353,11 @@
       },
       {
         "source": "rcmnd-api",
+        "target": "npm:nest-neo4j",
+        "type": "static"
+      },
+      {
+        "source": "rcmnd-api",
         "target": "dto",
         "type": "static"
       },
