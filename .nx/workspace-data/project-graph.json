@@ -16290,6 +16290,11 @@
       },
       {
         "source": "dto",
+        "target": "npm:class-validator",
+        "type": "static"
+      },
+      {
+        "source": "dto",
         "target": "backend-features-meal",
         "type": "static"
       }
@@ -16349,6 +16354,11 @@
       {
         "source": "rcmnd-api",
         "target": "neo4j",
+        "type": "static"
+      },
+      {
+        "source": "rcmnd-api",
+        "target": "npm:nest-neo4j",
         "type": "static"
       },
       {
