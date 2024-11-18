@@ -1,18 +1,24 @@
+@if(!users) {
+    <p>Loading data...</p>
+} @else if(users && users.length === 0) {
+    <p>Nu users where found.</p>
+} @else {
 <div class="container p-3">
     <table class="table table-striped table-bordered">
         <thead class="thead-dark">
             <tr>
-                <th>Id</th>
+                <th>Profile Picture</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>IsActive</th>
-                <th>ImageUrl</th>
                 <th>Edit</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let user of users">
-                <td>{{ user._id }}</td>
+            <tr *ngFor="let user of users" routerLink="{{user._id}}">
+                <td>
+                    <img [src]="user.profileImgUrl" alt="{{ user.name }}" class="img-thumbnail" style="width: 50px; height: 50px;">
+                </td>
                 <td>
                     <a routerLink="{{user._id}}" >
                         {{ user.name }}
@@ -30,3 +36,4 @@
         </tbody>
     </table>
 </div>
+}

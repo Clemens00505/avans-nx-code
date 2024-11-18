@@ -1,36 +1,38 @@
-import { Component } from '@angular/core';
-import { IUserInfo, UserGender, UserRole } from '@avans-nx-workshop/shared/api';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
+import { IUserInfo } from '@avans-nx-workshop/shared/api';
+import { Subscription } from 'rxjs';
 
 @Component({
-    selector: 'avans-nx-workshop-user-list',
-    templateUrl: './user-list.component.html',
-    styles: []
+  selector: 'avans-nx-workshop-user-list',
+  templateUrl: './user-list.component.html',
+  styles: []
 })
-export class UserListComponent {
+export class UserListComponent implements OnInit, OnDestroy {
+  users: IUserInfo[] | undefined = undefined;
+  sub: Subscription = new Subscription();
 
-    users: IUserInfo[] = [
-        {
-            _id: "1",
-            name: "John Doe",
-            emailAddress: "j.doe@mail.com",
-            profileImgUrl: "https://picsum.photos/seed/picsum/200/300",
-            role: UserRole.Unknown,
-            gender: UserGender.Male,
-            password: "secret",
-            isActive: true
+  constructor(private userService: UserService) {}
+
+  ngOnInit(): void {
+    console.log('UserListComponent.ngOnInit() aangeroepen');
+    this.sub.add(
+      this.userService.getUsersAsync().subscribe(
+        (users) => {
+          this.users = users;
+          console.log('Users loaded:', users);
         },
-        {
-            _id: "2",
-            name: "Jane Doe",
-            emailAddress: "j.doe2@mail.com",
-            profileImgUrl: "https://picsum.photos/seed/picsum/200/300",
-            role: UserRole.Unknown,
-            gender: UserGender.Male,
-            password: "secret",
-            isActive: true
+        (error) => {
+          console.error('Error loading users:', error);
         }
+      )
+    );
+  }
 
-    ]
-        
-
+  ngOnDestroy(): void {
+    if (this.sub) {
+      console.log('Unsubscribing from user service');
+      this.sub.unsubscribe();
+    }
+  }
 }
