@@ -1,0 +1,297 @@
+[NX Daemon Server] - 2024-11-18T11:54:47.571Z - Started listening on: \\.\pipe\nx\C:\Users\Cleme\AppData\Local\Temp\545c26c22c\d.sock
+[NX Daemon Server] - 2024-11-18T11:54:47.576Z - [WATCHER]: Subscribed to changes within: c:\Avans\Jaar_2\avans-nx-workshop (native)
+[NX Daemon Server] - 2024-11-18T11:54:47.582Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-18T11:54:47.584Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-18T11:54:47.584Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-18T11:54:47.586Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-11-18T11:54:47.934Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-11-18T11:54:48.137Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-11-18T11:54:48.145Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-11-18T11:54:48.145Z - [REQUEST]: 
+[NX Daemon Server] - 2024-11-18T11:54:48.145Z - [REQUEST]: 
+[NX Daemon Server] - 2024-11-18T11:54:48.154Z - Time taken for 'loadNxPlugins' 557.1992ms
+[NX Daemon Server] - 2024-11-18T11:54:48.216Z - Time taken for 'build-project-configs' 52.11360000000013ms
+[NX Daemon Server] - 2024-11-18T11:54:48.261Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-11-18T11:54:57.494Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-11-18T11:54:57.495Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-11-18T11:54:57.496Z - Time taken for 'total for creating and serializing project graph' 9908.822400000001ms
+[NX Daemon Server] - 2024-11-18T11:54:57.497Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-11-18T11:54:57.497Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 9909. Response time: 2.
+[NX Daemon Server] - 2024-11-18T11:54:57.501Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX Daemon Server] - 2024-11-18T11:54:57.501Z - Done responding to the client handleContextFileData
+[NX Daemon Server] - 2024-11-18T11:54:57.501Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 0. Response time: 0.
+[NX Daemon Server] - 2024-11-18T11:54:57.502Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-18T11:55:23.078Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-11-18T11:55:23.081Z - [WATCHER]: apps/my-app/project.json was modified
+[NX Daemon Server] - 2024-11-18T11:55:23.204Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-11-18T11:55:23.204Z - [REQUEST]: apps/my-app/project.json
+[NX Daemon Server] - 2024-11-18T11:55:23.204Z - [REQUEST]: 
+[NX Daemon Server] - 2024-11-18T11:55:23.209Z - Time taken for 'hash changed files from watcher' 16.07680000000255ms
+[NX Daemon Server] - 2024-11-18T11:55:23.237Z - Time taken for 'build-project-configs' 25.715200000006007ms
+[NX Daemon Server] - 2024-11-18T11:55:23.273Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-11-18T11:55:23.273Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-11-18T11:55:23.274Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-11-18T11:55:23.274Z - Time taken for 'total execution time for createProjectGraph()' 30.498600000006263ms
+[NX Daemon Server] - 2024-11-18T11:55:24.098Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-18T11:55:24.099Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-18T11:55:24.099Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-18T11:55:24.100Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-11-18T11:55:24.101Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-11-18T11:55:24.103Z - Time taken for 'total for creating and serializing project graph' 0.4040000000022701ms
+[NX Daemon Server] - 2024-11-18T11:55:24.103Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-11-18T11:55:24.103Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 1. Response time: 2.
+[NX Daemon Server] - 2024-11-18T11:55:24.108Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX Daemon Server] - 2024-11-18T11:55:24.108Z - Done responding to the client handleContextFileData
+[NX Daemon Server] - 2024-11-18T11:55:24.108Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 1. Response time: 0.
+[NX Daemon Server] - 2024-11-18T11:55:24.108Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-18T11:55:29.810Z - [WATCHER]: apps/my-app/project.json was modified
+[NX Daemon Server] - 2024-11-18T11:55:29.810Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-11-18T11:55:29.919Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-11-18T11:55:29.919Z - [REQUEST]: apps/my-app/project.json
+[NX Daemon Server] - 2024-11-18T11:55:29.919Z - [REQUEST]: 
+[NX Daemon Server] - 2024-11-18T11:55:29.926Z - Time taken for 'hash changed files from watcher' 0.8572999999960302ms
+[NX Daemon Server] - 2024-11-18T11:55:29.942Z - Time taken for 'build-project-configs' 15.257800000006682ms
+[NX Daemon Server] - 2024-11-18T11:55:29.968Z - Error detected when creating a project graph: Failed to create project graph. See above for errors
+[NX Daemon Server] - 2024-11-18T11:55:29.968Z - Time taken for 'build project graph' 29.53349999999773ms
+[NX Daemon Server] - 2024-11-18T11:55:30.826Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-18T11:55:30.827Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-18T11:55:30.827Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-18T11:55:30.828Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-11-18T11:55:30.829Z - [REQUEST]: Responding to the client with an error. Error when preparing serialized project graph. Failed to process project graph. Run "nx reset" to fix this. Please report the issue if you keep seeing it.
+Failed to process project graph. Run "nx reset" to fix this. Please report the issue if you keep seeing it.
+      An error occurred while processing files for the nx/core/project-json plugin.
+    - apps/my-app/project.json: ColonExpected in c:\Avans\Jaar_2\avans-nx-workshop\apps\my-app\project.json at 31:13
+    29 |                 ],
+    30 |                 "generate"
+  > 31 |             },
+       |             ^
+    32 |             "configurations": {
+    33 |                 "production": {
+    34 |                     "budgets": [
+  
+      Error: ColonExpected in c:\Avans\Jaar_2\avans-nx-workshop\apps\my-app\project.json at 31:13
+        29 |                 ],
+        30 |                 "generate"
+      > 31 |             },
+           |             ^
+        32 |             "configurations": {
+        33 |                 "production": {
+        34 |                     "budgets": [
+      
+          at parseJson (c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\utils\json.js:29:15)
+          at readJsonFile (c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\utils\fileutils.js:32:37)
+          at c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\plugins\project-json\build-nodes\project-json.js:16:59
+          at c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\project-graph\plugins\utils.js:10:33
+          at Array.map (<anonymous>)
+          at createNodesFromFiles (c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\project-graph\plugins\utils.js:8:35)
+          at exports.ProjectJsonProjectsPlugin.createNodesV2 (c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\plugins\project-json\build-nodes\project-json.js:15:55)
+          at LoadedNxPlugin.createNodes (c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\project-graph\plugins\internal-api.js:34:65)
+          at LoadedNxPlugin.createNodes.<computed> (c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\project-graph\plugins\internal-api.js:44:34)
+          at createNodes (c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\project-graph\plugins\isolation\plugin-worker.js:54:63)
+    WorkspaceValidityError: Configuration Error
+  The following implicitDependencies point to non-existent project(s):
+    my-app-e2e
+      my-app
+      at assertWorkspaceValidity (c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\utils\assert-workspace-validity.js:71:11)
+      at buildProjectGraphUsingProjectFileMap (c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\project-graph\build-project-graph.js:55:65)
+      at createAndSerializeProjectGraph (c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\daemon\server\project-graph-incremental-recomputation.js:241:124)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async processFilesAndCreateAndSerializeProjectGraph (c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\daemon\server\project-graph-incremental-recomputation.js:172:19)
+      at async Timeout._onTimeout (c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\daemon\server\project-graph-incremental-recomputation.js:94:38)
+[NX Daemon Server] - 2024-11-18T11:55:30.829Z - Done responding to the client null
+[NX Daemon Server] - 2024-11-18T11:55:30.829Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 0. Response time: 1.
+[NX Daemon Server] - 2024-11-18T11:55:30.830Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-18T11:55:31.994Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-18T11:55:31.994Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-18T11:55:31.995Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-18T11:55:31.996Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-11-18T11:55:31.997Z - [REQUEST]: Responding to the client with an error. Error when preparing serialized project graph. Failed to process project graph. Run "nx reset" to fix this. Please report the issue if you keep seeing it.
+Failed to process project graph. Run "nx reset" to fix this. Please report the issue if you keep seeing it.
+      An error occurred while processing files for the nx/core/project-json plugin.
+    - apps/my-app/project.json: ColonExpected in c:\Avans\Jaar_2\avans-nx-workshop\apps\my-app\project.json at 31:13
+    29 |                 ],
+    30 |                 "generate"
+  > 31 |             },
+       |             ^
+    32 |             "configurations": {
+    33 |                 "production": {
+    34 |                     "budgets": [
+  
+      Error: ColonExpected in c:\Avans\Jaar_2\avans-nx-workshop\apps\my-app\project.json at 31:13
+        29 |                 ],
+        30 |                 "generate"
+      > 31 |             },
+           |             ^
+        32 |             "configurations": {
+        33 |                 "production": {
+        34 |                     "budgets": [
+      
+          at parseJson (c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\utils\json.js:29:15)
+          at readJsonFile (c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\utils\fileutils.js:32:37)
+          at c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\plugins\project-json\build-nodes\project-json.js:16:59
+          at c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\project-graph\plugins\utils.js:10:33
+          at Array.map (<anonymous>)
+          at createNodesFromFiles (c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\project-graph\plugins\utils.js:8:35)
+          at exports.ProjectJsonProjectsPlugin.createNodesV2 (c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\plugins\project-json\build-nodes\project-json.js:15:55)
+          at LoadedNxPlugin.createNodes (c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\project-graph\plugins\internal-api.js:34:65)
+          at LoadedNxPlugin.createNodes.<computed> (c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\project-graph\plugins\internal-api.js:44:34)
+          at createNodes (c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\project-graph\plugins\isolation\plugin-worker.js:54:63)
+    WorkspaceValidityError: Configuration Error
+  The following implicitDependencies point to non-existent project(s):
+    my-app-e2e
+      my-app
+      at assertWorkspaceValidity (c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\utils\assert-workspace-validity.js:71:11)
+      at buildProjectGraphUsingProjectFileMap (c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\project-graph\build-project-graph.js:55:65)
+      at createAndSerializeProjectGraph (c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\daemon\server\project-graph-incremental-recomputation.js:241:124)
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+      at async processFilesAndCreateAndSerializeProjectGraph (c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\daemon\server\project-graph-incremental-recomputation.js:172:19)
+      at async Timeout._onTimeout (c:\Avans\Jaar_2\avans-nx-workshop\node_modules\nx\src\daemon\server\project-graph-incremental-recomputation.js:94:38)
+[NX Daemon Server] - 2024-11-18T11:55:31.997Z - Done responding to the client null
+[NX Daemon Server] - 2024-11-18T11:55:31.997Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 0. Response time: 1.
+[NX Daemon Server] - 2024-11-18T11:55:31.998Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-18T11:55:32.988Z - [WATCHER]: apps/my-app/project.json was modified
+[NX Daemon Server] - 2024-11-18T11:55:32.989Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-11-18T11:55:33.109Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-11-18T11:55:33.109Z - [REQUEST]: apps/my-app/project.json
+[NX Daemon Server] - 2024-11-18T11:55:33.109Z - [REQUEST]: 
+[NX Daemon Server] - 2024-11-18T11:55:33.113Z - Time taken for 'hash changed files from watcher' 13.44539999999688ms
+[NX Daemon Server] - 2024-11-18T11:55:33.129Z - Time taken for 'build-project-configs' 14.168299999997544ms
+[NX Daemon Server] - 2024-11-18T11:55:33.152Z - Error detected when creating a project graph: Failed to create project graph. See above for errors
+[NX Daemon Server] - 2024-11-18T11:55:33.152Z - Time taken for 'build project graph' 25.71719999999914ms
+[NX Daemon Server] - 2024-11-18T11:55:33.996Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-11-18T11:55:33.998Z - [WATCHER]: apps/my-app/project.json was modified
+[NX Daemon Server] - 2024-11-18T11:55:34.002Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-18T11:55:34.003Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-18T11:55:34.003Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-18T11:55:34.004Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-11-18T11:55:34.012Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-11-18T11:55:34.012Z - [REQUEST]: apps/my-app/project.json
+[NX Daemon Server] - 2024-11-18T11:55:34.012Z - [REQUEST]: 
+[NX Daemon Server] - 2024-11-18T11:55:34.015Z - Time taken for 'hash changed files from watcher' 7.136700000002747ms
+[NX Daemon Server] - 2024-11-18T11:55:34.031Z - Time taken for 'build-project-configs' 12.61200000000099ms
+[NX Daemon Server] - 2024-11-18T11:55:34.068Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-11-18T11:55:34.069Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-11-18T11:55:34.069Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-11-18T11:55:34.072Z - Time taken for 'total for creating and serializing project graph' 65.46360000000277ms
+[NX Daemon Server] - 2024-11-18T11:55:34.073Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-11-18T11:55:34.073Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 65. Response time: 4.
+[NX Daemon Server] - 2024-11-18T11:55:34.077Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX Daemon Server] - 2024-11-18T11:55:34.077Z - Done responding to the client handleContextFileData
+[NX Daemon Server] - 2024-11-18T11:55:34.077Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 0. Response time: 0.
+[NX Daemon Server] - 2024-11-18T11:55:34.078Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-18T11:55:35.011Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-18T11:55:35.011Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-18T11:55:35.011Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-18T11:55:35.012Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-11-18T11:55:35.012Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-11-18T11:55:35.014Z - Time taken for 'total for creating and serializing project graph' 0.47250000000349246ms
+[NX Daemon Server] - 2024-11-18T11:55:35.014Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-11-18T11:55:35.014Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 0. Response time: 2.
+[NX Daemon Server] - 2024-11-18T11:55:35.019Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX Daemon Server] - 2024-11-18T11:55:35.019Z - Done responding to the client handleContextFileData
+[NX Daemon Server] - 2024-11-18T11:55:35.019Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 0. Response time: 0.
+[NX Daemon Server] - 2024-11-18T11:55:35.020Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-18T11:55:36.113Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-18T11:55:36.113Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-18T11:55:36.113Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-18T11:55:36.114Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-11-18T11:55:36.114Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-11-18T11:55:36.115Z - Time taken for 'total for creating and serializing project graph' 0.2532000000064727ms
+[NX Daemon Server] - 2024-11-18T11:55:36.116Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-11-18T11:55:36.116Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 0. Response time: 2.
+[NX Daemon Server] - 2024-11-18T11:55:36.119Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX Daemon Server] - 2024-11-18T11:55:36.119Z - Done responding to the client handleContextFileData
+[NX Daemon Server] - 2024-11-18T11:55:36.119Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 0. Response time: 0.
+[NX Daemon Server] - 2024-11-18T11:55:36.120Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-18T12:03:56.792Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-11-18T12:03:56.794Z - [WATCHER]: .github/workflows/azure-static-web-apps-gentle-grass-03aaa6503.yml was modified
+[NX Daemon Server] - 2024-11-18T12:03:56.923Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-11-18T12:03:56.924Z - [REQUEST]: .github/workflows/azure-static-web-apps-gentle-grass-03aaa6503.yml
+[NX Daemon Server] - 2024-11-18T12:03:56.924Z - [REQUEST]: 
+[NX Daemon Server] - 2024-11-18T12:03:56.928Z - Time taken for 'hash changed files from watcher' 19.677200000034645ms
+[NX Daemon Server] - 2024-11-18T12:03:56.944Z - Time taken for 'build-project-configs' 14.463300000061281ms
+[NX Daemon Server] - 2024-11-18T12:03:56.966Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-11-18T12:03:56.966Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-11-18T12:03:56.966Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-11-18T12:03:56.966Z - Time taken for 'total execution time for createProjectGraph()' 16.429699999978766ms
+[NX Daemon Server] - 2024-11-18T12:03:57.816Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-18T12:03:57.816Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-18T12:03:57.816Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-18T12:03:57.817Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-11-18T12:03:57.817Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-11-18T12:03:57.819Z - Time taken for 'total for creating and serializing project graph' 0.29110000003129244ms
+[NX Daemon Server] - 2024-11-18T12:03:57.819Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-11-18T12:03:57.819Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 0. Response time: 2.
+[NX Daemon Server] - 2024-11-18T12:03:57.824Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX Daemon Server] - 2024-11-18T12:03:57.824Z - Done responding to the client handleContextFileData
+[NX Daemon Server] - 2024-11-18T12:03:57.824Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 1. Response time: 0.
+[NX Daemon Server] - 2024-11-18T12:03:57.824Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-18T12:05:16.451Z - [WATCHER]: .gitmodules was modified
+[NX Daemon Server] - 2024-11-18T12:05:16.451Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-11-18T12:05:16.559Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-11-18T12:05:16.559Z - [REQUEST]: .gitmodules
+[NX Daemon Server] - 2024-11-18T12:05:16.559Z - [REQUEST]: 
+[NX Daemon Server] - 2024-11-18T12:05:16.564Z - Time taken for 'hash changed files from watcher' 0.46290000004228204ms
+[NX Daemon Server] - 2024-11-18T12:05:16.579Z - Time taken for 'build-project-configs' 14.323699999949895ms
+[NX Daemon Server] - 2024-11-18T12:05:16.604Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-11-18T12:05:16.604Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-11-18T12:05:16.604Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-11-18T12:05:16.604Z - Time taken for 'total execution time for createProjectGraph()' 17.783700000029057ms
+[NX Daemon Server] - 2024-11-18T12:05:17.464Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-18T12:05:17.464Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-18T12:05:17.464Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-18T12:05:17.465Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-11-18T12:05:17.466Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-11-18T12:05:17.467Z - Time taken for 'total for creating and serializing project graph' 0.26459999999497086ms
+[NX Daemon Server] - 2024-11-18T12:05:17.467Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-11-18T12:05:17.467Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 1. Response time: 1.
+[NX Daemon Server] - 2024-11-18T12:05:17.472Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX Daemon Server] - 2024-11-18T12:05:17.472Z - Done responding to the client handleContextFileData
+[NX Daemon Server] - 2024-11-18T12:05:17.472Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 1. Response time: 0.
+[NX Daemon Server] - 2024-11-18T12:05:17.472Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-18T12:05:20.881Z - [WATCHER]: .gitmodules was modified
+[NX Daemon Server] - 2024-11-18T12:05:20.882Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-11-18T12:05:21.001Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-11-18T12:05:21.001Z - [REQUEST]: .gitmodules
+[NX Daemon Server] - 2024-11-18T12:05:21.001Z - [REQUEST]: 
+[NX Daemon Server] - 2024-11-18T12:05:21.003Z - Time taken for 'hash changed files from watcher' 9.181199999991804ms
+[NX Daemon Server] - 2024-11-18T12:05:21.018Z - Time taken for 'build-project-configs' 12.34210000000894ms
+[NX Daemon Server] - 2024-11-18T12:05:21.042Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-11-18T12:05:21.042Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-11-18T12:05:21.042Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-11-18T12:05:21.042Z - Time taken for 'total execution time for createProjectGraph()' 18.038600000087172ms
+[NX Daemon Server] - 2024-11-18T12:05:21.896Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-18T12:05:21.896Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-18T12:05:21.896Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-18T12:05:21.897Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-11-18T12:05:21.898Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-11-18T12:05:21.899Z - Time taken for 'total for creating and serializing project graph' 0.35220000008121133ms
+[NX Daemon Server] - 2024-11-18T12:05:21.899Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-11-18T12:05:21.899Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 1. Response time: 1.
+[NX Daemon Server] - 2024-11-18T12:05:21.903Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX Daemon Server] - 2024-11-18T12:05:21.903Z - Done responding to the client handleContextFileData
+[NX Daemon Server] - 2024-11-18T12:05:21.903Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 0. Response time: 0.
+[NX Daemon Server] - 2024-11-18T12:05:21.903Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-18T12:05:40.048Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-11-18T12:05:40.049Z - [WATCHER]: .gitmodules was modified
+[NX Daemon Server] - 2024-11-18T12:05:40.171Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-11-18T12:05:40.171Z - [REQUEST]: .gitmodules
+[NX Daemon Server] - 2024-11-18T12:05:40.171Z - [REQUEST]: 
+[NX Daemon Server] - 2024-11-18T12:05:40.177Z - Time taken for 'hash changed files from watcher' 12.496599999954924ms
+[NX Daemon Server] - 2024-11-18T12:05:40.209Z - Time taken for 'build-project-configs' 24.937399999937043ms
+[NX Daemon Server] - 2024-11-18T12:05:40.258Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-11-18T12:05:40.258Z - [SYNC]: project graph hash is the same, not collecting task sync generators
+[NX Daemon Server] - 2024-11-18T12:05:40.258Z - [SYNC]: nx.json hash is the same, not collecting global sync generators
+[NX Daemon Server] - 2024-11-18T12:05:40.258Z - Time taken for 'total execution time for createProjectGraph()' 38.00820000004023ms
+[NX Daemon Server] - 2024-11-18T12:05:41.073Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-18T12:05:41.074Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-18T12:05:41.074Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-18T12:05:41.076Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-11-18T12:05:41.076Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-11-18T12:05:41.078Z - Time taken for 'total for creating and serializing project graph' 0.40190000005532056ms
+[NX Daemon Server] - 2024-11-18T12:05:41.078Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-11-18T12:05:41.078Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 0. Response time: 2.
+[NX Daemon Server] - 2024-11-18T12:05:41.088Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX Daemon Server] - 2024-11-18T12:05:41.089Z - Done responding to the client handleContextFileData
+[NX Daemon Server] - 2024-11-18T12:05:41.089Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 0. Response time: 1.
+[NX Daemon Server] - 2024-11-18T12:05:41.090Z - Closed a connection. Number of open connections: 0
