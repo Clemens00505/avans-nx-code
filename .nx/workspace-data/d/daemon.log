@@ -1235,3 +1235,23 @@ Error: UnexpectedEndOfString in c:\Avans\Jaar_2\avans-nx-workshop\package.json a
 [NX Daemon Server] - 2024-11-18T12:23:24.839Z - Done responding to the client handleContextFileData
 [NX Daemon Server] - 2024-11-18T12:23:24.839Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 0. Response time: 0.
 [NX Daemon Server] - 2024-11-18T12:23:24.840Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-18T13:15:15.006Z - Started listening on: \\.\pipe\nx\C:\Users\Cleme\AppData\Local\Temp\545c26c22c\d.sock
+[NX Daemon Server] - 2024-11-18T13:15:15.016Z - [WATCHER]: Subscribed to changes within: c:\Avans\Jaar_2\avans-nx-workshop (native)
+[NX Daemon Server] - 2024-11-18T13:15:15.018Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-18T13:15:15.019Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-11-18T13:15:15.020Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-18T13:15:15.023Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-11-18T13:15:15.256Z - [REQUEST]: Updated workspace context based on watched changes, recomputing project graph...
+[NX Daemon Server] - 2024-11-18T13:15:15.256Z - [REQUEST]: 
+[NX Daemon Server] - 2024-11-18T13:15:15.256Z - [REQUEST]: 
+[NX Daemon Server] - 2024-11-18T13:15:15.262Z - Time taken for 'loadNxPlugins' 231.2372ms
+[NX Daemon Server] - 2024-11-18T13:15:15.292Z - Time taken for 'build-project-configs' 15.902800000000013ms
+[NX Daemon Server] - 2024-11-18T13:15:15.499Z - [SYNC]: collect registered sync generators
+[NX Daemon Server] - 2024-11-18T13:15:15.500Z - [REQUEST]: Responding to the client. project-graph
+[NX Daemon Server] - 2024-11-18T13:15:15.501Z - Time taken for 'total for creating and serializing project graph' 476.92799999999994ms
+[NX Daemon Server] - 2024-11-18T13:15:15.501Z - Done responding to the client project-graph
+[NX Daemon Server] - 2024-11-18T13:15:15.502Z - Handled REQUEST_PROJECT_GRAPH. Handling time: 477. Response time: 2.
+[NX Daemon Server] - 2024-11-18T13:15:15.505Z - [REQUEST]: Responding to the client. handleContextFileData
+[NX Daemon Server] - 2024-11-18T13:15:15.505Z - Done responding to the client handleContextFileData
+[NX Daemon Server] - 2024-11-18T13:15:15.505Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 0. Response time: 0.
+[NX Daemon Server] - 2024-11-18T13:15:15.506Z - Closed a connection. Number of open connections: 0
