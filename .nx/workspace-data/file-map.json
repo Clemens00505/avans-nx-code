@@ -43,20 +43,12 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": ".gitmodules",
-        "hash": "15225402042894221620"
+        "file": ".eslintrc.json",
+        "hash": "18315524891129148814"
       },
       {
-        "file": "Nx-workshop.postman_collection.json",
-        "hash": "7975152560232430547"
-      },
-      {
-        "file": "jest.preset.js",
-        "hash": "9430166341120122740"
-      },
-      {
-        "file": "nx.json",
-        "hash": "4494248826616246957"
+        "file": ".eslintignore",
+        "hash": "7663861978715868291"
       },
       {
         "file": "package.json",
@@ -67,12 +59,48 @@
         "hash": "3395189204293871444"
       },
       {
-        "file": ".eslintrc.json",
-        "hash": "18315524891129148814"
+        "file": "jest.config.ts",
+        "hash": "12333515226966617182"
       },
       {
         "file": "tsconfig.base.json",
         "hash": "12713824660565517040"
+      },
+      {
+        "file": "libs/share-a-meal/readme.txt",
+        "hash": "8731589497805983804"
+      },
+      {
+        "file": "README.md",
+        "hash": "1955868086715526908"
+      },
+      {
+        "file": ".gitmodules",
+        "hash": "15225402042894221620"
+      },
+      {
+        "file": "nx.json",
+        "hash": "4494248826616246957"
+      },
+      {
+        "file": ".editorconfig",
+        "hash": "5443105041930014821"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "8491837053101957257"
+      },
+      {
+        "file": "Nx-workshop.postman_collection.json",
+        "hash": "7975152560232430547"
+      },
+      {
+        "file": "jest.preset.js",
+        "hash": "9430166341120122740"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "6192629144332209564"
       },
       {
         "file": "package-lock.json",
@@ -80,35 +108,7 @@
       },
       {
         "file": ".github/workflows/azure-static-web-apps-gentle-grass-03aaa6503.yml",
-        "hash": "4725256296895486460"
-      },
-      {
-        "file": ".gitignore",
-        "hash": "8491837053101957257"
-      },
-      {
-        "file": "README.md",
-        "hash": "1955868086715526908"
-      },
-      {
-        "file": "libs/share-a-meal/readme.txt",
-        "hash": "8731589497805983804"
-      },
-      {
-        "file": ".editorconfig",
-        "hash": "5443105041930014821"
-      },
-      {
-        "file": "jest.config.ts",
-        "hash": "12333515226966617182"
-      },
-      {
-        "file": ".prettierrc",
-        "hash": "6192629144332209564"
-      },
-      {
-        "file": ".eslintignore",
-        "hash": "7663861978715868291"
+        "hash": "7186565712347998075"
       }
     ],
     "projectFileMap": {
