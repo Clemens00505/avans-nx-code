@@ -5,6 +5,7 @@
     "scripts": {
         "deploy": "nx run share-a-meal-web:build",
         "build": "nx run-many -t build",
+        "build:my-app": "nx run my-app:build:production",
         "test": "nx run-many -t test"
     },
     "private": true,
