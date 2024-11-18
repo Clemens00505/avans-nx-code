@@ -43,72 +43,72 @@
   "fileMap": {
     "nonProjectFiles": [
       {
-        "file": ".eslintrc.json",
-        "hash": "18315524891129148814"
-      },
-      {
-        "file": "nx.json",
-        "hash": "4494248826616246957"
-      },
-      {
-        "file": "libs/share-a-meal/readme.txt",
-        "hash": "8731589497805983804"
-      },
-      {
-        "file": ".eslintignore",
-        "hash": "7663861978715868291"
-      },
-      {
-        "file": "README.md",
-        "hash": "1955868086715526908"
-      },
-      {
-        "file": "package.json",
-        "hash": "11965534134886268288"
+        "file": ".prettierignore",
+        "hash": "3395189204293871444"
       },
       {
         "file": ".prettierrc",
         "hash": "6192629144332209564"
       },
       {
-        "file": "Nx-workshop.postman_collection.json",
-        "hash": "7975152560232430547"
-      },
-      {
-        "file": ".gitmodules",
-        "hash": "15225402042894221620"
-      },
-      {
         "file": "tsconfig.base.json",
         "hash": "12713824660565517040"
       },
       {
-        "file": "jest.config.ts",
-        "hash": "12333515226966617182"
-      },
-      {
-        "file": ".gitignore",
-        "hash": "8491837053101957257"
-      },
-      {
-        "file": "package-lock.json",
-        "hash": "5922905673379006667"
-      },
-      {
-        "file": ".github/workflows/azure-static-web-apps-gentle-grass-03aaa6503.yml",
-        "hash": "11482155329519193800"
+        "file": ".eslintrc.json",
+        "hash": "18315524891129148814"
       },
       {
         "file": ".editorconfig",
         "hash": "5443105041930014821"
       },
       {
-        "file": ".prettierignore",
-        "hash": "3395189204293871444"
+        "file": "nx.json",
+        "hash": "4494248826616246957"
+      },
+      {
+        "file": ".github/workflows/azure-static-web-apps-gentle-grass-03aaa6503.yml",
+        "hash": "4028904355970385244"
+      },
+      {
+        "file": ".eslintignore",
+        "hash": "7663861978715868291"
       },
       {
         "file": "jest.preset.js",
         "hash": "9430166341120122740"
+      },
+      {
+        "file": ".gitmodules",
+        "hash": "15225402042894221620"
+      },
+      {
+        "file": "package-lock.json",
+        "hash": "5922905673379006667"
+      },
+      {
+        "file": "package.json",
+        "hash": "11965534134886268288"
+      },
+      {
+        "file": "Nx-workshop.postman_collection.json",
+        "hash": "7975152560232430547"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "8491837053101957257"
+      },
+      {
+        "file": "jest.config.ts",
+        "hash": "12333515226966617182"
+      },
+      {
+        "file": "README.md",
+        "hash": "1955868086715526908"
+      },
+      {
+        "file": "libs/share-a-meal/readme.txt",
+        "hash": "8731589497805983804"
       }
     ],
     "projectFileMap": {
