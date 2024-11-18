@@ -40,8 +40,3 @@ Thumbs.db
 
 .nx/cache
 .angular
-
-# nx
-.nx/*
-!nx.json
-
