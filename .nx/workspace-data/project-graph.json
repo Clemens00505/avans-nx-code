@@ -16041,12 +16041,17 @@
       },
       {
         "source": "features",
-        "target": "api",
+        "target": "users",
         "type": "static"
       },
       {
         "source": "features",
         "target": "npm:rxjs",
+        "type": "static"
+      },
+      {
+        "source": "features",
+        "target": "api",
         "type": "static"
       },
       {
@@ -16244,6 +16249,16 @@
       {
         "source": "users",
         "target": "npm:uuid",
+        "type": "static"
+      },
+      {
+        "source": "users",
+        "target": "npm:validator",
+        "type": "static"
+      },
+      {
+        "source": "users",
+        "target": "npm:class-validator",
         "type": "static"
       },
       {

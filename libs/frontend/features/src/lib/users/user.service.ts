@@ -13,23 +13,23 @@ export class UserService {
         _id: "1",
         name: "Isaac Gibson",
         emailAddress: "isaac.gibson@example.com",
+        phoneNumber: "06-12345678",
         profileImgUrl: "https://randomuser.me/api/portraits/men/16.jpg",
         role: UserRole.Unknown,
         gender: UserGender.Male,
         password: "secret",
-        isActive: true,
-        meals: []
+        isActive: true
     },
     {
         _id: "2",
         name: "Anne Williams",
         emailAddress: "anne.williams@example.com",
+        phoneNumber: "06-12345678",
         profileImgUrl: "https://randomuser.me/api/portraits/women/40.jpg",
         role: UserRole.Unknown,
         gender: UserGender.Male,
         password: "secret",
-        isActive: true,
-        meals: []
+        isActive: true
     }
   ];
 

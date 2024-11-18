@@ -51,216 +51,219 @@
   "nxJsonPlugins": [],
   "fileMap": {
     "projectFileMap": {
-      "features": [
+      "data-api-e2e": [
         {
-          "file": "libs/frontend/features/.eslintrc.json",
-          "hash": "9293852775400125686"
+          "file": "apps/data-api-e2e/.eslintrc.json",
+          "hash": "13800677001662881425"
         },
         {
-          "file": "libs/frontend/features/README.md",
-          "hash": "9246777289339377121"
+          "file": "apps/data-api-e2e/jest.config.ts",
+          "hash": "11289544556175763105"
         },
         {
-          "file": "libs/frontend/features/jest.config.ts",
-          "hash": "675170498047466924"
+          "file": "apps/data-api-e2e/project.json",
+          "hash": "14487847278478867191"
         },
         {
-          "file": "libs/frontend/features/project.json",
-          "hash": "6440707396456724368"
-        },
-        {
-          "file": "libs/frontend/features/src/index.ts",
-          "hash": "13470320293376610404"
-        },
-        {
-          "file": "libs/frontend/features/src/lib/features.module.ts",
-          "hash": "16319781769783525381",
+          "file": "apps/data-api-e2e/src/data-api/api-meal.spec.ts",
+          "hash": "12634385605556572883",
           "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common",
-            "npm:@angular/router",
-            "npm:passport"
+            "npm:axios"
           ]
         },
         {
-          "file": "libs/frontend/features/src/lib/users/user-details/user-details.component.html",
-          "hash": "15003838530794705697"
+          "file": "apps/data-api-e2e/src/support/global-setup.ts",
+          "hash": "2568409276037275290"
         },
         {
-          "file": "libs/frontend/features/src/lib/users/user-details/user-details.component.spec.ts",
-          "hash": "11136590702041865018",
+          "file": "apps/data-api-e2e/src/support/global-teardown.ts",
+          "hash": "5275447082211835490"
+        },
+        {
+          "file": "apps/data-api-e2e/src/support/test-setup.ts",
+          "hash": "10984585515912236441",
           "deps": [
-            "npm:@angular/core"
+            "npm:axios"
           ]
         },
         {
-          "file": "libs/frontend/features/src/lib/users/user-details/user-details.component.ts",
-          "hash": "4525465358076299686",
+          "file": "apps/data-api-e2e/tsconfig.json",
+          "hash": "15443990093475294480"
+        },
+        {
+          "file": "apps/data-api-e2e/tsconfig.spec.json",
+          "hash": "14954872453723519891"
+        }
+      ],
+      "users": [
+        {
+          "file": "libs/backend/user/.eslintrc.json",
+          "hash": "14803369877490046397"
+        },
+        {
+          "file": "libs/backend/user/README.md",
+          "hash": "15006167837473288106"
+        },
+        {
+          "file": "libs/backend/user/jest.config.ts",
+          "hash": "12447656778709370055"
+        },
+        {
+          "file": "libs/backend/user/project.json",
+          "hash": "9172701930356347591"
+        },
+        {
+          "file": "libs/backend/user/src/index.ts",
+          "hash": "18201255863368591681"
+        },
+        {
+          "file": "libs/backend/user/src/lib/user/user-exists.guard.ts",
+          "hash": "15590245430234254791",
           "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/frontend/features/src/lib/users/user-edit/user-edit.component.html",
-          "hash": "5875704848038097964"
-        },
-        {
-          "file": "libs/frontend/features/src/lib/users/user-edit/user-edit.component.spec.ts",
-          "hash": "5340154644524321637",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/frontend/features/src/lib/users/user-edit/user-edit.component.ts",
-          "hash": "7929604386517746896",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/frontend/features/src/lib/users/user-list/user-list.component.html",
-          "hash": "14559055911961865424"
-        },
-        {
-          "file": "libs/frontend/features/src/lib/users/user-list/user-list.component.spec.ts",
-          "hash": "13831544502946103292",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "libs/frontend/features/src/lib/users/user-list/user-list.component.ts",
-          "hash": "4893426089760412418",
-          "deps": [
-            "npm:@angular/core",
-            "api",
+            "npm:@nestjs/common",
+            "npm:@nestjs/mongoose",
+            "npm:mongoose",
             "npm:rxjs"
           ]
         },
         {
-          "file": "libs/frontend/features/src/lib/users/user.service.spec.ts",
-          "hash": "3244421341483603138"
+          "file": "libs/backend/user/src/lib/user/user.controller.spec.ts",
+          "hash": "16553284843351070695",
+          "deps": [
+            "npm:@nestjs/testing"
+          ]
         },
         {
-          "file": "libs/frontend/features/src/lib/users/user.service.ts",
-          "hash": "12661039531044555601",
+          "file": "libs/backend/user/src/lib/user/user.controller.ts",
+          "hash": "16842222910309761397",
           "deps": [
-            "npm:@angular/core",
             "api",
-            "npm:rxjs",
-            "npm:@angular/common"
+            "dto"
           ]
         },
         {
-          "file": "libs/frontend/features/src/test-setup.ts",
-          "hash": "4022486634036225089",
+          "file": "libs/backend/user/src/lib/user/user.schema.spec.ts",
+          "hash": "252429985294783900",
           "deps": [
-            "npm:jest-preset-angular"
+            "npm:@nestjs/testing",
+            "npm:mongoose",
+            "npm:@nestjs/mongoose",
+            "npm:uuid"
           ]
         },
         {
-          "file": "libs/frontend/features/tsconfig.json",
-          "hash": "8354012467016588143"
+          "file": "libs/backend/user/src/lib/user/user.schema.ts",
+          "hash": "9830815625636106632",
+          "deps": [
+            "npm:@nestjs/mongoose",
+            "npm:mongoose",
+            "npm:validator",
+            "api",
+            "npm:class-validator"
+          ]
         },
         {
-          "file": "libs/frontend/features/tsconfig.lib.json",
-          "hash": "3924040990733920241"
+          "file": "libs/backend/user/src/lib/user/user.service.spec.ts",
+          "hash": "10832785061875187159",
+          "deps": [
+            "npm:@nestjs/testing",
+            "npm:@nestjs/mongoose",
+            "npm:mongoose",
+            "npm:mongodb"
+          ]
         },
         {
-          "file": "libs/frontend/features/tsconfig.spec.json",
-          "hash": "17344764448552449211"
+          "file": "libs/backend/user/src/lib/user/user.service.ts",
+          "hash": "12857530342413913462",
+          "deps": [
+            "api",
+            "dto"
+          ]
+        },
+        {
+          "file": "libs/backend/user/src/lib/users.module.ts",
+          "hash": "11547217722149552254",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/mongoose"
+          ]
+        },
+        {
+          "file": "libs/backend/user/tsconfig.json",
+          "hash": "2557874373890351669"
+        },
+        {
+          "file": "libs/backend/user/tsconfig.lib.json",
+          "hash": "5754459057639250434"
+        },
+        {
+          "file": "libs/backend/user/tsconfig.spec.json",
+          "hash": "2579164740543429247"
         }
       ],
-      "common": [
+      "common_share-a-meal": [
         {
-          "file": "libs/frontend/common/.eslintrc.json",
-          "hash": "9293852775400125686"
+          "file": "libs/share-a-meal/common/.eslintrc.json",
+          "hash": "17229790698468906239"
         },
         {
-          "file": "libs/frontend/common/README.md",
-          "hash": "5067725685752823321"
+          "file": "libs/share-a-meal/common/README.md",
+          "hash": "2200719060512274419"
         },
         {
-          "file": "libs/frontend/common/jest.config.ts",
-          "hash": "14201889676474065391"
+          "file": "libs/share-a-meal/common/jest.config.ts",
+          "hash": "2102817330726165690"
         },
         {
-          "file": "libs/frontend/common/project.json",
-          "hash": "14677979573358869615"
+          "file": "libs/share-a-meal/common/project.json",
+          "hash": "17422346830263667601"
         },
         {
-          "file": "libs/frontend/common/src/index.ts",
-          "hash": "14177925512953375293"
+          "file": "libs/share-a-meal/common/src/index.ts",
+          "hash": "2430881540356233151"
         },
         {
-          "file": "libs/frontend/common/src/lib/common.module.ts",
-          "hash": "17455652627419181422",
+          "file": "libs/share-a-meal/common/src/lib/common.module.ts",
+          "hash": "11815243917219490442",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/common"
           ]
         },
         {
-          "file": "libs/frontend/common/src/test-setup.ts",
-          "hash": "4022486634036225089",
+          "file": "libs/share-a-meal/common/src/lib/entity/entity.model.ts",
+          "hash": "2922657672244363389",
+          "deps": [
+            "api"
+          ]
+        },
+        {
+          "file": "libs/share-a-meal/common/src/lib/entity/entity.service.ts",
+          "hash": "5320745814065222843",
+          "deps": [
+            "npm:rxjs",
+            "npm:@angular/common",
+            "api"
+          ]
+        },
+        {
+          "file": "libs/share-a-meal/common/src/test-setup.ts",
+          "hash": "12935735732682149507",
           "deps": [
             "npm:jest-preset-angular"
           ]
         },
         {
-          "file": "libs/frontend/common/tsconfig.json",
-          "hash": "16345539577515900790"
+          "file": "libs/share-a-meal/common/tsconfig.json",
+          "hash": "8526453262384300416"
         },
         {
-          "file": "libs/frontend/common/tsconfig.lib.json",
-          "hash": "3924040990733920241"
+          "file": "libs/share-a-meal/common/tsconfig.lib.json",
+          "hash": "5210152845168933800"
         },
         {
-          "file": "libs/frontend/common/tsconfig.spec.json",
-          "hash": "17344764448552449211"
-        }
-      ],
-      "my-app-e2e": [
-        {
-          "file": "apps/my-app-e2e/.eslintrc.json",
-          "hash": "2268504342791978563"
-        },
-        {
-          "file": "apps/my-app-e2e/cypress.config.ts",
-          "hash": "13758650857735414517",
-          "deps": [
-            "npm:@nx/cypress",
-            "npm:cypress"
-          ]
-        },
-        {
-          "file": "apps/my-app-e2e/project.json",
-          "hash": "8861499231352072629"
-        },
-        {
-          "file": "apps/my-app-e2e/src/e2e/app.cy.ts",
-          "hash": "1400024305452055270"
-        },
-        {
-          "file": "apps/my-app-e2e/src/fixtures/example.json",
-          "hash": "8244047265829016264"
-        },
-        {
-          "file": "apps/my-app-e2e/src/support/app.po.ts",
-          "hash": "11157016311132186162"
-        },
-        {
-          "file": "apps/my-app-e2e/src/support/commands.ts",
-          "hash": "4709268516280968380"
-        },
-        {
-          "file": "apps/my-app-e2e/src/support/e2e.ts",
-          "hash": "1054106023200826784"
-        },
-        {
-          "file": "apps/my-app-e2e/tsconfig.json",
-          "hash": "16101841879267239062"
+          "file": "libs/share-a-meal/common/tsconfig.spec.json",
+          "hash": "7652445452192956988"
         }
       ],
       "dto": [
@@ -340,6 +343,351 @@
         {
           "file": "libs/backend/dto/tsconfig.spec.json",
           "hash": "9110660443763673899"
+        }
+      ],
+      "rcmnd-api": [
+        {
+          "file": "apps/rcmnd-api/.env",
+          "hash": "10204480241532389462"
+        },
+        {
+          "file": "apps/rcmnd-api/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "apps/rcmnd-api/jest.config.ts",
+          "hash": "4799419067996328130"
+        },
+        {
+          "file": "apps/rcmnd-api/project.json",
+          "hash": "4542380656080258925"
+        },
+        {
+          "file": "apps/rcmnd-api/src/app/app.controller.spec.ts",
+          "hash": "9499997688052526633",
+          "deps": [
+            "npm:@nestjs/testing"
+          ]
+        },
+        {
+          "file": "apps/rcmnd-api/src/app/app.controller.ts",
+          "hash": "9005150069945785676",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/rcmnd-api/src/app/app.module.ts",
+          "hash": "3492701680234226929",
+          "deps": [
+            "neo4j"
+          ]
+        },
+        {
+          "file": "apps/rcmnd-api/src/app/app.service.spec.ts",
+          "hash": "8587461140686713758",
+          "deps": [
+            "npm:@nestjs/testing"
+          ]
+        },
+        {
+          "file": "apps/rcmnd-api/src/app/app.service.ts",
+          "hash": "9967902337593410053",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/rcmnd-api/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/rcmnd-api/src/main.ts",
+          "hash": "2813640680959726837",
+          "deps": [
+            "dto"
+          ]
+        },
+        {
+          "file": "apps/rcmnd-api/tsconfig.app.json",
+          "hash": "3171572500325445971"
+        },
+        {
+          "file": "apps/rcmnd-api/tsconfig.json",
+          "hash": "3490524966360018312"
+        },
+        {
+          "file": "apps/rcmnd-api/tsconfig.spec.json",
+          "hash": "11550347367511341917"
+        },
+        {
+          "file": "apps/rcmnd-api/webpack.config.js",
+          "hash": "10619490397189790225",
+          "deps": [
+            "npm:@nx/webpack"
+          ]
+        }
+      ],
+      "share-a-meal-web": [
+        {
+          "file": "apps/share-a-meal-web/.eslintrc.json",
+          "hash": "12118854377797659445"
+        },
+        {
+          "file": "apps/share-a-meal-web/jest.config.ts",
+          "hash": "2667253891853561832"
+        },
+        {
+          "file": "apps/share-a-meal-web/project.json",
+          "hash": "6021475482155891052"
+        },
+        {
+          "file": "apps/share-a-meal-web/src/app/app.component.html",
+          "hash": "14096303333607304980"
+        },
+        {
+          "file": "apps/share-a-meal-web/src/app/app.component.ts",
+          "hash": "10064478920892536205",
+          "deps": [
+            "npm:@angular/core",
+            "npm:flowbite",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/share-a-meal-web/src/app/app.config.ts",
+          "hash": "8993342557759126848",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/share-a-meal-web/src/app/app.routes.ts",
+          "hash": "1640601350016319054",
+          "deps": [
+            "npm:@angular/router"
+          ]
+        },
+        {
+          "file": "apps/share-a-meal-web/src/app/components/about/about.component.html",
+          "hash": "16089002778921768123"
+        },
+        {
+          "file": "apps/share-a-meal-web/src/app/components/about/about.component.spec.ts",
+          "hash": "8855752337671383617",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/share-a-meal-web/src/app/components/about/about.component.ts",
+          "hash": "12127380471888693726",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/share-a-meal-web/src/app/components/dashboard/dashboard.component.html",
+          "hash": "13178263766354848654"
+        },
+        {
+          "file": "apps/share-a-meal-web/src/app/components/dashboard/dashboard.component.ts",
+          "hash": "3591264399526952365",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "apps/share-a-meal-web/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/share-a-meal-web/src/assets/Entity-Relationship-Diagram.png",
+          "hash": "10440411800400986942"
+        },
+        {
+          "file": "apps/share-a-meal-web/src/favicon.ico",
+          "hash": "9303420814833116677"
+        },
+        {
+          "file": "apps/share-a-meal-web/src/index.html",
+          "hash": "1306304337514846625"
+        },
+        {
+          "file": "apps/share-a-meal-web/src/main.ts",
+          "hash": "7323565367452876306",
+          "deps": [
+            "util-env"
+          ]
+        },
+        {
+          "file": "apps/share-a-meal-web/src/styles.css",
+          "hash": "6917432578050628436"
+        },
+        {
+          "file": "apps/share-a-meal-web/src/test-setup.ts",
+          "hash": "12935735732682149507",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "apps/share-a-meal-web/tailwind.config.js",
+          "hash": "17076277411316600840",
+          "deps": [
+            "npm:@nx/angular",
+            "npm:tailwindcss",
+            "npm:flowbite"
+          ]
+        },
+        {
+          "file": "apps/share-a-meal-web/tsconfig.app.json",
+          "hash": "12911920861351469827"
+        },
+        {
+          "file": "apps/share-a-meal-web/tsconfig.editor.json",
+          "hash": "17511610827034788226"
+        },
+        {
+          "file": "apps/share-a-meal-web/tsconfig.json",
+          "hash": "12094030803572703611"
+        },
+        {
+          "file": "apps/share-a-meal-web/tsconfig.spec.json",
+          "hash": "2927375835638640771"
+        }
+      ],
+      "auth": [
+        {
+          "file": "libs/backend/auth/.eslintrc.json",
+          "hash": "14803369877490046397"
+        },
+        {
+          "file": "libs/backend/auth/README.md",
+          "hash": "2714506683984300359"
+        },
+        {
+          "file": "libs/backend/auth/jest.config.ts",
+          "hash": "7393473880814802537"
+        },
+        {
+          "file": "libs/backend/auth/project.json",
+          "hash": "10900080738138481029"
+        },
+        {
+          "file": "libs/backend/auth/src/index.ts",
+          "hash": "8171256524500497217"
+        },
+        {
+          "file": "libs/backend/auth/src/lib/auth.module.ts",
+          "hash": "13672625618093882281",
+          "deps": [
+            "users"
+          ]
+        },
+        {
+          "file": "libs/backend/auth/src/lib/auth/auth.controller.ts",
+          "hash": "9119232248160480625",
+          "deps": [
+            "api",
+            "dto",
+            "users"
+          ]
+        },
+        {
+          "file": "libs/backend/auth/src/lib/auth/auth.guards.ts",
+          "hash": "1169352348141372632",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/jwt",
+            "npm:express"
+          ]
+        },
+        {
+          "file": "libs/backend/auth/src/lib/auth/auth.service.ts",
+          "hash": "7542937570367128318",
+          "deps": [
+            "users",
+            "api",
+            "dto"
+          ]
+        },
+        {
+          "file": "libs/backend/auth/src/lib/decorators/decorators.ts",
+          "hash": "10477944848985380888",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "libs/backend/auth/tsconfig.json",
+          "hash": "2557874373890351669"
+        },
+        {
+          "file": "libs/backend/auth/tsconfig.lib.json",
+          "hash": "5754459057639250434"
+        },
+        {
+          "file": "libs/backend/auth/tsconfig.spec.json",
+          "hash": "2579164740543429247"
+        }
+      ],
+      "api": [
+        {
+          "file": "libs/shared/api/.eslintrc.json",
+          "hash": "9703569748258640057"
+        },
+        {
+          "file": "libs/shared/api/README.md",
+          "hash": "16991573359934460317"
+        },
+        {
+          "file": "libs/shared/api/jest.config.ts",
+          "hash": "13191683439927968697"
+        },
+        {
+          "file": "libs/shared/api/project.json",
+          "hash": "14674537182950455393"
+        },
+        {
+          "file": "libs/shared/api/src/index.ts",
+          "hash": "2285904233715408372"
+        },
+        {
+          "file": "libs/shared/api/src/lib/models/api-response.interface.ts",
+          "hash": "8427544215955229724"
+        },
+        {
+          "file": "libs/shared/api/src/lib/models/auth.interface.ts",
+          "hash": "2344568373568603112"
+        },
+        {
+          "file": "libs/shared/api/src/lib/models/id.type.ts",
+          "hash": "4221549683740961460"
+        },
+        {
+          "file": "libs/shared/api/src/lib/models/meal.interface.ts",
+          "hash": "16963523837302253019"
+        },
+        {
+          "file": "libs/shared/api/src/lib/models/user.interface.ts",
+          "hash": "9878609439873559659",
+          "deps": [
+            "common_share-a-meal"
+          ]
+        },
+        {
+          "file": "libs/shared/api/tsconfig.json",
+          "hash": "15173121383886817530"
+        },
+        {
+          "file": "libs/shared/api/tsconfig.lib.json",
+          "hash": "11624129529813747059"
+        },
+        {
+          "file": "libs/shared/api/tsconfig.spec.json",
+          "hash": "2924590645906076043"
         }
       ],
       "my-app": [
@@ -527,106 +875,214 @@
           "hash": "7582695473675793029"
         }
       ],
-      "users": [
+      "neo4j": [
         {
-          "file": "libs/backend/user/.eslintrc.json",
+          "file": "libs/backend/neo4j/.eslintrc.json",
+          "hash": "9711169714124487252"
+        },
+        {
+          "file": "libs/backend/neo4j/README.md",
+          "hash": "1931175694511016404"
+        },
+        {
+          "file": "libs/backend/neo4j/jest.config.ts",
+          "hash": "5112817739183331882"
+        },
+        {
+          "file": "libs/backend/neo4j/project.json",
+          "hash": "1358699683992919469"
+        },
+        {
+          "file": "libs/backend/neo4j/src/index.ts",
+          "hash": "2525531413006645940"
+        },
+        {
+          "file": "libs/backend/neo4j/src/lib/neo4j-backend.module.ts",
+          "hash": "5157628902254834377",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:nest-neo4j"
+          ]
+        },
+        {
+          "file": "libs/backend/neo4j/src/lib/neo4j-users.service.ts",
+          "hash": "10111601820006766033",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:nest-neo4j"
+          ]
+        },
+        {
+          "file": "libs/backend/neo4j/src/lib/neo4j.controller.ts",
+          "hash": "281241572722780520",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "libs/backend/neo4j/tsconfig.json",
+          "hash": "15394874861207803846"
+        },
+        {
+          "file": "libs/backend/neo4j/tsconfig.lib.json",
+          "hash": "8011469165096590032"
+        },
+        {
+          "file": "libs/backend/neo4j/tsconfig.spec.json",
+          "hash": "11234809548007883289"
+        }
+      ],
+      "util-env": [
+        {
+          "file": "libs/shared/util-env/.eslintrc.json",
           "hash": "14803369877490046397"
         },
         {
-          "file": "libs/backend/user/README.md",
-          "hash": "15006167837473288106"
+          "file": "libs/shared/util-env/README.md",
+          "hash": "9316519027226229526"
         },
         {
-          "file": "libs/backend/user/jest.config.ts",
-          "hash": "12447656778709370055"
+          "file": "libs/shared/util-env/jest.config.ts",
+          "hash": "342988293264216826"
         },
         {
-          "file": "libs/backend/user/project.json",
-          "hash": "9172701930356347591"
+          "file": "libs/shared/util-env/project.json",
+          "hash": "5670522147730240415"
         },
         {
-          "file": "libs/backend/user/src/index.ts",
-          "hash": "18201255863368591681"
+          "file": "libs/shared/util-env/src/index.ts",
+          "hash": "9306622506208637328"
         },
         {
-          "file": "libs/backend/user/src/lib/user/user-exists.guard.ts",
-          "hash": "15590245430234254791",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/mongoose",
-            "npm:mongoose",
-            "npm:rxjs"
-          ]
+          "file": "libs/shared/util-env/src/lib/environment.development.ts",
+          "hash": "2658168945417351789"
         },
         {
-          "file": "libs/backend/user/src/lib/user/user.controller.spec.ts",
-          "hash": "16553284843351070695",
-          "deps": [
-            "npm:@nestjs/testing"
-          ]
+          "file": "libs/shared/util-env/src/lib/environment.interface.ts",
+          "hash": "6901534070706269043"
         },
         {
-          "file": "libs/backend/user/src/lib/user/user.controller.ts",
-          "hash": "16842222910309761397",
-          "deps": [
-            "api",
-            "dto"
-          ]
+          "file": "libs/shared/util-env/src/lib/environment.production.ts",
+          "hash": "16659012079913550517"
         },
         {
-          "file": "libs/backend/user/src/lib/user/user.schema.spec.ts",
-          "hash": "252429985294783900",
-          "deps": [
-            "npm:@nestjs/testing",
-            "npm:mongoose",
-            "npm:@nestjs/mongoose",
-            "npm:uuid"
-          ]
+          "file": "libs/shared/util-env/src/lib/environment.ts",
+          "hash": "6096651325099897968"
         },
         {
-          "file": "libs/backend/user/src/lib/user/user.schema.ts",
-          "hash": "9830815625636106632",
-          "deps": [
-            "api"
-          ]
+          "file": "libs/shared/util-env/tsconfig.json",
+          "hash": "18309056100680416803"
         },
         {
-          "file": "libs/backend/user/src/lib/user/user.service.spec.ts",
-          "hash": "10832785061875187159",
-          "deps": [
-            "npm:@nestjs/testing",
-            "npm:@nestjs/mongoose",
-            "npm:mongoose",
-            "npm:mongodb"
-          ]
+          "file": "libs/shared/util-env/tsconfig.lib.json",
+          "hash": "11543095524060174729"
         },
         {
-          "file": "libs/backend/user/src/lib/user/user.service.ts",
-          "hash": "12857530342413913462",
-          "deps": [
-            "api",
-            "dto"
-          ]
-        },
-        {
-          "file": "libs/backend/user/src/lib/users.module.ts",
-          "hash": "11547217722149552254",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/mongoose"
-          ]
-        },
-        {
-          "file": "libs/backend/user/tsconfig.json",
-          "hash": "2557874373890351669"
-        },
-        {
-          "file": "libs/backend/user/tsconfig.lib.json",
-          "hash": "5754459057639250434"
-        },
-        {
-          "file": "libs/backend/user/tsconfig.spec.json",
+          "file": "libs/shared/util-env/tsconfig.spec.json",
           "hash": "2579164740543429247"
+        }
+      ],
+      "ui": [
+        {
+          "file": "libs/frontend/ui/.eslintrc.json",
+          "hash": "9293852775400125686"
+        },
+        {
+          "file": "libs/frontend/ui/README.md",
+          "hash": "17507811124529675953"
+        },
+        {
+          "file": "libs/frontend/ui/jest.config.ts",
+          "hash": "7708082680495695516"
+        },
+        {
+          "file": "libs/frontend/ui/project.json",
+          "hash": "16473757094332102946"
+        },
+        {
+          "file": "libs/frontend/ui/src/index.ts",
+          "hash": "4363461478511886578"
+        },
+        {
+          "file": "libs/frontend/ui/src/lib/ui.module.ts",
+          "hash": "12164550067170034361",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "libs/frontend/ui/src/test-setup.ts",
+          "hash": "4022486634036225089",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "libs/frontend/ui/tsconfig.json",
+          "hash": "16345539577515900790"
+        },
+        {
+          "file": "libs/frontend/ui/tsconfig.lib.json",
+          "hash": "3924040990733920241"
+        },
+        {
+          "file": "libs/frontend/ui/tsconfig.spec.json",
+          "hash": "17344764448552449211"
+        }
+      ],
+      "data-api": [
+        {
+          "file": "apps/data-api/.eslintrc.json",
+          "hash": "13800677001662881425"
+        },
+        {
+          "file": "apps/data-api/jest.config.ts",
+          "hash": "4536376685111812873"
+        },
+        {
+          "file": "apps/data-api/project.json",
+          "hash": "9844984168826012667"
+        },
+        {
+          "file": "apps/data-api/src/app/app.module.ts",
+          "hash": "9940766460323426276",
+          "deps": [
+            "backend-features-meal",
+            "users",
+            "auth",
+            "util-env"
+          ]
+        },
+        {
+          "file": "apps/data-api/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/data-api/src/main.ts",
+          "hash": "7217832273289412444",
+          "deps": [
+            "dto"
+          ]
+        },
+        {
+          "file": "apps/data-api/tsconfig.app.json",
+          "hash": "3171572500325445971"
+        },
+        {
+          "file": "apps/data-api/tsconfig.json",
+          "hash": "3490524966360018312"
+        },
+        {
+          "file": "apps/data-api/tsconfig.spec.json",
+          "hash": "11550347367511341917"
+        },
+        {
+          "file": "apps/data-api/webpack.config.js",
+          "hash": "10619490397189790225",
+          "deps": [
+            "npm:@nx/webpack"
+          ]
         }
       ],
       "backend-features-meal": [
@@ -707,663 +1163,6 @@
           "hash": "4939860449784718704"
         }
       ],
-      "auth": [
-        {
-          "file": "libs/backend/auth/.eslintrc.json",
-          "hash": "14803369877490046397"
-        },
-        {
-          "file": "libs/backend/auth/README.md",
-          "hash": "2714506683984300359"
-        },
-        {
-          "file": "libs/backend/auth/jest.config.ts",
-          "hash": "7393473880814802537"
-        },
-        {
-          "file": "libs/backend/auth/project.json",
-          "hash": "10900080738138481029"
-        },
-        {
-          "file": "libs/backend/auth/src/index.ts",
-          "hash": "8171256524500497217"
-        },
-        {
-          "file": "libs/backend/auth/src/lib/auth.module.ts",
-          "hash": "13672625618093882281",
-          "deps": [
-            "users"
-          ]
-        },
-        {
-          "file": "libs/backend/auth/src/lib/auth/auth.controller.ts",
-          "hash": "9119232248160480625",
-          "deps": [
-            "api",
-            "dto",
-            "users"
-          ]
-        },
-        {
-          "file": "libs/backend/auth/src/lib/auth/auth.guards.ts",
-          "hash": "1169352348141372632",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:@nestjs/jwt",
-            "npm:express"
-          ]
-        },
-        {
-          "file": "libs/backend/auth/src/lib/auth/auth.service.ts",
-          "hash": "7542937570367128318",
-          "deps": [
-            "users",
-            "api",
-            "dto"
-          ]
-        },
-        {
-          "file": "libs/backend/auth/src/lib/decorators/decorators.ts",
-          "hash": "10477944848985380888",
-          "deps": [
-            "npm:@nestjs/common"
-          ]
-        },
-        {
-          "file": "libs/backend/auth/tsconfig.json",
-          "hash": "2557874373890351669"
-        },
-        {
-          "file": "libs/backend/auth/tsconfig.lib.json",
-          "hash": "5754459057639250434"
-        },
-        {
-          "file": "libs/backend/auth/tsconfig.spec.json",
-          "hash": "2579164740543429247"
-        }
-      ],
-      "data-api": [
-        {
-          "file": "apps/data-api/.eslintrc.json",
-          "hash": "13800677001662881425"
-        },
-        {
-          "file": "apps/data-api/jest.config.ts",
-          "hash": "4536376685111812873"
-        },
-        {
-          "file": "apps/data-api/project.json",
-          "hash": "9844984168826012667"
-        },
-        {
-          "file": "apps/data-api/src/app/app.module.ts",
-          "hash": "9940766460323426276",
-          "deps": [
-            "backend-features-meal",
-            "users",
-            "auth",
-            "util-env"
-          ]
-        },
-        {
-          "file": "apps/data-api/src/assets/.gitkeep",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/data-api/src/main.ts",
-          "hash": "7217832273289412444",
-          "deps": [
-            "dto"
-          ]
-        },
-        {
-          "file": "apps/data-api/tsconfig.app.json",
-          "hash": "3171572500325445971"
-        },
-        {
-          "file": "apps/data-api/tsconfig.json",
-          "hash": "3490524966360018312"
-        },
-        {
-          "file": "apps/data-api/tsconfig.spec.json",
-          "hash": "11550347367511341917"
-        },
-        {
-          "file": "apps/data-api/webpack.config.js",
-          "hash": "10619490397189790225",
-          "deps": [
-            "npm:@nx/webpack"
-          ]
-        }
-      ],
-      "share-a-meal-web": [
-        {
-          "file": "apps/share-a-meal-web/.eslintrc.json",
-          "hash": "12118854377797659445"
-        },
-        {
-          "file": "apps/share-a-meal-web/jest.config.ts",
-          "hash": "2667253891853561832"
-        },
-        {
-          "file": "apps/share-a-meal-web/project.json",
-          "hash": "6021475482155891052"
-        },
-        {
-          "file": "apps/share-a-meal-web/src/app/app.component.html",
-          "hash": "14096303333607304980"
-        },
-        {
-          "file": "apps/share-a-meal-web/src/app/app.component.ts",
-          "hash": "10064478920892536205",
-          "deps": [
-            "npm:@angular/core",
-            "npm:flowbite",
-            "npm:@angular/router"
-          ]
-        },
-        {
-          "file": "apps/share-a-meal-web/src/app/app.config.ts",
-          "hash": "8993342557759126848",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/router"
-          ]
-        },
-        {
-          "file": "apps/share-a-meal-web/src/app/app.routes.ts",
-          "hash": "1640601350016319054",
-          "deps": [
-            "npm:@angular/router"
-          ]
-        },
-        {
-          "file": "apps/share-a-meal-web/src/app/components/about/about.component.html",
-          "hash": "16089002778921768123"
-        },
-        {
-          "file": "apps/share-a-meal-web/src/app/components/about/about.component.spec.ts",
-          "hash": "8855752337671383617",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "apps/share-a-meal-web/src/app/components/about/about.component.ts",
-          "hash": "12127380471888693726",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "apps/share-a-meal-web/src/app/components/dashboard/dashboard.component.html",
-          "hash": "13178263766354848654"
-        },
-        {
-          "file": "apps/share-a-meal-web/src/app/components/dashboard/dashboard.component.ts",
-          "hash": "3591264399526952365",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "apps/share-a-meal-web/src/assets/.gitkeep",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/share-a-meal-web/src/assets/Entity-Relationship-Diagram.png",
-          "hash": "10440411800400986942"
-        },
-        {
-          "file": "apps/share-a-meal-web/src/favicon.ico",
-          "hash": "9303420814833116677"
-        },
-        {
-          "file": "apps/share-a-meal-web/src/index.html",
-          "hash": "1306304337514846625"
-        },
-        {
-          "file": "apps/share-a-meal-web/src/main.ts",
-          "hash": "7323565367452876306",
-          "deps": [
-            "util-env"
-          ]
-        },
-        {
-          "file": "apps/share-a-meal-web/src/styles.css",
-          "hash": "6917432578050628436"
-        },
-        {
-          "file": "apps/share-a-meal-web/src/test-setup.ts",
-          "hash": "12935735732682149507",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "apps/share-a-meal-web/tailwind.config.js",
-          "hash": "17076277411316600840",
-          "deps": [
-            "npm:@nx/angular",
-            "npm:tailwindcss",
-            "npm:flowbite"
-          ]
-        },
-        {
-          "file": "apps/share-a-meal-web/tsconfig.app.json",
-          "hash": "12911920861351469827"
-        },
-        {
-          "file": "apps/share-a-meal-web/tsconfig.editor.json",
-          "hash": "17511610827034788226"
-        },
-        {
-          "file": "apps/share-a-meal-web/tsconfig.json",
-          "hash": "12094030803572703611"
-        },
-        {
-          "file": "apps/share-a-meal-web/tsconfig.spec.json",
-          "hash": "2927375835638640771"
-        }
-      ],
-      "common_share-a-meal": [
-        {
-          "file": "libs/share-a-meal/common/.eslintrc.json",
-          "hash": "17229790698468906239"
-        },
-        {
-          "file": "libs/share-a-meal/common/README.md",
-          "hash": "2200719060512274419"
-        },
-        {
-          "file": "libs/share-a-meal/common/jest.config.ts",
-          "hash": "2102817330726165690"
-        },
-        {
-          "file": "libs/share-a-meal/common/project.json",
-          "hash": "17422346830263667601"
-        },
-        {
-          "file": "libs/share-a-meal/common/src/index.ts",
-          "hash": "2430881540356233151"
-        },
-        {
-          "file": "libs/share-a-meal/common/src/lib/common.module.ts",
-          "hash": "11815243917219490442",
-          "deps": [
-            "npm:@angular/core",
-            "npm:@angular/common"
-          ]
-        },
-        {
-          "file": "libs/share-a-meal/common/src/lib/entity/entity.model.ts",
-          "hash": "2922657672244363389",
-          "deps": [
-            "api"
-          ]
-        },
-        {
-          "file": "libs/share-a-meal/common/src/lib/entity/entity.service.ts",
-          "hash": "5320745814065222843",
-          "deps": [
-            "npm:rxjs",
-            "npm:@angular/common",
-            "api"
-          ]
-        },
-        {
-          "file": "libs/share-a-meal/common/src/test-setup.ts",
-          "hash": "12935735732682149507",
-          "deps": [
-            "npm:jest-preset-angular"
-          ]
-        },
-        {
-          "file": "libs/share-a-meal/common/tsconfig.json",
-          "hash": "8526453262384300416"
-        },
-        {
-          "file": "libs/share-a-meal/common/tsconfig.lib.json",
-          "hash": "5210152845168933800"
-        },
-        {
-          "file": "libs/share-a-meal/common/tsconfig.spec.json",
-          "hash": "7652445452192956988"
-        }
-      ],
-      "neo4j": [
-        {
-          "file": "libs/backend/neo4j/.eslintrc.json",
-          "hash": "9711169714124487252"
-        },
-        {
-          "file": "libs/backend/neo4j/README.md",
-          "hash": "1931175694511016404"
-        },
-        {
-          "file": "libs/backend/neo4j/jest.config.ts",
-          "hash": "5112817739183331882"
-        },
-        {
-          "file": "libs/backend/neo4j/project.json",
-          "hash": "1358699683992919469"
-        },
-        {
-          "file": "libs/backend/neo4j/src/index.ts",
-          "hash": "2525531413006645940"
-        },
-        {
-          "file": "libs/backend/neo4j/src/lib/neo4j-backend.module.ts",
-          "hash": "5157628902254834377",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:nest-neo4j"
-          ]
-        },
-        {
-          "file": "libs/backend/neo4j/src/lib/neo4j-users.service.ts",
-          "hash": "10111601820006766033",
-          "deps": [
-            "npm:@nestjs/common",
-            "npm:nest-neo4j"
-          ]
-        },
-        {
-          "file": "libs/backend/neo4j/src/lib/neo4j.controller.ts",
-          "hash": "281241572722780520",
-          "deps": [
-            "npm:@nestjs/common"
-          ]
-        },
-        {
-          "file": "libs/backend/neo4j/tsconfig.json",
-          "hash": "15394874861207803846"
-        },
-        {
-          "file": "libs/backend/neo4j/tsconfig.lib.json",
-          "hash": "8011469165096590032"
-        },
-        {
-          "file": "libs/backend/neo4j/tsconfig.spec.json",
-          "hash": "11234809548007883289"
-        }
-      ],
-      "api": [
-        {
-          "file": "libs/shared/api/.eslintrc.json",
-          "hash": "9703569748258640057"
-        },
-        {
-          "file": "libs/shared/api/README.md",
-          "hash": "16991573359934460317"
-        },
-        {
-          "file": "libs/shared/api/jest.config.ts",
-          "hash": "13191683439927968697"
-        },
-        {
-          "file": "libs/shared/api/project.json",
-          "hash": "14674537182950455393"
-        },
-        {
-          "file": "libs/shared/api/src/index.ts",
-          "hash": "2285904233715408372"
-        },
-        {
-          "file": "libs/shared/api/src/lib/models/api-response.interface.ts",
-          "hash": "8427544215955229724"
-        },
-        {
-          "file": "libs/shared/api/src/lib/models/auth.interface.ts",
-          "hash": "2344568373568603112"
-        },
-        {
-          "file": "libs/shared/api/src/lib/models/id.type.ts",
-          "hash": "4221549683740961460"
-        },
-        {
-          "file": "libs/shared/api/src/lib/models/meal.interface.ts",
-          "hash": "16963523837302253019"
-        },
-        {
-          "file": "libs/shared/api/src/lib/models/user.interface.ts",
-          "hash": "9878609439873559659",
-          "deps": [
-            "common_share-a-meal"
-          ]
-        },
-        {
-          "file": "libs/shared/api/tsconfig.json",
-          "hash": "15173121383886817530"
-        },
-        {
-          "file": "libs/shared/api/tsconfig.lib.json",
-          "hash": "11624129529813747059"
-        },
-        {
-          "file": "libs/shared/api/tsconfig.spec.json",
-          "hash": "2924590645906076043"
-        }
-      ],
-      "share-a-meal-web-e2e": [
-        {
-          "file": "apps/share-a-meal-web-e2e/.eslintrc.json",
-          "hash": "9199987846761270635"
-        },
-        {
-          "file": "apps/share-a-meal-web-e2e/cypress.config.ts",
-          "hash": "16639359929265687390",
-          "deps": [
-            "npm:@nx/cypress",
-            "npm:cypress"
-          ]
-        },
-        {
-          "file": "apps/share-a-meal-web-e2e/project.json",
-          "hash": "15924191116928498889"
-        },
-        {
-          "file": "apps/share-a-meal-web-e2e/src/e2e/app.cy.ts",
-          "hash": "7534840248335012081"
-        },
-        {
-          "file": "apps/share-a-meal-web-e2e/src/fixtures/example.json",
-          "hash": "11785586596216172004"
-        },
-        {
-          "file": "apps/share-a-meal-web-e2e/src/support/app.po.ts",
-          "hash": "11157016311132186162"
-        },
-        {
-          "file": "apps/share-a-meal-web-e2e/src/support/commands.ts",
-          "hash": "5397443931564808659"
-        },
-        {
-          "file": "apps/share-a-meal-web-e2e/src/support/e2e.ts",
-          "hash": "1054106023200826784"
-        },
-        {
-          "file": "apps/share-a-meal-web-e2e/tsconfig.json",
-          "hash": "4332380883180617610"
-        }
-      ],
-      "rcmnd-api": [
-        {
-          "file": "apps/rcmnd-api/.env",
-          "hash": "10204480241532389462"
-        },
-        {
-          "file": "apps/rcmnd-api/.eslintrc.json",
-          "hash": "13800677001662881425"
-        },
-        {
-          "file": "apps/rcmnd-api/jest.config.ts",
-          "hash": "4799419067996328130"
-        },
-        {
-          "file": "apps/rcmnd-api/project.json",
-          "hash": "4542380656080258925"
-        },
-        {
-          "file": "apps/rcmnd-api/src/app/app.controller.spec.ts",
-          "hash": "9499997688052526633",
-          "deps": [
-            "npm:@nestjs/testing"
-          ]
-        },
-        {
-          "file": "apps/rcmnd-api/src/app/app.controller.ts",
-          "hash": "9005150069945785676",
-          "deps": [
-            "npm:@nestjs/common"
-          ]
-        },
-        {
-          "file": "apps/rcmnd-api/src/app/app.module.ts",
-          "hash": "3492701680234226929",
-          "deps": [
-            "neo4j"
-          ]
-        },
-        {
-          "file": "apps/rcmnd-api/src/app/app.service.spec.ts",
-          "hash": "8587461140686713758",
-          "deps": [
-            "npm:@nestjs/testing"
-          ]
-        },
-        {
-          "file": "apps/rcmnd-api/src/app/app.service.ts",
-          "hash": "9967902337593410053",
-          "deps": [
-            "npm:@nestjs/common"
-          ]
-        },
-        {
-          "file": "apps/rcmnd-api/src/assets/.gitkeep",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/rcmnd-api/src/main.ts",
-          "hash": "2813640680959726837",
-          "deps": [
-            "dto"
-          ]
-        },
-        {
-          "file": "apps/rcmnd-api/tsconfig.app.json",
-          "hash": "3171572500325445971"
-        },
-        {
-          "file": "apps/rcmnd-api/tsconfig.json",
-          "hash": "3490524966360018312"
-        },
-        {
-          "file": "apps/rcmnd-api/tsconfig.spec.json",
-          "hash": "11550347367511341917"
-        },
-        {
-          "file": "apps/rcmnd-api/webpack.config.js",
-          "hash": "10619490397189790225",
-          "deps": [
-            "npm:@nx/webpack"
-          ]
-        }
-      ],
-      "data-api-e2e": [
-        {
-          "file": "apps/data-api-e2e/.eslintrc.json",
-          "hash": "13800677001662881425"
-        },
-        {
-          "file": "apps/data-api-e2e/jest.config.ts",
-          "hash": "11289544556175763105"
-        },
-        {
-          "file": "apps/data-api-e2e/project.json",
-          "hash": "14487847278478867191"
-        },
-        {
-          "file": "apps/data-api-e2e/src/data-api/api-meal.spec.ts",
-          "hash": "12634385605556572883",
-          "deps": [
-            "npm:axios"
-          ]
-        },
-        {
-          "file": "apps/data-api-e2e/src/support/global-setup.ts",
-          "hash": "2568409276037275290"
-        },
-        {
-          "file": "apps/data-api-e2e/src/support/global-teardown.ts",
-          "hash": "5275447082211835490"
-        },
-        {
-          "file": "apps/data-api-e2e/src/support/test-setup.ts",
-          "hash": "10984585515912236441",
-          "deps": [
-            "npm:axios"
-          ]
-        },
-        {
-          "file": "apps/data-api-e2e/tsconfig.json",
-          "hash": "15443990093475294480"
-        },
-        {
-          "file": "apps/data-api-e2e/tsconfig.spec.json",
-          "hash": "14954872453723519891"
-        }
-      ],
-      "util-env": [
-        {
-          "file": "libs/shared/util-env/.eslintrc.json",
-          "hash": "14803369877490046397"
-        },
-        {
-          "file": "libs/shared/util-env/README.md",
-          "hash": "9316519027226229526"
-        },
-        {
-          "file": "libs/shared/util-env/jest.config.ts",
-          "hash": "342988293264216826"
-        },
-        {
-          "file": "libs/shared/util-env/project.json",
-          "hash": "5670522147730240415"
-        },
-        {
-          "file": "libs/shared/util-env/src/index.ts",
-          "hash": "9306622506208637328"
-        },
-        {
-          "file": "libs/shared/util-env/src/lib/environment.development.ts",
-          "hash": "2658168945417351789"
-        },
-        {
-          "file": "libs/shared/util-env/src/lib/environment.interface.ts",
-          "hash": "6901534070706269043"
-        },
-        {
-          "file": "libs/shared/util-env/src/lib/environment.production.ts",
-          "hash": "16659012079913550517"
-        },
-        {
-          "file": "libs/shared/util-env/src/lib/environment.ts",
-          "hash": "6096651325099897968"
-        },
-        {
-          "file": "libs/shared/util-env/tsconfig.json",
-          "hash": "18309056100680416803"
-        },
-        {
-          "file": "libs/shared/util-env/tsconfig.lib.json",
-          "hash": "11543095524060174729"
-        },
-        {
-          "file": "libs/shared/util-env/tsconfig.spec.json",
-          "hash": "2579164740543429247"
-        }
-      ],
       "rcmnd-api-e2e": [
         {
           "file": "apps/rcmnd-api-e2e/.eslintrc.json",
@@ -1408,53 +1207,261 @@
           "hash": "14954872453723519891"
         }
       ],
-      "ui": [
+      "share-a-meal-web-e2e": [
         {
-          "file": "libs/frontend/ui/.eslintrc.json",
+          "file": "apps/share-a-meal-web-e2e/.eslintrc.json",
+          "hash": "9199987846761270635"
+        },
+        {
+          "file": "apps/share-a-meal-web-e2e/cypress.config.ts",
+          "hash": "16639359929265687390",
+          "deps": [
+            "npm:@nx/cypress",
+            "npm:cypress"
+          ]
+        },
+        {
+          "file": "apps/share-a-meal-web-e2e/project.json",
+          "hash": "15924191116928498889"
+        },
+        {
+          "file": "apps/share-a-meal-web-e2e/src/e2e/app.cy.ts",
+          "hash": "7534840248335012081"
+        },
+        {
+          "file": "apps/share-a-meal-web-e2e/src/fixtures/example.json",
+          "hash": "11785586596216172004"
+        },
+        {
+          "file": "apps/share-a-meal-web-e2e/src/support/app.po.ts",
+          "hash": "11157016311132186162"
+        },
+        {
+          "file": "apps/share-a-meal-web-e2e/src/support/commands.ts",
+          "hash": "5397443931564808659"
+        },
+        {
+          "file": "apps/share-a-meal-web-e2e/src/support/e2e.ts",
+          "hash": "1054106023200826784"
+        },
+        {
+          "file": "apps/share-a-meal-web-e2e/tsconfig.json",
+          "hash": "4332380883180617610"
+        }
+      ],
+      "common": [
+        {
+          "file": "libs/frontend/common/.eslintrc.json",
           "hash": "9293852775400125686"
         },
         {
-          "file": "libs/frontend/ui/README.md",
-          "hash": "17507811124529675953"
+          "file": "libs/frontend/common/README.md",
+          "hash": "5067725685752823321"
         },
         {
-          "file": "libs/frontend/ui/jest.config.ts",
-          "hash": "7708082680495695516"
+          "file": "libs/frontend/common/jest.config.ts",
+          "hash": "14201889676474065391"
         },
         {
-          "file": "libs/frontend/ui/project.json",
-          "hash": "16473757094332102946"
+          "file": "libs/frontend/common/project.json",
+          "hash": "14677979573358869615"
         },
         {
-          "file": "libs/frontend/ui/src/index.ts",
-          "hash": "4363461478511886578"
+          "file": "libs/frontend/common/src/index.ts",
+          "hash": "14177925512953375293"
         },
         {
-          "file": "libs/frontend/ui/src/lib/ui.module.ts",
-          "hash": "12164550067170034361",
+          "file": "libs/frontend/common/src/lib/common.module.ts",
+          "hash": "17455652627419181422",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/common"
           ]
         },
         {
-          "file": "libs/frontend/ui/src/test-setup.ts",
+          "file": "libs/frontend/common/src/test-setup.ts",
           "hash": "4022486634036225089",
           "deps": [
             "npm:jest-preset-angular"
           ]
         },
         {
-          "file": "libs/frontend/ui/tsconfig.json",
+          "file": "libs/frontend/common/tsconfig.json",
           "hash": "16345539577515900790"
         },
         {
-          "file": "libs/frontend/ui/tsconfig.lib.json",
+          "file": "libs/frontend/common/tsconfig.lib.json",
           "hash": "3924040990733920241"
         },
         {
-          "file": "libs/frontend/ui/tsconfig.spec.json",
+          "file": "libs/frontend/common/tsconfig.spec.json",
           "hash": "17344764448552449211"
+        }
+      ],
+      "features": [
+        {
+          "file": "libs/frontend/features/.eslintrc.json",
+          "hash": "9293852775400125686"
+        },
+        {
+          "file": "libs/frontend/features/README.md",
+          "hash": "9246777289339377121"
+        },
+        {
+          "file": "libs/frontend/features/jest.config.ts",
+          "hash": "675170498047466924"
+        },
+        {
+          "file": "libs/frontend/features/project.json",
+          "hash": "6440707396456724368"
+        },
+        {
+          "file": "libs/frontend/features/src/index.ts",
+          "hash": "13470320293376610404"
+        },
+        {
+          "file": "libs/frontend/features/src/lib/features.module.ts",
+          "hash": "16319781769783525381",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/common",
+            "npm:@angular/router",
+            "npm:passport"
+          ]
+        },
+        {
+          "file": "libs/frontend/features/src/lib/users/user-details/user-details.component.html",
+          "hash": "15003838530794705697"
+        },
+        {
+          "file": "libs/frontend/features/src/lib/users/user-details/user-details.component.spec.ts",
+          "hash": "11136590702041865018",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/frontend/features/src/lib/users/user-details/user-details.component.ts",
+          "hash": "4525465358076299686",
+          "deps": [
+            "npm:@angular/core",
+            "npm:@angular/router",
+            "users",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "libs/frontend/features/src/lib/users/user-edit/user-edit.component.html",
+          "hash": "5875704848038097964"
+        },
+        {
+          "file": "libs/frontend/features/src/lib/users/user-edit/user-edit.component.spec.ts",
+          "hash": "5340154644524321637",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/frontend/features/src/lib/users/user-edit/user-edit.component.ts",
+          "hash": "7929604386517746896",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/frontend/features/src/lib/users/user-list/user-list.component.html",
+          "hash": "14559055911961865424"
+        },
+        {
+          "file": "libs/frontend/features/src/lib/users/user-list/user-list.component.spec.ts",
+          "hash": "13831544502946103292",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "libs/frontend/features/src/lib/users/user-list/user-list.component.ts",
+          "hash": "4893426089760412418",
+          "deps": [
+            "npm:@angular/core",
+            "api",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "libs/frontend/features/src/lib/users/user.service.spec.ts",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "libs/frontend/features/src/lib/users/user.service.ts",
+          "hash": "12661039531044555601",
+          "deps": [
+            "npm:@angular/core",
+            "api",
+            "npm:rxjs",
+            "npm:@angular/common"
+          ]
+        },
+        {
+          "file": "libs/frontend/features/src/test-setup.ts",
+          "hash": "4022486634036225089",
+          "deps": [
+            "npm:jest-preset-angular"
+          ]
+        },
+        {
+          "file": "libs/frontend/features/tsconfig.json",
+          "hash": "8354012467016588143"
+        },
+        {
+          "file": "libs/frontend/features/tsconfig.lib.json",
+          "hash": "3924040990733920241"
+        },
+        {
+          "file": "libs/frontend/features/tsconfig.spec.json",
+          "hash": "17344764448552449211"
+        }
+      ],
+      "my-app-e2e": [
+        {
+          "file": "apps/my-app-e2e/.eslintrc.json",
+          "hash": "2268504342791978563"
+        },
+        {
+          "file": "apps/my-app-e2e/cypress.config.ts",
+          "hash": "13758650857735414517",
+          "deps": [
+            "npm:@nx/cypress",
+            "npm:cypress"
+          ]
+        },
+        {
+          "file": "apps/my-app-e2e/project.json",
+          "hash": "8861499231352072629"
+        },
+        {
+          "file": "apps/my-app-e2e/src/e2e/app.cy.ts",
+          "hash": "1400024305452055270"
+        },
+        {
+          "file": "apps/my-app-e2e/src/fixtures/example.json",
+          "hash": "8244047265829016264"
+        },
+        {
+          "file": "apps/my-app-e2e/src/support/app.po.ts",
+          "hash": "11157016311132186162"
+        },
+        {
+          "file": "apps/my-app-e2e/src/support/commands.ts",
+          "hash": "4709268516280968380"
+        },
+        {
+          "file": "apps/my-app-e2e/src/support/e2e.ts",
+          "hash": "1054106023200826784"
+        },
+        {
+          "file": "apps/my-app-e2e/tsconfig.json",
+          "hash": "16101841879267239062"
         }
       ]
     },

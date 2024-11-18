@@ -10,6 +10,8 @@
                 <th>Profile Picture</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Role</th>
+                <th>PhoneNumber</th>
                 <th>IsActive</th>
                 <th>Edit</th>
             </tr>
@@ -17,7 +19,7 @@
         <tbody>
             <tr *ngFor="let user of users" routerLink="{{user._id}}">
                 <td>
-                    <img [src]="user.profileImgUrl" alt="{{ user.name }}" class="img-thumbnail" style="width: 50px; height: 50px;">
+                    <img [src]="user.profileImgUrl" alt="{{ user.name }}" class="img-thumbnail" style="width: 75px; height: 75px;">
                 </td>
                 <td>
                     <a routerLink="{{user._id}}" >
@@ -25,8 +27,9 @@
                     </a>
                 </td>
                 <td>{{ user.emailAddress }}</td>
+                <td>{{ user.role }}</td>
+                <td>{{ user.phoneNumber }}</td>
                 <td>{{ user.isActive }}</td>
-                <td>{{ user.profileImgUrl }}</td>
                 <td>
                     <a routerLink="{{user._id}}/edit" class="btn btn-primary">
                         Edit
