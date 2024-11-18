@@ -16290,6 +16290,11 @@
       },
       {
         "source": "dto",
+        "target": "npm:class-validator",
+        "type": "static"
+      },
+      {
+        "source": "dto",
         "target": "backend-features-meal",
         "type": "static"
       }
