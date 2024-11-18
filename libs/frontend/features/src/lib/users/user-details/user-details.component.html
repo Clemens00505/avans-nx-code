@@ -1,0 +1,18 @@
+<div class="container mt-5"></div>
+    <div class="row">
+        <div class="col-md-12 text-center"></div>
+            <h1 class="display-4">User Details</h1>
+    </div>
+    <div class="card mt-4">
+        <div class="card-body">
+            <h5 class="card-title">{{ user?.name }}</h5>
+            <p class="card-text"><strong>Email:</strong> {{ user?.emailAddress }}</p>
+            <p class="card-text"><strong>Phone Number:</strong> {{ user?.phoneNumber }}</p>
+                <div class="text-center mb-3" style="position: absolute; top: 10px; right: 10px;">
+                    <img [src]="user?.profileImgUrl" alt="Profile Image" class="img-thumbnail" style="max-width: 150px;" />
+                </div>
+            <p class="card-text"><strong>Role:</strong> {{ user?.role }}</p>
+            <p class="card-text"><strong>Gender:</strong> {{ user?.gender }}</p>
+            <p class="card-text"><strong>Active:</strong> {{ user?.isActive ? 'Yes' : 'No' }}</p>
+        </div>
+    </div>
