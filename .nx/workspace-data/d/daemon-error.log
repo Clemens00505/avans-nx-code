@@ -1,0 +1,26 @@
+Daemon process terminated and closed the connection
+
+Messages from the log:
+[NX Daemon Server] - 2024-11-18T13:16:51.292Z - Done responding to the client handleContextFileData
+[NX Daemon Server] - 2024-11-18T13:16:51.292Z - Handled GET_CONTEXT_FILE_DATA. Handling time: 1. Response time: 0.
+[NX Daemon Server] - 2024-11-18T13:16:51.292Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-18T13:16:52.511Z - [WATCHER]: .gitignore was modified
+[NX Daemon Server] - 2024-11-18T13:16:52.511Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-11-18T13:16:52.512Z - [WATCHER]: Stopping the watcher for c:\Avans\Jaar_2\avans-nx-workshop (sources)
+[NX Daemon Server] - 2024-11-18T13:16:52.512Z - [WATCHER]: Stopping the watcher for c:\Avans\Jaar_2\avans-nx-workshop (outputs)
+[NX Daemon Server] - 2024-11-18T13:16:52.521Z - Server stopped because: "Stopping the daemon the set of ignored files changed (native)"
+[NX Daemon Server] - 2024-11-18T13:16:53.770Z - Started listening on: \\.\pipe\nx\C:\Users\Cleme\AppData\Local\Temp\545c26c22c\d.sock
+[NX Daemon Server] - 2024-11-18T13:16:53.773Z - [WATCHER]: Subscribed to changes within: c:\Avans\Jaar_2\avans-nx-workshop (native)
+[NX Daemon Server] - 2024-11-18T13:16:53.783Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-18T13:16:53.785Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-18T13:16:53.785Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-11-18T13:16:53.787Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-11-18T13:16:53.939Z - [WATCHER]: .gitignore was modified
+[NX Daemon Server] - 2024-11-18T13:16:53.940Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-11-18T13:16:53.940Z - [WATCHER]: Stopping the watcher for c:\Avans\Jaar_2\avans-nx-workshop (sources)
+[NX Daemon Server] - 2024-11-18T13:16:53.940Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-11-18T13:16:53.940Z - [WATCHER]: Stopping the watcher for c:\Avans\Jaar_2\avans-nx-workshop (outputs)
+
+
+
+More information: c:\Avans\Jaar_2\avans-nx-workshop\.nx\workspace-data\d\daemon.log
