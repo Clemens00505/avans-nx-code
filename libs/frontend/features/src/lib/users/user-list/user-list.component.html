@@ -10,8 +10,6 @@
                 <th>Profile Picture</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Role</th>
-                <th>PhoneNumber</th>
                 <th>IsActive</th>
                 <th>Edit</th>
             </tr>
@@ -27,8 +25,6 @@
                     </a>
                 </td>
                 <td>{{ user.emailAddress }}</td>
-                <td>{{ user.role }}</td>
-                <td>{{ user.phoneNumber }}</td>
                 <td>{{ user.isActive }}</td>
                 <td>
                     <a routerLink="{{user._id}}/edit" class="btn btn-primary">

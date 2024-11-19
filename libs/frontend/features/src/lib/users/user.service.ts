@@ -15,7 +15,7 @@ export class UserService {
         emailAddress: "isaac.gibson@example.com",
         phoneNumber: "06-12345678",
         profileImgUrl: "https://randomuser.me/api/portraits/men/16.jpg",
-        role: UserRole.Unknown,
+        role: UserRole.Guest,
         gender: UserGender.Male,
         password: "secret",
         isActive: true
@@ -26,9 +26,20 @@ export class UserService {
         emailAddress: "anne.williams@example.com",
         phoneNumber: "06-12345678",
         profileImgUrl: "https://randomuser.me/api/portraits/women/40.jpg",
-        role: UserRole.Unknown,
+        role: UserRole.Guest,
         gender: UserGender.Male,
         password: "secret",
+        isActive: true
+    },
+    {
+        _id: "3",
+        name: "Felix Barnes",
+        emailAddress: "felix.barnes@example.com",
+        phoneNumber: "06-12345678",
+        profileImgUrl: "https://randomuser.me/api/portraits/men/28.jpg",
+        role: UserRole.Admin,
+        gender: UserGender.Male,
+        password: "slinky",
         isActive: true
     }
   ];
