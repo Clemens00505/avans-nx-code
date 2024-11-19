@@ -39,6 +39,10 @@ export class UpsertUserDto implements IUpsertUser {
     @IsNotEmpty()
     emailAddress!: string;
 
+    @IsString()
+    @IsNotEmpty()
+    phoneNumber!: string;
+
     @IsBoolean()
     @IsNotEmpty()
     isActive!: boolean;
