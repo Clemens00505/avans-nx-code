@@ -1,18 +1,18 @@
 @if(!users) {
-    <p>Loading data...</p>
+    <p class="text-white">Loading data...</p>
 } @else if(users && users.length === 0) {
-    <p>Nu users where found.</p>
+    <p class="text-white">No users were found.</p>
 } @else {
 <div class="container p-3">
-    <table class="table table-striped table-bordered">
+    <table class="table table-striped table-bordered table-dark">
         <thead class="thead-dark">
             <tr>
                 <th>Profile Picture</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Role</th>
-                <th>PhoneNumber</th>
-                <th>IsActive</th>
+                <th>Phone Number</th>
+                <th>Is Active</th>
                 <th>Edit</th>
             </tr>
         </thead>
@@ -22,7 +22,7 @@
                     <img [src]="user.profileImgUrl" alt="{{ user.name }}" class="img-thumbnail" style="width: 75px; height: 75px;">
                 </td>
                 <td>
-                    <a routerLink="{{user._id}}" >
+                    <a routerLink="{{user._id}}" class="text-white">
                         {{ user.name }}
                     </a>
                 </td>
