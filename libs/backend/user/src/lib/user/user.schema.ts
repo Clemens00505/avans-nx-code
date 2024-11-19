@@ -44,6 +44,12 @@ export class User implements IUser {
 
     @Prop({
         required: false,
+        type: String
+    })
+    phoneNumber!: string;
+
+    @Prop({
+        required: false,
         select: true,
         default: 'https://cdn-icons-png.flaticon.com/512/219/219969.png'
     })
@@ -69,13 +75,6 @@ export class User implements IUser {
         default: true
     })
     isActive = true;
-
-    @Prop({
-        default: [],
-        type: [MongooseSchema.Types.ObjectId],
-        ref: 'Meal'
-    })
-    meals: IMeal[] = [];
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
