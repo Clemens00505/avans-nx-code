@@ -29,6 +29,11 @@
         "e2e": {
             "cache": true,
             "inputs": ["default", "^production"]
+        },
+        "@nx/js:tsc": {
+            "cache": true,
+            "dependsOn": ["^build"],
+            "inputs": ["production", "^production"]
         }
     },
     "namedInputs": {
@@ -60,5 +65,13 @@
             "style": "css"
         }
     },
-    "nxCloudAccessToken": "ZjM2ZDA1YjgtMWY1Ny00M2YxLWFlZmMtNjUxYzk3OWFjYmJmfHJlYWQtd3JpdGU="
+    "nxCloudAccessToken": "ZjM2ZDA1YjgtMWY1Ny00M2YxLWFlZmMtNjUxYzk3OWFjYmJmfHJlYWQtd3JpdGU=",
+    "plugins": [
+        {
+            "plugin": "@nx/eslint/plugin",
+            "options": {
+                "targetName": "eslint:lint"
+            }
+        }
+    ]
 }

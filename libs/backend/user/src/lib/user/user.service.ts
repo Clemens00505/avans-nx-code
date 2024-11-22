@@ -11,7 +11,7 @@ export class UserService {
     private readonly logger: Logger = new Logger(UserService.name);
 
     constructor(
-        @InjectModel(UserModel.name) private userModel: Model<UserDocument> // @InjectModel(Meal.name) private meetupModel: Model<MealDocument>
+        @InjectModel(UserModel.name) private userModel: Model<UserDocument>
     ) {}
 
     async findAll(): Promise<IUserInfo[]> {
