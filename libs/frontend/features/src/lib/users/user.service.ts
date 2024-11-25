@@ -29,4 +29,11 @@ export class UserService {
             .get<ApiResponse<any>>(environment.dataApiUrl + `/user/${id}`)
             .pipe(map((response) => response.results));
     }
+
+    updateUser(id: string | null, user: IUser): Observable<IUser> {
+        console.log('updateUser aanroepen');
+        return this.http
+            .put<ApiResponse<any>>(environment.dataApiUrl + `/user/${id}`, user)
+            .pipe(map((response) => response.results));
+    }
 }
