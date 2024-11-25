@@ -43,3 +43,5 @@ Thumbs.db
 /.nx
 .nx
 .nx/
+
+package-lock.json
