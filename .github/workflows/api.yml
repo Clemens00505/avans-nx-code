@@ -62,12 +62,12 @@ jobs:
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.ANGULAR_PUBLISHTOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           app_build_command: "npm run build:my-app"
           app_location: "/"
           api_location: ""
           output_location: "dist/apps/my-app"
-          github_id_token: ${{ steps.idtoken.outputs.result }}
 
   deploy-data-api:
     runs-on: ubuntu-latest
