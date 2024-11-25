@@ -22,10 +22,10 @@ export class Book {
     author!: string;
 
     @Prop({
-        required: false,
+        required: true,
         type: String
     })
-    genre?: string;
+    genre!: string;
 
     @Prop({
         required: false,
