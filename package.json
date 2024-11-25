@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "license": "MIT",
     "scripts": {
-        "build": "nx run-many -t build",
+        "build": "nx run-many --target=build --projects=data-api,my-app",
         "build:my-app": "nx run my-app:build:production",
         "test": "nx run-many -t test"
     },
