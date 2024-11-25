@@ -7,10 +7,8 @@
     <table class="table table-striped table-bordered table-dark">
         <thead class="thead-dark">
             <tr>
-                <th>Profile Picture</th>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Role</th>
                 <th>Is Active</th>
                 <th>Edit</th>
             </tr>
@@ -18,15 +16,11 @@
         <tbody>
             <tr *ngFor="let user of users" routerLink="{{user._id}}">
                 <td>
-                    <img [src]="user.profileImgUrl" alt="{{ user.name }}" class="img-thumbnail" style="width: 75px; height: 75px;">
-                </td>
-                <td>
                     <a routerLink="{{user._id}}" class="text-white">
                         {{ user.name }}
                     </a>
                 </td>
                 <td>{{ user.emailAddress }}</td>
-                <td>{{ user.role }}</td>
                 <td>{{ user.isActive }}</td>
                 <td>
                     <a routerLink="{{user._id}}/edit" class="btn btn-primary">
