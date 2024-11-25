@@ -45,6 +45,16 @@
         ],
         "sharedGlobals": []
     },
+    
+    "tasksRunnerOptions": {
+        "default": {
+            "runner": "nx/tasks-runners/default",
+            "options": {
+                "cacheableOperations": ["build", "lint", "test", "e2e"]
+            }
+        }
+    },
+
     "generators": {
         "@nx/angular:application": {
             "style": "css",
@@ -59,6 +69,5 @@
         "@nx/angular:component": {
             "style": "css"
         }
-    },
-    "nxCloudAccessToken": "ZjM2ZDA1YjgtMWY1Ny00M2YxLWFlZmMtNjUxYzk3OWFjYmJmfHJlYWQtd3JpdGU="
+    }
 }
