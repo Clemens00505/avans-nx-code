@@ -65,11 +65,11 @@ jobs:
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: ${{ secrets.ANGULAR_PUBLISHTOKEN }}
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_GENTLE_GRASS_03AAA6503 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
           action: "upload"
           app_location: "/" # App source code path
-          api_location: "dist/apps/data-api" # Api source code path - optional
+          api_location: "" # Api source code path - optional
           output_location: "dist/apps/my-app" # Built app content directory - optional
 
 
@@ -96,7 +96,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'NxWorkshop'
+          app-name: 'avans-nx-API-Clemens'
           slot-name: 'Production'
           publish-profile: ${{ secrets.NEXTJS_PUBLISHPROFILE }}
           package: .
