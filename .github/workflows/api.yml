@@ -97,7 +97,7 @@ jobs:
               id: deploy-to-webapp
               uses: azure/webapps-deploy@v3
               with:
-                  app-name: 'nx-workshop'
+                  app-name: 'avans-nx-API-Clemens'
                   slot-name: 'Production'
                   publish-profile: ${{ secrets.DATA_API_PUBLISHPROFILE }}
                   package: .
