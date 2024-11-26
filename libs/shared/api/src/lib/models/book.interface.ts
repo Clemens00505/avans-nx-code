@@ -14,8 +14,9 @@ export interface IBook extends IEntity {
     genre: genre;
     description: string;
     author: string;
+    publicationYear: number;
 }
 
-export type ICreateBook = Pick<IBook, 'coverUrl' | 'title' | 'genre' | 'description' | 'author'>;
+export type ICreateBook = Pick<IBook, 'coverUrl' | 'title' | 'genre' | 'description' | 'author' | 'publicationYear'>;
 export type IUpdateBook = Partial<Omit<IBook, 'id'>>;
 export type IUpsertBook = IBook;

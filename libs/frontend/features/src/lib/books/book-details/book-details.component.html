@@ -1,1 +1,16 @@
-<p>book-details works!</p>
+<div class="container">
+        <div class="d-flex justify-content-between align-items-center mt-3">
+            <h1>{{ book?.title }}</h1>
+            <button class="btn btn-primary" [routerLink]="['/books', book?._id, 'edit']">Edit</button>
+        </div>
+    <div class="row">
+        <div class="col-md-4">
+        <img src="{{ book?.coverUrl }}" alt="{{ book?.title }}" class="img-fluid rounded">
+        </div>
+        <div class="col-md-8">
+        <p>{{ book?.description }}</p>
+        <p>Author: {{ book?.author }}</p>
+        <p>Published: {{ book?.publicationYear }}</p>
+        </div>
+    </div>
+</div>
