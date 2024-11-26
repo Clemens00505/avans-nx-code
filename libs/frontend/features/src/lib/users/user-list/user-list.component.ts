@@ -12,7 +12,9 @@ export class UserListComponent implements OnInit, OnDestroy {
   users: IUserInfo[] | undefined = undefined;
   sub: Subscription = new Subscription();
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService) {
+    console.log('UserListComponent.constructor() aangeroepen');
+  }
 
   ngOnInit(): void {
     console.log('UserListComponent.ngOnInit() aangeroepen');

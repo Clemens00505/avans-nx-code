@@ -9,12 +9,13 @@ export enum genre {
 }
 
 export interface IBook extends IEntity {
+    coverUrl:string;
     title: string;
     genre: genre;
     description: string;
     author: string;
 }
 
-export type ICreateBook = Pick<IBook, 'title' | 'genre' | 'description' | 'author'>;
+export type ICreateBook = Pick<IBook, 'coverUrl' | 'title' | 'genre' | 'description' | 'author'>;
 export type IUpdateBook = Partial<Omit<IBook, 'id'>>;
 export type IUpsertBook = IBook;

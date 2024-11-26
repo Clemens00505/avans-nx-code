@@ -13,6 +13,12 @@ export class Book {
         required: true,
         type: String
     })
+    coverUrl!: string;
+
+    @Prop({
+        required: true,
+        type: String
+    })
     title!: string;
 
     @Prop({
