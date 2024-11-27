@@ -24,7 +24,11 @@ export class UserDetailsComponent implements OnInit {
 
         this.route.paramMap.subscribe(params => {
             this.userId = params.get('id');
-            this.user = this.userService.getUserById(String(this.userId));
+            if (this.userId) {
+                this.sub = this.userService.getUserByIdAsync(this.userId).subscribe(user => {
+                    this.user = user;
+                });
+            }
         });
     }
 }
