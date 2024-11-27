@@ -1,43 +1,103 @@
-<div class="container mt-5">
+<div class="container bootstrap snippets bootdey mt-5">
+    <h1 class="text-primary text-center">Edit User Details</h1>
+    <hr />
     <div class="row">
-        <div class="col-md-12 text-center">
-            <h1 class="display-4 text-white">Edit User Details</h1>
+        <!-- Left column for profile image -->
+        <div class="col-md-3">
+            <div class="text-center">
+                <img
+                    [src]="user.profileImgUrl || 'https://bootdey.com/img/Content/avatar/avatar7.png'"
+                    class="avatar img-circle img-thumbnail"
+                    alt="avatar"
+                />
+                <h6>Upload a different photo...</h6>
+                <input type="text" class="form-control" [(ngModel)]="user.profileImgUrl" name="profileImgUrl" />
+            </div>
         </div>
-    </div>
-    <div class="card mt-4 bg-dark text-white">
-        <div class="card-body">
-            <form>
+
+        <!-- Right column for form -->
+        <div class="col-md-9 personal-info">
+            
+            <h3>Personal Info</h3>
+
+            <form class="form-horizontal" role="form" (ngSubmit)="onSave()">
+                <!-- Name -->
                 <div class="form-group">
-                    <label for="userName">Name</label>
-                    <input type="text" class="form-control" id="userName" [(ngModel)]="user.name" name="name">
+                    <label class="col-lg-3 control-label">Name:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" [(ngModel)]="user.name" name="name" />
+                    </div>
                 </div>
+
+                <!-- Email -->
                 <div class="form-group">
-                    <label for="userEmail">Email</label>
-                    <input type="email" class="form-control" id="userEmail" [(ngModel)]="user.emailAddress" name="emailAddress">
+                    <label class="col-lg-3 control-label">Email:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="email" [(ngModel)]="user.emailAddress" name="emailAddress" />
+                    </div>
                 </div>
+
+                <!-- Password -->
                 <div class="form-group">
-                    <label for="userPhone">Phone Number</label>
-                    <input type="text" class="form-control" id="userPhone" [(ngModel)]="user.phoneNumber" name="phoneNumber">
+                    <label class="col-lg-3 control-label">Password:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="password" [(ngModel)]="user.password" name="password" />
+                    </div>
                 </div>
+
+                <!-- Phone Number -->
                 <div class="form-group">
-                    <label for="userRole">Role</label>
-                    <input type="text" class="form-control" id="userRole" [(ngModel)]="user.role" name="role">
+                    <label class="col-lg-3 control-label">Phone Number:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" [(ngModel)]="user.phoneNumber" name="phoneNumber" />
+                    </div>
                 </div>
+
+                <!-- Role -->
                 <div class="form-group">
-                    <label for="userGender">Gender</label>
-                    <input type="text" class="form-control" id="userGender" [(ngModel)]="user.gender" name="gender">
+                    <label class="col-lg-3 control-label">Role:</label>
+                    <div class="col-lg-8">
+                        <select class="form-control" [(ngModel)]="user.role" name="role">
+                            <option *ngFor="let role of userRoles" [value]="role">{{ role }}</option>
+                        </select>
+                    </div>
                 </div>
+
+                <!-- Address -->
                 <div class="form-group">
-                    <label for="userActive">Active</label>
-                    <select class="form-control" id="userActive" [(ngModel)]="user.isActive" name="isActive">
-                        <option [value]="true">Yes</option>
-                        <option [value]="false">No</option>
-                    </select>
+                    <label class="col-lg-3 control-label">Address:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" [(ngModel)]="user.address" name="address" />
+                    </div>
                 </div>
-                <div class="text-center mb-3" style="position: absolute; top: 10px; right: 10px;">
-                    <img [src]="user.profileImgUrl" alt="Profile Image" class="img-thumbnail" style="max-width: 150px;" />
+
+                <!-- Gender Select -->
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Gender:</label>
+                    <div class="col-lg-8">
+                        <select class="form-control" [(ngModel)]="user.gender" name="gender">
+                            <option *ngFor="let gender of userGenders" [value]="gender">{{ gender }}</option>
+                        </select>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary mt-3" (click)="onSave()">Save Changes</button>
+
+                <!-- Active -->
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Active:</label>
+                    <div class="col-lg-8">
+                        <select class="form-control" [(ngModel)]="user.isActive" name="isActive">
+                            <option [value]="true">Yes</option>
+                            <option [value]="false">No</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Save Button -->
+                <div class="form-group">
+                    <div class="col-lg-3">
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>

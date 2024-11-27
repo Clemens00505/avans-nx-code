@@ -11,10 +11,9 @@ export const appRoutes: Route[] = [
     { path: 'dashboard', component: DashboardComponent },
     { path: 'about', component: AboutComponent },
     { path: 'users', component: UserListComponent },
-    { path: 'users/:id', component: UserDetailsComponent },
     { path: 'users/new', component: UserEditComponent },
+    { path: 'users/:id', component: UserDetailsComponent },
     { path: 'users/:id/edit', component: UserEditComponent },
     
-
     { path: '**', redirectTo: 'dashboard' }
 ];

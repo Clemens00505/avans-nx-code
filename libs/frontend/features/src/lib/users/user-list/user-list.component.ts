@@ -35,4 +35,16 @@ export class UserListComponent implements OnInit, OnDestroy {
       this.sub.unsubscribe();
     }
   }
+
+  deleteUser(userId: string): void {
+    this.userService.deleteUser(userId).subscribe(
+      () => {
+        console.log('User deleted:', userId);
+        this.users = this.users?.filter((user) => user._id !== userId);
+      },
+      (error) => {
+        console.error('Error deleting user:', error);
+      }
+    );
+  }
 }

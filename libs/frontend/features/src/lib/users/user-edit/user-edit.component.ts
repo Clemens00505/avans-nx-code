@@ -5,6 +5,7 @@ import { User } from '@avans-nx-workshop/backend/user';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Subscription } from 'rxjs';
+import { UserGender, UserRole } from '@avans-nx-workshop/shared/api';
 
 @Component({
     selector: 'avans-nx-workshop-user-edit',
@@ -16,6 +17,8 @@ export class UserEditComponent implements OnInit, OnDestroy {
     userId: string | null = null;
     user: User = {} as User;
     sub: Subscription = new Subscription();
+    userGenders: string[] = Object.values(UserGender);
+    userRoles: string[] = Object.values(UserRole);
 
     constructor(
         private route: ActivatedRoute,
@@ -41,6 +44,10 @@ export class UserEditComponent implements OnInit, OnDestroy {
     onSave() {
         if (this.userId) {
             this.userService.updateUser(this.userId, this.user).subscribe(() => {
+                this.router.navigate(['/users']);
+            });
+        } else {
+            this.userService.upsertUser(this.user).subscribe(() => {
                 this.router.navigate(['/users']);
             });
         }
