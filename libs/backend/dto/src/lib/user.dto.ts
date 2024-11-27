@@ -53,7 +53,7 @@ export class UpsertUserDto implements IUpsertUser {
 
     @IsString()
     @IsNotEmpty()
-    meals: Meal[] = [];
+    address!: string;
 
     @IsString()
     @IsNotEmpty()
@@ -71,3 +71,5 @@ export class UpdateUserDto implements IUpdateUser {
     @IsOptional()
     name!: string;
 }
+
+
