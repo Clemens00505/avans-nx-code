@@ -1,76 +1,53 @@
 import { Injectable } from '@angular/core';
-import { IUser, UserRole, UserGender } from '../../../../../../libs/shared/api/src';
-import { delay, Observable, of } from 'rxjs';
+import { IUser,IUserInfo, UserRole, UserGender } from '@avans-nx-workshop/shared/api';
+import { delay, map, Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '@avans-nx-workshop/shared/util-env';
+import { ApiResponse } from '@avans-nx-workshop/shared/api';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class UserService {
-  readonly users: IUser[] = [
-    {
-        _id: "1",
-        name: "Isaac Gibson",
-        emailAddress: "isaac.gibson@example.com",
-        phoneNumber: "06-12345678",
-        profileImgUrl: "https://randomuser.me/api/portraits/men/16.jpg",
-        role: UserRole.Guest,
-        gender: UserGender.Male,
-        password: "secret",
-        isActive: true
-    },
-    {
-        _id: "2",
-        name: "Anne Williams",
-        emailAddress: "anne.williams@example.com",
-        phoneNumber: "06-12345678",
-        profileImgUrl: "https://randomuser.me/api/portraits/women/40.jpg",
-        role: UserRole.Guest,
-        gender: UserGender.Male,
-        password: "secret",
-        isActive: true
-    },
-    {
-        _id: "3",
-        name: "Felix Barnes",
-        emailAddress: "felix.barnes@example.com",
-        phoneNumber: "06-12345678",
-        profileImgUrl: "https://randomuser.me/api/portraits/men/28.jpg",
-        role: UserRole.Admin,
-        gender: UserGender.Male,
-        password: "slinky",
-        isActive: true
-    }
-  ];
+    readonly users?: IUserInfo[]
 
-    constructor() {
+    constructor(private http: HttpClient) {
         console.log('Service constructor aanroepen');
     }
 
-    getUsers(): IUser[] {
-        console.log('getUsers aanroepen');
-        return this.users;
-    }
-
-    getUsersAsync(): Observable<IUser[]> {
+    getUsersAsync(): Observable<IUserInfo[]> {
         console.log('getUsersAsync() aanroepen');
-        return of(this.users).pipe(delay(2000));
+        return this.http
+            .get<ApiResponse<any>>(environment.dataApiUrl + '/user')
+            .pipe(map((response) => response.results));
     }
 
-    getUserById(id: string | null): IUser {
+    getUserByIdAsync(id: string | null, async: boolean = false): Observable<IUser> {
         console.log('getUserById aanroepen');
-        return this.users.filter((user) => user._id === id)[0];
+        return this.http
+            .get<ApiResponse<any>>(environment.dataApiUrl + `/user/${id}`)
+            .pipe(map((response) => response.results));
     }
 
-    /**
-     * Asynchrone versie voor het ophalen van 1 user nij gegeven Id.
-     * @param id
-     * @returns
-     */
+    updateUser(id: string | null, user: IUser): Observable<IUser> {
+        console.log('updateUser aanroepen');
+        return this.http
+            .put<ApiResponse<any>>(environment.dataApiUrl + `/user/${id}`, user)
+            .pipe(map((response) => response.results));
+    }
 
-    getUserByIdAsync(id: string | null): Observable<IUser> {
-        console.log('getUserByIdAsync aanroepen');
-        return of(this.getUserById(id)).pipe(delay(2000));
+    upsertUser(user: IUser): Observable<IUser> {
+        console.log('upsertUser aanroepen');
+        return this.http
+            .post<ApiResponse<any>>(environment.dataApiUrl + '/user', user)
+            .pipe(map((response) => response.results));
+    }
+
+    deleteUser(id: string): Observable<void> {
+        console.log('deleteUser aanroepen');
+        return this.http
+            .delete<ApiResponse<any>>(environment.dataApiUrl + `/user/${id}`)
+            .pipe(map((response) => response.results));
     }
 }
