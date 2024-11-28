@@ -1,5 +1,4 @@
 import { IsNotEmpty, IsString, IsOptional, IsNumber } from 'class-validator';
-import { Id } from '@avans-nx-workshop/shared/api';
 
 export class CreateBookDto {
     @IsString()
@@ -14,17 +13,37 @@ export class CreateBookDto {
     @IsOptional()
     genre?: string;
 
+    @IsString()
+    @IsNotEmpty()
+    coverUrl!: string;
+
+    @IsString()
+    @IsOptional()
+    description?: string;
+
     @IsNumber()
     @IsOptional()
     publicationYear?: number;
+
+    @IsString()
+    @IsOptional()
+    language?: string;
+
+    @IsString()
+    @IsOptional()
+    publicator?: string;
 }
 
-export class UpsertBookDto {
-    _id!: Id;
+export class UpdateBookDto {
+    _id?: string | undefined;
 
     @IsString()
     @IsNotEmpty()
     title!: string;
+
+    @IsString()
+    @IsNotEmpty()
+    coverUrl!: string;
 
     @IsString()
     @IsNotEmpty()
@@ -34,27 +53,19 @@ export class UpsertBookDto {
     @IsOptional()
     genre?: string;
 
-    @IsNumber()
-    @IsOptional()
-    publicationYear?: number;
-}
-
-export class UpdateBookDto {
-    _id?: string | undefined;
-
     @IsString()
     @IsOptional()
-    title?: string;
-
-    @IsString()
-    @IsOptional()
-    author?: string;
-
-    @IsString()
-    @IsOptional()
-    genre?: string;
+    description?: string;
 
     @IsNumber()
     @IsOptional()
     publicationYear?: number;
+
+    @IsString()
+    @IsOptional()
+    language?: string;
+
+    @IsString()
+    @IsOptional()
+    publicator?: string;
 }

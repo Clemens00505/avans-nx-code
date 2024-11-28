@@ -1,18 +1,22 @@
 <div class="container">
-        <div class="d-flex justify-content-between align-items-center mt-3">
-            <h1>{{ book?.title }}</h1>
-            <button class="btn btn-primary" [routerLink]="['/books', book?._id, 'edit']">Edit</button>
-        </div>
+    <div class="d-flex justify-content-between align-items-center">
+        <h1>{{ book?.title }}</h1>
+        <button class="btn btn-primary" [routerLink]="['/books', book?._id, 'edit']">
+            Edit
+        </button>
+    </div>
     <div class="row">
         <div class="col-md-4">
-        <img src="{{ book?.coverUrl }}" alt="{{ book?.title }}" class="img-fluid rounded">
+            <img src="{{ book?.coverUrl }}" alt="{{ book?.title }}" class="img-fluid rounded">
         </div>
         <div class="col-md-8">
-        <p>{{ book?.description }}</p>
-        <p>Author: {{ book?.author }}</p>
-        <p>Published: {{ book?.publicationYear }}</p>
-        <p>Launguage: {{ book?.launguage }}</p>
-        <p>Publicator: {{ book?.publicator }}</p>
+            <p><strong>Author:</strong> {{ book?.author }}</p>
+            <p><strong>Published:</strong> {{ book?.publicationYear }}</p>
+            <p><strong>Language:</strong> {{ book?.language }}</p>
+            <p><strong>Publicator:</strong> {{ book?.publicator }}</p>
+            <p><strong>Year of publication:</strong> {{ book?.publicationYear }}</p>
+            <p><strong>Genre:</strong> {{ book?.genre }}</p>
+            <p><strong>Description:</strong> {{ book?.description }}</p>
         </div>
     </div>
 </div>

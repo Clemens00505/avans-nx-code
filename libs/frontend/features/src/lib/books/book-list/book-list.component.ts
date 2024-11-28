@@ -41,4 +41,16 @@ export class BookListComponent implements OnInit, OnDestroy {
             this.sub.unsubscribe();
         }
     }
+
+    deleteBook(bookId: string): void {
+        this.bookService.deleteBook(bookId).subscribe(
+            () => {
+                console.log('Boek verwijderd', bookId);
+                this.books = this.books?.filter((book) => book._id !== bookId);
+            },
+            (error) => {
+                console.error('Boek niet verwijderd', error);
+            }
+        );   
+    }
 }

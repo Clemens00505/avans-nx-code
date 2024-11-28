@@ -14,12 +14,12 @@ export const appRoutes: Route[] = [
     { path: 'dashboard', component: DashboardComponent },
     { path: 'about', component: AboutComponent },
     { path: 'books', component: BookListComponent },
-    { path: 'books/:id', component: BookDetailsComponent },
     { path: 'books/new', component: BookEditComponent },
+    { path: 'books/:id', component: BookDetailsComponent },
     { path: 'books/:id/edit', component: BookEditComponent },
     { path: 'users', component: UserListComponent },
-    { path: 'users/:id', component: UserDetailsComponent },
     { path: 'users/new', component: UserEditComponent },
+    { path: 'users/:id', component: UserDetailsComponent },
     { path: 'users/:id/edit', component: UserEditComponent },
     
 

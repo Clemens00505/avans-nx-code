@@ -26,12 +26,12 @@ export class BooksController {
     }
 
     @Post()
-    create(@Body() createBookDto: CreateBookDto): Promise<Book> {
+    async create(@Body() createBookDto: CreateBookDto): Promise<Book> {
         return this.booksService.create(createBookDto);
     }
 
     @Put(':id')
-    update(
+    async update(
         @Param('id') id: string,
         @Body() updateBookDto: UpdateBookDto
     ): Promise<Book | null> {
@@ -39,7 +39,7 @@ export class BooksController {
     }
 
     @Delete(':id')
-    remove(@Param('id') id: string): Promise<Book | null> {
+    async remove(@Param('id') id: string): Promise<Book | null> {
         return this.booksService.remove(id);
     }
 }

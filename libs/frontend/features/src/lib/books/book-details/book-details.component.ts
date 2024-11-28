@@ -38,4 +38,8 @@ export class BookDetailsComponent implements OnInit {
             }
         });
     }
+
+    ngOnDestroy(): void {
+        this.sub.unsubscribe();
+    }
 }

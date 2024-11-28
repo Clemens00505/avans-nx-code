@@ -35,9 +35,27 @@ export class Book {
 
     @Prop({
         required: false,
+        type: String
+    })
+    description?: string;
+
+    @Prop({
+        required: false,
         type: Number
     })
     publicationYear?: number;
+
+    @Prop({
+        required: false,
+        type: String
+    })
+    language?: string;
+
+    @Prop({
+        required: false,
+        type: String
+    })
+    publicator?: string;
 }
 
 export const BookSchema = SchemaFactory.createForClass(Book);

@@ -15,10 +15,10 @@ export interface IBook extends IEntity {
     description: string;
     author: string;
     publicationYear: number;
-    launguage: string;
+    language: string;
     publicator: string;
 }
 
-export type ICreateBook = Pick<IBook, 'coverUrl' | 'title' | 'genre' | 'description' | 'author' | 'publicationYear' | 'launguage' | 'publicator'>;
+export type ICreateBook = Pick<IBook, 'coverUrl' | 'title' | 'genre' | 'description' | 'author' | 'publicationYear' | 'language' | 'publicator'>;
 export type IUpdateBook = Partial<Omit<IBook, 'id'>>;
 export type IUpsertBook = IBook;

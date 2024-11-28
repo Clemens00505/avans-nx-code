@@ -29,4 +29,25 @@ export class BookService {
                         .get<ApiResponse<any>>(environment.dataApiUrl + `/book/${id}`)
                         .pipe(map((response) => response.results));
         }
+
+        upsertBook(book: IBook): Observable<IBook> {
+                console.log('upsertBook aanroepen');
+                return this.http
+                        .post<ApiResponse<any>>(environment.dataApiUrl + '/book', book)
+                        .pipe(map((response) => response.results));
+        }
+
+        updateBook(id: string, book: IBook): Observable<IBook> {
+                console.log('updateBook aanroepen');
+                return this.http
+                        .put<ApiResponse<any>>(environment.dataApiUrl + `/book/${id}`, book)
+                        .pipe(map((response) => response.results));
+        }
+
+        deleteBook(id: string): Observable<IBook> {
+                console.log('deleteBook aanroepen');
+                return this.http
+                        .delete<ApiResponse<any>>(environment.dataApiUrl + `/book/${id}`)
+                        .pipe(map((response) => response.results));
+        }
 }
