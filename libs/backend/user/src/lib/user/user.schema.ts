@@ -74,6 +74,13 @@ export class User implements IUser {
         default: true
     })
     isActive = true;
+
+    @Prop({
+        required: false,
+        type: String
+    })
+    address!: string;
+
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

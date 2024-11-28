@@ -52,6 +52,10 @@ export class UpsertUserDto implements IUpsertUser {
 
     @IsString()
     @IsNotEmpty()
+    address!: string;
+
+    @IsString()
+    @IsNotEmpty()
     role: UserRole = UserRole.Unknown;
 
     @IsString()
@@ -66,3 +70,5 @@ export class UpdateUserDto implements IUpdateUser {
     @IsOptional()
     name!: string;
 }
+
+

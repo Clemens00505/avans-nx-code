@@ -25,7 +25,7 @@ export interface IUserIdentity extends IEntity {
     phoneNumber: string;
     profileImgUrl: string;
     role: UserRole;
-    token?: string;
+    address: string;
 }
 
 /**
@@ -38,6 +38,7 @@ export interface IUserInfo extends IUserRegistration {
     role: UserRole;
     gender: UserGender;
     isActive: boolean;
+    address: string;
 }
 
 /**
