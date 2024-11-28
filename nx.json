@@ -29,6 +29,11 @@
         "e2e": {
             "cache": true,
             "inputs": ["default", "^production"]
+        },
+        "@nx/js:tsc": {
+            "cache": true,
+            "dependsOn": ["^build"],
+            "inputs": ["production", "^production"]
         }
     },
     "namedInputs": {
@@ -69,5 +74,13 @@
         "@nx/angular:component": {
             "style": "css"
         }
-    }
+    },
+    "plugins": [
+        {
+            "plugin": "@nx/eslint/plugin",
+            "options": {
+                "targetName": "eslint:lint"
+            }
+        }
+    ]
 }

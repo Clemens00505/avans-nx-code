@@ -1,0 +1,27 @@
+{
+    "name": "books",
+    "$schema": "../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "backend/src",
+    "projectType": "library",
+    "tags": [],
+    "targets": {
+        "build": {
+            "executor": "@nx/js:tsc",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/backend",
+                "tsConfig": "backend/tsconfig.lib.json",
+                "packageJson": "backend/package.json",
+                "main": "backend/src/index.ts",
+                "assets": ["backend/*.md"]
+            }
+        },
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+            "options": {
+                "jestConfig": "backend/jest.config.ts"
+            }
+        }
+    }
+}
