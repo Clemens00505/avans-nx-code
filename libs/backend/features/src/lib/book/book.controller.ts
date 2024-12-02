@@ -8,7 +8,7 @@ import {
     Delete
 } from '@nestjs/common';
 import { BooksService } from './book.service';
-import { CreateBookDto, UpdateBookDto } from '../../../dto/src';
+import { CreateBookDto, UpdateBookDto } from '../../../../dto/src';
 import { Book } from './books.schema';
 
 @Controller('book')
