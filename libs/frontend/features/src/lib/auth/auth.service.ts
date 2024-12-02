@@ -5,7 +5,7 @@ import { IUser } from '../../../../../shared/api/src';
 import { Router } from '@angular/router';
 import { environment } from '../../../../../shared/util-env/src';	
 import { map, tap, catchError, switchMap } from 'rxjs/operators';
-import { AlertService, AlertType } from '../../../../../share-a-meal/common/src';
+import { AlertService, AlertType } from '../../../../../share-a-meal/ui/src';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CreateUserDto } from '../../../../../backend/dto/src';
 

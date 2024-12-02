@@ -8,7 +8,7 @@ import { AboutComponent } from './components/about/about.component';
 import { HeaderComponent } from './components/ui/header/header.component';
 import { FooterComponent } from './components/ui/footer/footer.component';
 import { FeaturesModule } from '../../../../libs/frontend/features/src';
-import { AlertService } from '../../../../libs/share-a-meal/common/src';
+import { AlertService } from '../../../../libs/share-a-meal/ui/src';
 
 @NgModule({
     imports: [

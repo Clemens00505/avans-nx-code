@@ -18,6 +18,7 @@
             "@avans-nx-workshop/backend/auth": [
                 "libs/backend/auth/src/index.ts"
             ],
+            "@avans-nx-workshop/backend/books": ["libs/backend/src/index.ts"],
             "@avans-nx-workshop/backend/dto": ["libs/backend/dto/src/index.ts"],
             "@avans-nx-workshop/backend/features": [
                 "libs/backend/features/src/index.ts"
@@ -28,7 +29,6 @@
             "@avans-nx-workshop/backend/user": [
                 "libs/backend/user/src/index.ts"
             ],
-            "@avans-nx-workshop/backend/books": ["libs/backend/src/index.ts"],
             "@avans-nx-workshop/common": ["libs/frontend/common/src/index.ts"],
             "@avans-nx-workshop/features": [
                 "libs/frontend/features/src/index.ts"
@@ -53,7 +53,7 @@
                 "libs/shared/util-env/src/index.ts"
             ],
             "@avans-nx-workshop/ui": ["libs/frontend/ui/src/index.ts"],
-            "@avans-nx-workshop/user": ["libs/frontend/user/src/index.ts"],
+            "@avans-nx-workshop/user": ["libs/frontend/user/src/index.ts"]
         }
     },
     "exclude": ["node_modules", "tmp"]

@@ -10,9 +10,10 @@ import { UserService } from './users/user.service';
 import { provideHttpClient } from '@angular/common/http';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { UiModule } from "../../../../share-a-meal/ui/src/lib/ui.module";
 
 @NgModule({
-    imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule],
+    imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule, UiModule],
     declarations: [
         UserDetailsComponent, 
         UserListComponent, 

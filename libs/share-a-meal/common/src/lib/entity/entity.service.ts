@@ -2,8 +2,8 @@ import { IEntity } from './entity.model';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
-// import { AlertService } from '@avans-nx-workshop/share-a-meal/ui';
-// import { AlertType } from '@avans-nx-workshop/share-a-meal/ui';
+import { AlertService } from '@avans-nx-workshop/share-a-meal/ui';
+import { AlertType } from '@avans-nx-workshop/share-a-meal/ui';
 import { Id } from '@avans-nx-workshop/shared/api';
 
 /**
@@ -13,23 +13,6 @@ const httpOptions = {
     observe: 'body',
     responseType: 'json' as const
 };
-
-/**
- * Alert service.
- */
-
-export class AlertService {
-    showAlert(options: any): void {
-        console.log
-    }
-}
-
-export enum AlertType {
-    Success = 'success',
-    Info = 'info',
-    Warning = 'warning',
-    Error = 'error'
-}
 
 /**
  * Generic service class for communicating objects to/from services.
@@ -133,10 +116,7 @@ export abstract class EntityService<T extends IEntity> {
             type: AlertType.Error,
             message: error.message,
             visible: true,
-            error: {
-                message: error.message,
-                statusCode: error.status
-            }
+            error: error.message
         });
         return of(false);
     };
