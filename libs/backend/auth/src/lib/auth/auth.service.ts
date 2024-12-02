@@ -16,7 +16,6 @@ import { Model } from 'mongoose';
 
 @Injectable()
 export class AuthService {
-    //
     private readonly logger = new Logger(AuthService.name);
 
     constructor(
@@ -36,11 +35,9 @@ export class AuthService {
     }
 
     async login(credentials: IUserCredentials): Promise<IUserIdentity> {
-        this.logger.log('login ' + credentials.emailAddress);
+        this.logger.log('login ' + JSON.stringify(credentials));
         return await this.userModel
-            .findOne({
-                emailAddress: credentials.emailAddress
-            })
+            .findOne({ emailAddress: credentials.emailAddress })
             .select('+password')
             .exec()
             .then((user) => {
@@ -48,6 +45,15 @@ export class AuthService {
                     const payload = {
                         user_id: user._id
                     };
+                    this.logger.debug('User found, returning token');
+                    this.logger.debug('Payload: ' + JSON.stringify(payload));
+                    this.logger.debug('User: ' + {
+                        _id: user._id,
+                        name: user.name,
+                        emailAddress: user.emailAddress,
+                        profileImgUrl: user.profileImgUrl,
+                        token: this.jwtService.sign(payload)
+                    });
                     return {
                         _id: user._id,
                         name: user.name,
@@ -57,11 +63,13 @@ export class AuthService {
                     };
                 } else {
                     const errMsg = 'Email not found or password invalid';
+                    this.logger.debug('Query: ' + this.userModel.findOne({ emailAddress: credentials.emailAddress }));
                     this.logger.debug(errMsg);
                     throw new UnauthorizedException(errMsg);
                 }
             })
             .catch((error) => {
+                console.error('Error: ', error);
                 return error;
             });
     }

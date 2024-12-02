@@ -7,10 +7,14 @@ import { UserEditComponent } from '../../../../libs/frontend/features/src/lib/us
 import { BookListComponent } from '../../../../libs/frontend/features/src/lib/books/book-list/book-list.component';
 import { BookDetailsComponent } from '../../../../libs/frontend/features/src/lib/books/book-details/book-details.component';
 import { BookEditComponent } from '../../../../libs/frontend/features/src/lib/books/book-edit/book-edit.component';
+import { LoginComponent } from '../../../../libs/frontend/features/src/lib/auth/login/login.component';
+import { RegisterComponent } from '../../../../libs/frontend/features/src/lib/auth/register/register.component';
 
 export const appRoutes: Route[] = [
     // HIer komen onze URL's te staan
     { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
+    { path: 'register', component: RegisterComponent },
+    { path: 'login', component: LoginComponent },
     { path: 'dashboard', component: DashboardComponent },
     { path: 'about', component: AboutComponent },
     { path: 'books', component: BookListComponent },

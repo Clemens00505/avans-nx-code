@@ -1,0 +1,153 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-10 col-md-8 col-lg-6 my-5">
+      <div class="card card-auth shadow-lg p-3 px-md-5 py-md-4">
+        <h2>Register</h2>
+        <form
+          class="form-signin"
+          [formGroup]="registerForm"
+          (ngSubmit)="onSubmit()"
+        >
+          <!-- First Name -->
+          <div class="form-row">
+            <div class="col-6">
+              <label for="inputFirstName">First Name</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="firstname"
+                placeholder="Enter your first name"
+                id="inputFirstName"
+                [ngClass]="{
+                  'is-invalid':
+                    registerForm.get('firstname')?.invalid &&
+                    registerForm.get('firstname')?.touched
+                }"
+                aria-describedby="firstName-invalid"
+              />
+              <div
+                *ngIf="
+                  registerForm.get('firstname')?.invalid &&
+                  registerForm.get('firstname')?.touched
+                "
+                class="invalid-feedback"
+                id="firstName-invalid"
+              >
+                First name is required.
+              </div>
+            </div>
+
+            <!-- Last Name -->
+            <div class="col-6">
+              <label for="inputLastName">Last Name</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter your last name"
+                formControlName="lastname"
+                id="inputLastName"
+                [ngClass]="{
+                  'is-invalid':
+                    registerForm.get('lastname')?.invalid &&
+                    registerForm.get('lastname')?.touched
+                }"
+                aria-describedby="lastName-invalid"
+              />
+              <div
+                *ngIf="
+                  registerForm.get('lastname')?.invalid &&
+                  registerForm.get('lastname')?.touched
+                "
+                class="invalid-feedback"
+                id="lastName-invalid"
+              >
+                Last name is required.
+              </div>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="inputEmail">Email Address</label>
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Enter your email"
+              formControlName="email"
+              id="inputEmail"
+              aria-describedby="emailHelp email-invalid"
+              [ngClass]="{
+                'is-invalid':
+                  registerForm.get('email')?.invalid &&
+                  registerForm.get('email')?.touched
+              }"
+            />
+            <small id="emailHelp" class="form-text text-muted">
+              We'll never share your email with anyone else.
+            </small>
+            <div
+              *ngIf="
+                registerForm.get('email')?.invalid &&
+                registerForm.get('email')?.touched
+              "
+              class="invalid-feedback"
+              id="email-invalid"
+            >
+              Please provide a valid email address.
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="password"
+              id="inputPassword"
+              placeholder="Enter your password"
+              aria-describedby="password-invalid"
+              [ngClass]="{
+                'is-invalid':
+                  registerForm.get('password')?.invalid &&
+                  registerForm.get('password')?.touched
+              }"
+            />
+            <div
+              *ngIf="
+                registerForm.get('password')?.invalid &&
+                registerForm.get('password')?.touched
+              "
+              class="invalid-feedback"
+              id="password-invalid"
+            >
+              Password must meet the required criteria.
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="form-group">
+            <button
+              id="submitbutton"
+              class="btn btn-lg btn-primary btn-block"
+              type="submit"
+              [disabled]="!registerForm.valid"
+            >
+              Register
+            </button>
+          </div>
+
+          <p class="mt-3">
+            <a routerLink="/">Homepage</a> |
+            <a routerLink="/login">Login</a>
+          </p>
+
+          <!-- Alert -->
+          <div class="form-group">
+            <!-- <app-alert></app-alert> -->
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
