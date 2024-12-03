@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { User } from '../../../../../backend/user/src';
-import { IUser } from '../../../../../shared/api/src';
+import { IUser, IUserIdentity } from '../../../../../shared/api/src';
 import { Router } from '@angular/router';
 import { environment } from '../../../../../shared/util-env/src';	
 import { map, tap, catchError, switchMap } from 'rxjs/operators';
@@ -13,7 +13,7 @@ import { CreateUserDto } from '../../../../../backend/dto/src';
   providedIn: 'root',
 })
 export class AuthService {
-  public currentUser$ = new BehaviorSubject<User | null>(null);
+  public currentUser$ = new BehaviorSubject<IUserIdentity | null>(null);
   private readonly CURRENT_USER = 'currentuser';
   private readonly TOKEN_KEY = 'token';
 
@@ -40,19 +40,35 @@ export class AuthService {
       .subscribe(() => console.log('Startup authentication completed.'));
   }
 
-  login(emailAddress: string, password: string): Observable<User | null> {
+  private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+  login(emailAddress: string, password: string): Observable<IUserIdentity | null> {
+    console.log(`login at ${environment.dataApiUrl}/auth/login`);
+  
     return this.http
-      .post<{ results: User & { token: string } }>(
+      .post<{ results: { _id: string; token: string; name: string; emailAddress: string; profileImgUrl: string } }>(
         `${environment.dataApiUrl}/auth/login`,
-        { emailAddress, password }
+        { emailAddress, password },
+        { headers: this.headers }
       )
       .pipe(
         map((response) => {
-          const { results } = response;
-          const { token, ...user } = results;
+          console.log('API Response:', response);
+          const { _id, token, name, emailAddress, profileImgUrl } = response.results;
   
-          this.saveUserToLocalStorage(user as User, token);
-          this.currentUser$.next(user as User);  // Update currentUser$
+          if (!token || !name || !emailAddress) {
+            throw new Error('Token or user details missing from response');
+          }
+  
+          const user: IUserIdentity = {
+            _id,
+            name,
+            emailAddress: emailAddress,
+            profileImgUrl,
+          };
+  
+          this.saveUserToLocalStorage(user, token);
+          this.currentUser$.next(user);
   
           this.alertService.showAlert({
             type: AlertType.Success,
@@ -60,24 +76,19 @@ export class AuthService {
             visible: true,
           });
   
-          console.log('Login successful:', user, token);
-          return user as User;
+          return user;
         }),
         catchError((error: any) => {
-          console.error('Login error:', error);
-  
+          console.error('Login failed:', error);
           this.alertService.showAlert({
             type: AlertType.Error,
             message: error.error?.message || error.message,
             visible: true,
           });
-  
           return of(null);
         })
       );
   }
-  
-
   
 
   register(dto: CreateUserDto): Observable<User | null> {
@@ -88,10 +99,12 @@ export class AuthService {
       )
       .pipe(
         map((response) => {
-          const { results } = response; // Access the 'results' object
-          const { token, ...user } = results; // Destructure 'results' into 'user' and 'token'
+          const { results } = response;
+          const { token, ...user } = results;
   
-          // Save the user and token to localStorage
+          console.log('User and token:', user, token);
+  
+          // Save user and token to localStorage
           this.saveUserToLocalStorage(user as User, token);
   
           // Update the current user
@@ -113,14 +126,16 @@ export class AuthService {
           // Show an error alert
           this.alertService.showAlert({
             type: AlertType.Error,
-            message: error.error?.message || error.message,
+            message: error.error?.message || 'Registration failed.',
             visible: true,
           });
   
+          // Pass null back to the caller to indicate failure
           return of(null);
         })
       );
   }
+  
 
   validateToken(): Observable<User | null> {
     const token = localStorage.getItem(this.TOKEN_KEY);
@@ -184,15 +199,16 @@ export class AuthService {
     }
   }
 
-  private saveUserToLocalStorage(user: User, token: string): void {
-    if (user && token) {
-      localStorage.setItem('user', JSON.stringify(user));
-      localStorage.setItem('token', token);
-      console.log('User and token saved to localStorage');
-    } else {
+  saveUserToLocalStorage(user: IUserIdentity, token: string): void {
+    if (!user || !token) {
       console.error('User or token is undefined');
+      return;
     }
+  
+    localStorage.setItem('currentuser', JSON.stringify(user));
+    localStorage.setItem('token', token);
   }
+  
 
   userMayEdit(itemUserId: number): Observable<boolean> {
     return this.currentUser$.pipe(

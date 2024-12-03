@@ -5,7 +5,7 @@
         <h2>Login</h2>
         <form
           class="form-signin"
-          [formGroup]="loginForm"
+          [formGroup]="loginForm!"
           (ngSubmit)="onSubmit()"
         >
           <div class="form-group">
@@ -22,7 +22,7 @@
               }"
             />
             <div
-              *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+              *ngIf="loginForm?.get('email')?.invalid && loginForm.get('email')?.touched"
               class="invalid-feedback"
             >
               <p id="email-invalid">Please enter a valid email address</p>
@@ -41,7 +41,7 @@
               }"
             />
             <div
-              *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+              *ngIf="loginForm?.get('password')?.invalid && loginForm?.get('password')?.touched"
               class="invalid-feedback"
             >
               <p id="password-invalid">Please enter a valid password</p>

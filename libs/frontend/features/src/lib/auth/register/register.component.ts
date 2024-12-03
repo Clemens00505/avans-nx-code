@@ -36,27 +36,35 @@ export class RegisterComponent implements OnInit, OnDestroy {
 
   onSubmit(): void {
     if (this.registerForm.valid) {
-      this.submitted = true;
+      this.submitted = true; // Indicate that the form is being submitted
       const { firstname, lastname, email, password } = this.registerForm.value;
-
+  
       const userDto: CreateUserDto = {
         name: `${firstname} ${lastname}`, // Combine first and last name into "name"
         emailAddress: email,
         password,
       };
-
+  
       this.subs = this.authService.register(userDto).subscribe({
         next: (user) => {
-          console.log('Registration successful:', user);
-          this.router.navigate(['/']);
+          if (user) {
+            // Navigate only if user registration was successful
+            console.log('Registration successful:', user);
+            this.router.navigate(['/']);
+          } else {
+            // Registration failed, reset submission state
+            console.error('Registration failed. API did not return a user.');
+            this.submitted = false;
+          }
         },
         error: (err) => {
           console.error('Registration error:', err);
-          this.submitted = false;
+          this.submitted = false; // Reset submission state
         },
       });
     } else {
       console.error('Registration form is invalid.');
     }
   }
+  
 }
