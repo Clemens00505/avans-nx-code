@@ -14,23 +14,18 @@ export class BooksService {
 
     async findAll(): Promise<Book[]> {
         this.logger.log(`Finding all books`);
-        const items = await this.bookModel.find().exec();
-        return items;
+        return this.bookModel.find().populate('reviews').exec();
     }
 
     async findOne(_id: string): Promise<Book | null> {
         this.logger.log(`Finding book with id ${_id}`);
-        const item = await this.bookModel.findOne({ _id }).exec();
-        if (!item) {
-            this.logger.debug('Book not found');
-        }
-        return item;
+        return this.bookModel.findById(_id).populate('reviews').exec();
     }
 
     async create(createBookDto: CreateBookDto): Promise<Book> {
         this.logger.log(`Create book ${createBookDto.title}`);
-        const createdItem = new this.bookModel(createBookDto);
-        return createdItem.save();
+        const createdBook = new this.bookModel(createBookDto);
+        return createdBook.save();
     }
 
     async update(_id: string, updateBookDto: UpdateBookDto): Promise<Book | null> {

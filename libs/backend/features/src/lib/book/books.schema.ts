@@ -1,6 +1,8 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document } from 'mongoose';
+import { Document, Schema as MongooseSchema } from 'mongoose';
 import { IsMongoId } from 'class-validator';
+import { IReview } from 'libs/shared/api/src/lib/models/review.interface';
+import { Review } from '../review/review.schema';
 
 export type BookDocument = Book & Document;
 
@@ -56,6 +58,12 @@ export class Book {
         type: String
     })
     publicator?: string;
+
+    @Prop({
+        required: false,
+        type: [Review]
+    })
+    reviews?: IReview[];
 }
 
 export const BookSchema = SchemaFactory.createForClass(Book);

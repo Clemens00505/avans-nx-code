@@ -80,7 +80,15 @@ export class User implements IUser {
         type: String
     })
     address!: string;
+}
 
+export interface UserSubdocument {
+    userId: string;
+    name: string;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
+export const UserSubdocumentSchema = new MongooseSchema({
+    userId: { type: String, required: true },
+    name: { type: String, required: true }
+});

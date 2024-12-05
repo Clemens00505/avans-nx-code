@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString, IsOptional, IsNumber } from 'class-validator';
+import { IsNotEmpty, IsString, IsOptional, IsNumber, IsArray } from 'class-validator';
 
 export class CreateBookDto {
     @IsString()
@@ -32,6 +32,10 @@ export class CreateBookDto {
     @IsString()
     @IsOptional()
     publicator?: string;
+
+    @IsArray()
+    @IsOptional()
+    reviews?: string[];
 }
 
 export class UpdateBookDto {
@@ -68,4 +72,8 @@ export class UpdateBookDto {
     @IsString()
     @IsOptional()
     publicator?: string;
+
+    @IsArray()
+    @IsOptional()
+    reviews?: string[];
 }
