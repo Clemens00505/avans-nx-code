@@ -14,12 +14,12 @@ export class BooksService {
 
     async findAll(): Promise<Book[]> {
         this.logger.log(`Finding all books`);
-        return this.bookModel.find().populate('reviews').exec();
+        return this.bookModel.find().exec();
     }
 
     async findOne(_id: string): Promise<Book | null> {
         this.logger.log(`Finding book with id ${_id}`);
-        return this.bookModel.findById(_id).populate('reviews').exec();
+        return this.bookModel.findById(_id).exec();
     }
 
     async create(createBookDto: CreateBookDto): Promise<Book> {

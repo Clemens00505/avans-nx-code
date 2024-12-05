@@ -34,20 +34,22 @@ export class ReviewService {
         this.logger.log(`Create review ${createReviewDto.title}`);
         const createdReview = new this.reviewModel(createReviewDto);
         const savedReview = await createdReview.save();
-
+    
         if (createReviewDto.bookId) {
-            // Update the corresponding book to include this review
+            const fullReview = await this.reviewModel.findById(savedReview._id).exec();
+    
             await this.bookModel.findByIdAndUpdate(
                 new Types.ObjectId(createReviewDto.bookId),
-                { $push: { reviews: savedReview._id } },
+                { $push: { reviews: fullReview } },
                 { new: true }
             ).exec();
         } else {
             this.logger.warn('No bookId provided in createReviewDto');
         }
-
+    
         return savedReview;
     }
+    
 
     async update(_id: string, updateReviewDto: UpdateReviewDto): Promise<Review | null> {
         this.logger.log(`Update review ${updateReviewDto._id}`);
@@ -57,10 +59,5 @@ export class ReviewService {
     async remove(_id: string): Promise<Review | null> {
         this.logger.log(`Remove review with id ${_id}`);
         return this.reviewModel.findByIdAndDelete(_id).exec();
-    }
-
-    async findBookWithReviews(bookId: string): Promise<Book | null> {
-        this.logger.log(`Finding book with id ${bookId} and populating reviews`);
-        return this.bookModel.findById(bookId).populate('reviews').exec();
     }
 }
