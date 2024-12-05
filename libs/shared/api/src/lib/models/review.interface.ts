@@ -2,6 +2,7 @@ import { IEntity } from "../../../../../share-a-meal/common/src";
 import { Id } from "./id.type";
 
 export interface IReview extends IEntity {
+    reviews: never[];
     user: {
         _id: Id;
         name: string;

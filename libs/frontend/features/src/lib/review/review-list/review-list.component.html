@@ -1,14 +1,18 @@
 <div class="review-list border rounded" style="height: 100%; overflow-y: auto;">
     <h2 class="m-3">Reviews</h2>
-    <div *ngIf="reviews?.length; else noReviews">
+    <div class="m-3" *ngIf="reviews?.length; else noReviews">
         <div *ngFor="let review of reviews" class="review-item mb-3">
-            <h5>{{ review.reviewerName }}</h5>
-            <p><strong>Rating:</strong> {{ review.rating }} / 5</p>
+            <div class="d-flex justify-content-between align-items-center m-3">
+                <h5>{{ review?.user?.name }}</h5>
+                <!-- <button class="btn btn-danger" (click)="deleteReview(review?._id!, book?._id!);">Delete</button> -->
+                 <button class="btn btn-danger">Delete</button>
+            </div>
+            <p><strong>Rating:</strong> {{ review?.rating }} / 5</p>
             <p>{{ review.comment }}</p>
             <hr>
         </div>
     </div>
     <ng-template #noReviews>
-        <p>No reviews yet. Be the first to review this book!</p>
+        <p class="m-3">No reviews yet. Be the first to review this book!</p>
     </ng-template>
 </div>

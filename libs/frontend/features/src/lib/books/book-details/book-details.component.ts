@@ -7,7 +7,6 @@ import { IBook } from '@avans-nx-workshop/shared/api';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ReviewListComponent } from '../../review/review-list/review-list.component';
-import { ReviewEditComponent } from "../../review/review-edit/review-edit.component";
 
 
 
@@ -24,8 +23,7 @@ import { ReviewEditComponent } from "../../review/review-edit/review-edit.compon
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
-    ReviewListComponent,
-    ReviewEditComponent
+    ReviewListComponent
 ],
     styleUrls: ['./book-details.component.css']
 })

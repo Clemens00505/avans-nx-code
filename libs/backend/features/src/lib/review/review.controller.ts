@@ -13,6 +13,7 @@ import { Review } from './review.schema';
 
 @Controller('review')
 export class ReviewController {
+    bookService: any;
     constructor(private readonly reviewService: ReviewService) {}
 
     @Get()
@@ -38,8 +39,8 @@ export class ReviewController {
         return this.reviewService.update(id, updateReviewDto);
     }
 
-    @Delete(':id')
-    async remove(@Param('id') id: string): Promise<Review | null> {
-        return this.reviewService.remove(id);
-    }
+    @Delete(':bookId/:reviewId')
+    async remove(@Param('bookId') bookId: string, @Param('reviewId') reviewId: string): Promise<void> {
+        await this.bookService.removeReviewFromBook(bookId, reviewId);
+  }
 }
