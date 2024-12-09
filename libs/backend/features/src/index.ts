@@ -6,3 +6,7 @@ export * from './lib/review/review.controller';
 export * from './lib/review/review.schema';
 export * from './lib/review/review.service';
 export * from './lib/review/review.module';
+export * from './lib/author/author.controller';
+export * from './lib/author/author.schema';
+export * from './lib/author/author.service';
+export * from './lib/author/author.module';
