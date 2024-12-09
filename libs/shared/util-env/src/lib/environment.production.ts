@@ -6,5 +6,12 @@ export const environment: IEnvironment = {
     ROOT_DOMAIN_URL: 'https://gentle-cliff-055362a03.5.azurestaticapps.net',
     dataApiUrl: 'https://avans-nx-api-clemens-esagaeaqe7gdezhn.northeurope-01.azurewebsites.net/api',
 
-    MONGO_DB_CONNECTION_STRING: 'mongodb+srv://boekbeheer:Test123@boekbeheer.hl7bf.mongodb.net/boekbeheer'
+    // MongoDB
+    MONGO_DB_CONNECTION_STRING: 'mongodb+srv://boekbeheer:Test123@boekbeheer.hl7bf.mongodb.net/boekbeheer',
+
+    // Neo4j
+    NEO4J_HOST: 'localhost',
+    NEO4J_PORT: 7687,
+    NEO4J_USER: 'neo4j',
+    NEO4J_PASSWORD: 'password'
 };
