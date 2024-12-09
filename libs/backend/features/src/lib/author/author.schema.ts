@@ -12,24 +12,24 @@ export class Author {
     name!: string;
 
     @Prop({ 
-        required: true 
+        required: false 
     })
-    email!: string;
+    email?: string;
 
     @Prop({ 
-        required: true 
+        required: false 
     })
-    birthDate!: Date;
+    birthDate?: Date;
 
     @Prop({ 
-        required: true 
+        required: false 
     })
-    bio!: string;
+    bio?: string;
 
     @Prop({ 
-        required: true 
+        required: false 
     })
-    photo!: string;
+    photo?: string;
 
     @Prop({ 
         type: [{ 

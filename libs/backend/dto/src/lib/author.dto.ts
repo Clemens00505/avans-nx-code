@@ -9,26 +9,6 @@ export class CreateAuthorDto {
     @IsNotEmpty()
     name!: string;
 
-    @IsString()
-    @IsNotEmpty()
-    surname!: string;
-
-    @IsString()
-    @IsNotEmpty()
-    email!: string;
-
-    @IsDate()
-    @Type(() => Date)
-    birthDate!: Date;
-
-    @IsString()
-    @IsNotEmpty()
-    bio!: string;
-
-    @IsString()
-    @IsNotEmpty()
-    photo!: string;
-
     @IsArray()
     @ValidateNested({ each: true })
     @Type(() => CreateBookDto)
@@ -39,10 +19,6 @@ export class UpdateAuthorDto {
     @IsString()
     @IsNotEmpty()
     name!: string;
-
-    @IsString()
-    @IsNotEmpty()
-    surname!: string;
 
     @IsString()
     @IsNotEmpty()

@@ -30,32 +30,46 @@ export class BookEditComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.route.paramMap.subscribe((params: any) => {
-            this.bookId = params.get('id');
-            if (this.bookId) {
-                this.sub = this.bookService.getBookByIdAsync(this.bookId).subscribe((book: IBook) => {
-                    this.book = book;
-                });
-            }
+          this.bookId = params.get('id');
+          if (this.bookId) {
+            this.sub = this.bookService.getBookByIdAsync(this.bookId).subscribe(
+              (book: IBook) => {
+                this.book = book;
+                // Initialize 'author' if undefined
+                if (!this.book.author) {
+                  this.book.author = '';
+                }
+              },
+              error => {
+                console.error('Error loading book:', error);
+                // Handle any error when fetching book data
+              }
+            );
+          }
         });
-    }
+      }
 
     ngOnDestroy() {
         this.sub.unsubscribe();
     }
 
     onSave() {
-        if (this.bookId) {
-            this.bookService.updateBook(this.bookId, this.book).subscribe(() => {
-                console.log(this.book);
-                this.router.navigate(['/books']);
-                console.log('Book updated');
-            });
-        } else {
-            this.bookService.upsertBook(this.book).subscribe(() => {
-                console.log(this.book);
-                this.router.navigate(['/books']);
-                console.log('Book created');
-            });
+        // Ensure 'author' is not empty before submitting
+        if (!this.book.author || this.book.author.trim() === '') {
+          console.log('Author is required');
+          return;
         }
-    }
+    
+        if (this.bookId) {
+          this.bookService.updateBook(this.bookId, this.book).subscribe(() => {
+            console.log('Book updated', this.book);
+            this.router.navigate(['/books']);
+          });
+        } else {
+          this.bookService.upsertBook(this.book).subscribe(() => {
+            console.log('Book created', this.book);
+            this.router.navigate(['/books']);
+          });
+        }
+      }
 }

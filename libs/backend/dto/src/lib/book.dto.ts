@@ -36,6 +36,7 @@ export class CreateBookDto {
     @IsArray()
     @IsOptional()
     reviews?: string[];
+    public _id: any;
 }
 
 export class UpdateBookDto {

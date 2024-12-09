@@ -27,7 +27,7 @@ export class BooksController {
 
     @Post()
     async create(@Body() createBookDto: CreateBookDto): Promise<Book> {
-        return this.booksService.create(createBookDto);
+        return this.booksService.createBook(createBookDto);
     }
 
     @Put(':id')

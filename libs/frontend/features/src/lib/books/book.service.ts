@@ -23,11 +23,14 @@ export class BookService {
                         .pipe(map((response) => response.results));
         }
 
-        getBookByIdAsync(id: string | null, async: boolean = false): Observable<IBook> {
-                console.log('getBookById aanroepen');
-                return this.http
-                        .get<ApiResponse<any>>(environment.dataApiUrl + `/book/${id}`)
-                        .pipe(map((response) => response.results));
+        getBookByIdAsync(id: string | null): Observable<IBook> {
+                return this.http.get<ApiResponse<any>>(environment.dataApiUrl + `/book/${id}`)
+                  .pipe(
+                    map((response) => {
+                      console.log('Fetched book:', response.results);
+                      return response.results;
+                    })
+                );
         }
 
         upsertBook(book: IBook): Observable<IBook> {

@@ -11,7 +11,7 @@ import { AuthorService } from './author.service';
         ])
     ],
     controllers: [AuthorController],
-    providers: [AuthorService],
-    exports: [AuthorService, MongooseModule]
+    providers: [AuthorService, AuthorModule],
+    exports: [AuthorService, AuthorModule, MongooseModule]
 })
 export class AuthorModule {}
