@@ -16,6 +16,18 @@ export class ReviewService {
             .pipe(map((response) => response.results));
     }
 
+    getReviewByIdAsync(reviewId: string): Observable<any> {
+        return this.http
+            .get<ApiResponse<any>>(environment.dataApiUrl + `/review/${reviewId}`)
+            .pipe(map((response) => response.results));
+    }
+
+    postReviewAsync(review: IReview): Observable<any> {
+        return this.http
+            .post<ApiResponse<any>>(environment.dataApiUrl + `/review`, review)
+            .pipe(map((response) => response.results));
+    }
+
     deleteReviewAsync(bookId: string, reviewId: string): Observable<any> {
         return this.http
             .delete<ApiResponse<any>>(environment.dataApiUrl + `/review/${bookId}/${reviewId}`)

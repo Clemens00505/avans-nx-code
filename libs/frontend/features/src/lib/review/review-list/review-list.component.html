@@ -1,10 +1,14 @@
 <div class="review-list border rounded" style="height: 100%; overflow-y: auto;">
-    <h2 class="m-3">Reviews</h2>
+    <div class="d-flex justify-content-between align-items-center m-3">
+        <h2 class="m-3">Reviews</h2>
+        <button class="btn btn-primary m-3" [routerLink]="['review']">Add Review</button>
+    </div>
     <div class="m-3" *ngIf="reviews?.length; else noReviews">
         <div *ngFor="let review of reviews" class="review-item mb-3">
             <div class="d-flex justify-content-between align-items-center m-3">
                 <h5>{{ review?.user?.name }}</h5>
-                <button class="btn btn-danger" (click)="deleteReview(book?._id!, review?._id!);">Delete</button>
+                <button *ngIf="userId === review?.user?.userId" class="btn btn-primary" [routerLink]="['review', review?._id!]">Edit</button>
+                <button *ngIf="userId === review?.user?.userId" class="btn btn-danger" (click)="deleteReview(book?._id!, review?._id!)">Delete</button>
             </div>
             <p><strong>Rating:</strong> {{ review?.rating }} / 5</p>
             <p>{{ review.comment }}</p>
