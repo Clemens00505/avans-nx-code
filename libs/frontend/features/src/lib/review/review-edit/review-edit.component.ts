@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ReviewService } from '../review.service';
@@ -23,6 +23,7 @@ export class ReviewEditComponent implements OnInit {
     reviewForm: FormGroup | undefined;
     user: any;
     reviewId: string | undefined;
+    submitted = false;
 
     constructor(
         private route: ActivatedRoute,
@@ -42,9 +43,9 @@ export class ReviewEditComponent implements OnInit {
     ngOnInit(): void {
         console.log('ReviewEditComponent ngOnInit called');
         this.reviewForm = this.fb.group({
-            rating: [''],
-            title: [''],
-            comment: ['']
+            rating: ['', [Validators.required, Validators.min(0), Validators.max(5)]],
+            title: ['', [Validators.required, Validators.maxLength(100)]],
+            comment: ['', Validators.required]
         });
     
         this.route.paramMap.subscribe((params: any) => {

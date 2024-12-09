@@ -3,27 +3,80 @@
     <div class="col-md-6 col-md-offset-3">
       <h2>Edit Review</h2>
       <form [formGroup]="reviewForm!" (ngSubmit)="onSubmit()">
-        <div class="form-group row">
+        <!-- Rating Section -->
+        <div class="mb-3 row">
           <label for="rating" class="col-sm-2 col-form-label">Rating</label>
           <div class="col-sm-10">
-            <input type="number" min="0" max="5" class="form-control" id="rating" formControlName="rating">
+            <select 
+              id="rating" 
+              formControlName="rating" 
+              class="form-select"
+              [ngClass]="{
+                'is-invalid': reviewForm?.get('rating')?.invalid && reviewForm?.get('rating')?.touched
+              }"
+            >
+              <option value="" disabled>Select rating</option>
+              <option *ngFor="let rating of [0, 1, 2, 3, 4, 5]" [value]="rating">
+                {{ rating }}
+              </option>
+            </select>
+            <div 
+              *ngIf="reviewForm?.get('rating')?.invalid && reviewForm?.get('rating')?.touched"
+              class="invalid-feedback"
+            >
+              Please enter a rating between 0 and 5.
+            </div>
           </div>
         </div>
+
+
+        <!-- Title section -->
         <div class="form-group row">
           <label for="title" class="col-sm-2 col-form-label">Title</label>
           <div class="col-sm-10">
-            <input class="form-control" id="title" formControlName="title">
+            <input 
+              class="form-control" 
+              id="title" 
+              formControlName="title"
+              [ngClass]="{
+                'is-invalid': reviewForm?.get('title')?.invalid && reviewForm?.get('title')?.touched
+              }"
+              >
+            <div 
+              *ngIf="reviewForm?.get('title')?.invalid && reviewForm?.get('title')?.touched"
+              class="invalid-feedback"
+            >
+              <p id="title-invalid">Please enter a title</p>
+            </div>
           </div>
         </div>
+
+        <!-- Comment section -->
         <div class="form-group row">
           <label for="comment" class="col-sm-2 col-form-label">Comment</label>
           <div class="col-sm-10">
-            <textarea class="form-control" id="comment" formControlName="comment"></textarea>
+            <textarea 
+              class="form-control" 
+              id="comment" 
+              formControlName="comment"
+              [ngClass]="{
+                'is-invalid': reviewForm?.get('comment')?.invalid && reviewForm?.get('comment')?.touched
+              }"
+              >
+            </textarea>
+            <div
+              *ngIf="reviewForm?.get('comment')?.invalid && reviewForm?.get('comment')?.touched"
+              class="invalid-feedback"
+            >
+              <p id="comment-invalid">Please enter a comment</p>
+            </div>
           </div>
         </div>
+
+        <!-- Button section -->
         <div class="form-group row">
             <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary" style="margin-right: 10px;">Save</button>
+            <button type="submit" class="btn btn-primary" style="margin-right: 10px;" [disabled]="!reviewForm?.valid || submitted">Save</button>
             <a [routerLink]="['/books']" class="btn btn-secondary" style="margin-left: 10px;">Cancel</a>
             </div>
         </div>
