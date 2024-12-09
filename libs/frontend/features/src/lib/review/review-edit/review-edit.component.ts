@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ReviewService } from '../review.service';
 
 @Component({
@@ -11,7 +11,8 @@ import { ReviewService } from '../review.service';
     imports: [
         CommonModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        RouterModule
     ],
     templateUrl: './review-edit.component.html',
     styleUrl: './review-edit.component.css'
@@ -21,6 +22,7 @@ export class ReviewEditComponent implements OnInit {
     review: any;
     reviewForm: FormGroup | undefined;
     user: any;
+    reviewId: string | undefined;
 
     constructor(
         private route: ActivatedRoute,
@@ -44,13 +46,12 @@ export class ReviewEditComponent implements OnInit {
             title: [''],
             comment: ['']
         });
-
+    
         this.route.paramMap.subscribe((params: any) => {
-            const reviewId = params.get('reviewId');
-            // get bookId from url route
             const url = window.location.href;
+            this.reviewId = url.split('/')[6];
+            console.log('Review ID: ' + this.reviewId);
             const bookId = url.split('/')[4];
-            console.log('Review ID: ' + reviewId);
             console.log('Book ID: ' + bookId);
             if (bookId) {
                 this.reviewService.getBookByIdAsync(bookId).subscribe((book) => {
@@ -58,8 +59,8 @@ export class ReviewEditComponent implements OnInit {
                     console.log('Book: ', this.book);
                 });
             }
-            if (reviewId) {
-                this.reviewService.getReviewByIdAsync(reviewId).subscribe((review) => {
+            if (this.reviewId) {
+                this.reviewService.getReviewByIdAsync(this.reviewId).subscribe((review) => {
                     this.review = review;
                     console.log('Review: ', this.review);
                     this.reviewForm?.patchValue(this.review);
@@ -88,10 +89,20 @@ export class ReviewEditComponent implements OnInit {
                 bookId: this.book._id,
                 dateAndTime: new Date().toISOString()
             };
-            this.reviewService.postReviewAsync(reviewData).subscribe(() => {
-                console.log('Review updated');
-                this.router.navigate(['/books']);
-            });
+
+            if (this.reviewId) {
+                // Update existing review
+                this.reviewService.updateReviewAsync(this.reviewId, reviewData).subscribe(() => {
+                    console.log('Review updated');
+                    this.router.navigate(['/books']);
+                });
+            } else {
+                // Create new review
+                this.reviewService.postReviewAsync(reviewData).subscribe(() => {
+                    console.log('Review created');
+                    this.router.navigate(['/books']);
+                });
+            }
         } else {
             console.error('Book ID or User is not available or missing required fields');
 

@@ -53,7 +53,17 @@ export class ReviewService {
 
     async update(_id: string, updateReviewDto: UpdateReviewDto): Promise<Review | null> {
         this.logger.log(`Update review ${updateReviewDto._id}`);
-        return this.reviewModel.findByIdAndUpdate(_id, updateReviewDto, { new: true }).exec();
+        const updatedReview = await this.reviewModel.findByIdAndUpdate(_id, updateReviewDto, { new: true }).exec();
+
+        if (updatedReview && updateReviewDto.bookId) {
+            await this.bookModel.findByIdAndUpdate(
+                new Types.ObjectId(updateReviewDto.bookId),
+                { $set: { "reviews.$[elem]": updatedReview } },
+                { arrayFilters: [{ "elem._id": new Types.ObjectId(_id) }], new: true }
+            ).exec();
+        }
+
+        return updatedReview;
     }
 
     async remove(_id: string): Promise<Review | null> {

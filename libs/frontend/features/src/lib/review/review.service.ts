@@ -22,6 +22,12 @@ export class ReviewService {
             .pipe(map((response) => response.results));
     }
 
+    updateReviewAsync(reviewId: string, review: IReview): Observable<any> {
+        return this.http
+            .put<ApiResponse<any>>(environment.dataApiUrl + `/review/${reviewId}`, review)
+            .pipe(map((response) => response.results));
+    }
+
     postReviewAsync(review: IReview): Observable<any> {
         return this.http
             .post<ApiResponse<any>>(environment.dataApiUrl + `/review`, review)
