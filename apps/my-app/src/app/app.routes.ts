@@ -9,6 +9,7 @@ import { BookDetailsComponent } from '../../../../libs/frontend/features/src/lib
 import { BookEditComponent } from '../../../../libs/frontend/features/src/lib/books/book-edit/book-edit.component';
 import { LoginComponent } from '../../../../libs/frontend/features/src/lib/auth/login/login.component';
 import { RegisterComponent } from '../../../../libs/frontend/features/src/lib/auth/register/register.component';
+import { ReviewEditComponent } from '../../../../libs/frontend/features/src/lib/review/review-edit/review-edit.component';
 
 export const appRoutes: Route[] = [
     // HIer komen onze URL's te staan
@@ -19,6 +20,8 @@ export const appRoutes: Route[] = [
     { path: 'about', component: AboutComponent },
     { path: 'books', component: BookListComponent },
     { path: 'books/new', component: BookEditComponent },
+    { path: 'books/:id/review', component: ReviewEditComponent },
+    { path: 'books/:id/review/:id', component: ReviewEditComponent },
     { path: 'books/:id', component: BookDetailsComponent },
     { path: 'books/:id/edit', component: BookEditComponent },
     { path: 'users', component: UserListComponent },

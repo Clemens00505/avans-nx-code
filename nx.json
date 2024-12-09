@@ -50,7 +50,6 @@
         ],
         "sharedGlobals": []
     },
-    
     "tasksRunnerOptions": {
         "default": {
             "runner": "nx/tasks-runners/default",
@@ -59,7 +58,6 @@
             }
         }
     },
-
     "generators": {
         "@nx/angular:application": {
             "style": "css",

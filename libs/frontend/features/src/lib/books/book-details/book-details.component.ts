@@ -4,16 +4,30 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { RouterModule } from '@angular/router';
 import { IBook } from '@avans-nx-workshop/shared/api';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ReviewListComponent } from '../../review/review-list/review-list.component';
+
 
 
 
 @Component({
-    selector: 'avans-nx-workshop-book-details',
+
+    selector: 'app-book-details',
+  
     templateUrl: './book-details.component.html',
+  
     standalone: true,
-    imports: [RouterModule],
-    styles: []
+  
+    imports: [
+    CommonModule,
+    RouterModule,
+    ReactiveFormsModule,
+    ReviewListComponent
+],
+    styleUrls: ['./book-details.component.css']
 })
+
 export class BookDetailsComponent implements OnInit {
     bookId: string | null = null;
     book: IBook | undefined;
