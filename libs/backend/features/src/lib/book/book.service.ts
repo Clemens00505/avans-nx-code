@@ -40,6 +40,6 @@ export class BooksService {
 
     async removeReviewFromBook(bookId: string, reviewId: string): Promise<void> {
         this.logger.log(`Remove review with id ${reviewId} from book with id ${bookId}`);
-        await this.bookModel.findByIdAndUpdate(bookId, { $pull: { reviews: reviewId } }).exec();
-    }
+        await this.bookModel.findByIdAndUpdate(bookId, { $pull: { reviews: { _id: reviewId } } }).exec();
+      }
 }

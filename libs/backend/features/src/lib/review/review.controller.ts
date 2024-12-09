@@ -10,11 +10,14 @@ import {
 import { ReviewService } from './review.service';
 import { CreateReviewDto, UpdateReviewDto } from '../../../../dto/src';
 import { Review } from './review.schema';
+import { BooksService } from '../book/book.service';
 
 @Controller('review')
 export class ReviewController {
-    bookService: any;
-    constructor(private readonly reviewService: ReviewService) {}
+    constructor(
+        private readonly reviewService: ReviewService,
+        private readonly bookService: BooksService
+    ) {}
 
     @Get()
     async findAll(): Promise<Review[]> {
@@ -40,7 +43,8 @@ export class ReviewController {
     }
 
     @Delete(':bookId/:reviewId')
-    async remove(@Param('bookId') bookId: string, @Param('reviewId') reviewId: string): Promise<void> {
+    async removeReviewFromBook(@Param('bookId') bookId: string, @Param('reviewId') reviewId: string): Promise<void> {
         await this.bookService.removeReviewFromBook(bookId, reviewId);
-  }
+        await this.reviewService.remove(reviewId);
+    }
 }

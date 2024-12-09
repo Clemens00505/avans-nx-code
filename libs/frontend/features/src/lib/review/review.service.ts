@@ -16,7 +16,7 @@ export class ReviewService {
             .pipe(map((response) => response.results));
     }
 
-    deleteReviewAsync(reviewId: string, bookId: string): Observable<any> {
+    deleteReviewAsync(bookId: string, reviewId: string): Observable<any> {
         return this.http
             .delete<ApiResponse<any>>(environment.dataApiUrl + `/review/${bookId}/${reviewId}`)
             .pipe(map((response) => response.results));

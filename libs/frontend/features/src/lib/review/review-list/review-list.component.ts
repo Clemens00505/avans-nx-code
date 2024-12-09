@@ -35,11 +35,12 @@ review: any;
         console.log('ReviewListComponent ngOnDestroy called');
     }
 
-    deleteReview(reviewId: string, bookId: string): void {
+    deleteReview(bookId: string, reviewId: string): void {
         console.log('Delete review with ID: ' + reviewId);
+        console.log('From book with ID: ' + bookId);
         this.reviewService.deleteReviewAsync(bookId, reviewId).subscribe(() => {
             console.log('Review deleted');
-            this.reviews = this.reviews.filter((review) => review.id !== reviewId);
+            this.ngOnInit();
         });
     }
 

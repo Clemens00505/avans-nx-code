@@ -11,6 +11,8 @@ import { provideHttpClient } from '@angular/common/http';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { UiModule } from "../../../../share-a-meal/ui/src/lib/ui.module";
+import { ReviewService } from './review/review.service';
+import { BookService } from './books/book.service';
 
 @NgModule({
     imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule, UiModule],
@@ -22,6 +24,6 @@ import { UiModule } from "../../../../share-a-meal/ui/src/lib/ui.module";
         RegisterComponent
     ],
     exports: [UserDetailsComponent, UserListComponent, UserEditComponent, LoginComponent, RegisterComponent],
-    providers: [ UserService, provideHttpClient() ]
+    providers: [ UserService, ReviewService, BookService, provideHttpClient() ]
 })
 export class FeaturesModule {}

@@ -59,5 +59,5 @@ export class ReviewService {
     async remove(_id: string): Promise<Review | null> {
         this.logger.log(`Remove review with id ${_id}`);
         return this.reviewModel.findByIdAndDelete(_id).exec();
-    }
+      }
 }
