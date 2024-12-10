@@ -10,60 +10,74 @@
                     class="avatar img-circle img-thumbnail"
                     alt="avatar"
                 />
-                 </div>
+            </div>
         </div>
 
         <!-- Right column for form -->
         <div class="col-md-9 personal-info">
             <h3>Personal Info</h3>
 
-            <!-- Wrap the entire form in a formGroup -->
             <form [formGroup]="authorForm" class="form-horizontal" role="form" (ngSubmit)="onSubmit()">
-                
                 <!-- Photo -->
-                <div class="form-group">
-                    <label class="col-lg-3 control-label">Upload a different photo...</label>
+                <div class="form-group row">
+                    <label class="col-lg-3 control-label">Photo URL:</label>
                     <div class="col-lg-8">
                         <input class="form-control" type="text" formControlName="photo" placeholder="Enter image URL" />
+                        <div *ngIf="authorForm.get('photo')?.invalid && authorForm.get('photo')?.touched" class="text-danger">
+                            Photo URL is required.
+                        </div>
                     </div>
                 </div>
 
                 <!-- Name -->
-                <div class="form-group">
+                <div class="form-group row">
                     <label class="col-lg-3 control-label">Name:</label>
                     <div class="col-lg-8">
                         <input class="form-control" type="text" formControlName="name" />
+                        <div *ngIf="authorForm.get('name')?.invalid && authorForm.get('name')?.touched" class="text-danger">
+                            Name is required.
+                        </div>
                     </div>
                 </div>
 
                 <!-- Email -->
-                <div class="form-group">
+                <div class="form-group row">
                     <label class="col-lg-3 control-label">Email:</label>
                     <div class="col-lg-8">
                         <input class="form-control" type="email" formControlName="email" />
+                        <div *ngIf="authorForm.get('email')?.invalid && authorForm.get('email')?.touched" class="text-danger">
+                            Enter a valid email.
+                        </div>
                     </div>
                 </div>
 
                 <!-- Birthdate -->
-                <div class="form-group">
+                <div class="form-group row">
                     <label class="col-lg-3 control-label">Birthdate:</label>
                     <div class="col-lg-8">
                         <input class="form-control" type="date" formControlName="birthDate" />
+                        <div *ngIf="authorForm.get('birthDate')?.invalid && authorForm.get('birthDate')?.touched" class="text-danger">
+                            Birthdate is required.
+                        </div>
                     </div>
                 </div>
 
                 <!-- Biography -->
-                <div class="form-group">
+                <div class="form-group row">
                     <label class="col-lg-3 control-label">Biography:</label>
                     <div class="col-lg-8">
                         <textarea class="form-control" formControlName="bio"></textarea>
+                        <div *ngIf="authorForm.get('bio')?.invalid && authorForm.get('bio')?.touched" class="text-danger">
+                            Biography is required.
+                        </div>
                     </div>
                 </div>
 
-                <!-- Save Button -->
-                <div class="form-group">
-                    <div class="col-lg-3">
-                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                <!-- Save and Cancel Buttons -->
+                <div class="form-group row">
+                    <div class="col-lg-8 offset-lg-3">
+                        <button class="btn btn-danger" [routerLink]="'/authors'">Cancel</button>
+                        <button type="submit" class="btn btn-primary" [disabled]="authorForm.invalid">Save Changes</button>
                     </div>
                 </div>
             </form>
