@@ -33,6 +33,11 @@ export class AuthorEditComponent implements OnInit {
 
   loadAuthorDetails(): void {
     this.authorService.getAuthorByIdAsync(this.authorId).subscribe((author) => {
+        // Set form values and convert birthDate to a Date object
+        if (author.birthDate) {
+            const date = new Date(author.birthDate);
+            (author as any).birthDate = date.toISOString().split('T')[0];
+        }
       this.authorForm.patchValue(author);
     });
   }

@@ -28,7 +28,9 @@
                     <p><strong>Email:</strong> {{ author?.email }}</p>
                     <p><strong>Birthdate:</strong> {{ author?.birthDate | date }}</p>
                     <p><strong>Biography:</strong></p>
-                    <p class="card">{{ author?.bio }}</p>
+                    <div class="card">
+                        <p class="p-2">{{ author?.bio }}</p>
+                    </div>
                 </div>
             </div>
         </div>

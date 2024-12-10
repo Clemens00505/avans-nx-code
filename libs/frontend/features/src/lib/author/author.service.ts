@@ -39,4 +39,11 @@ export class AuthorService {
             .put<ApiResponse<any>>(environment.dataApiUrl + `/author/${id}`, author)
             .pipe(map((response) => response.results));
     }
+
+    deleteAuthor(id: string): Observable<IAuthor> {
+        console.log('deleteAuthor aanroepen');
+        return this.http
+            .delete<ApiResponse<any>>(environment.dataApiUrl + `/author/${id}`)
+            .pipe(map((response) => response.results));
+    }
 }

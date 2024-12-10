@@ -32,5 +32,8 @@ export class AuthorDetailsComponent {
         });
     }
 
+    ngOnDestroy(): void {
+        this.sub.unsubscribe();
+    }
 
 }
