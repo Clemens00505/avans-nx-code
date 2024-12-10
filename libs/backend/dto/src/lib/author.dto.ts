@@ -1,4 +1,4 @@
-import { IsString, IsNotEmpty, IsDate, IsArray, ValidateNested } from 'class-validator';
+import { IsString, IsNotEmpty, IsDate, IsArray, ValidateNested, IsOptional } from 'class-validator';
 import { Type } from 'class-transformer';
 
 import { CreateBookDto } from './book.dto';
@@ -39,5 +39,6 @@ export class UpdateAuthorDto {
     @IsArray()
     @ValidateNested({ each: true })
     @Type(() => CreateBookDto)
-    books!: CreateBookDto[];
+    @IsOptional()
+    books?: CreateBookDto[];
 }

@@ -1,0 +1,72 @@
+<div class="container bootstrap snippets bootdey mt-5">
+    <h1 class="text-primary text-center">Edit User Details</h1>
+    <hr />
+    <div class="row">
+        <!-- Left column for profile image -->
+        <div class="col-md-3">
+            <div class="text-center">
+                <img
+                    [src]="authorForm.get('photo')?.value || 'https://bootdey.com/img/Content/avatar/avatar7.png'"
+                    class="avatar img-circle img-thumbnail"
+                    alt="avatar"
+                />
+                 </div>
+        </div>
+
+        <!-- Right column for form -->
+        <div class="col-md-9 personal-info">
+            <h3>Personal Info</h3>
+
+            <!-- Wrap the entire form in a formGroup -->
+            <form [formGroup]="authorForm" class="form-horizontal" role="form" (ngSubmit)="onSubmit()">
+                
+                <!-- Photo -->
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Upload a different photo...</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" formControlName="photo" placeholder="Enter image URL" />
+                    </div>
+                </div>
+
+                <!-- Name -->
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Name:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" formControlName="name" />
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Email:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="email" formControlName="email" />
+                    </div>
+                </div>
+
+                <!-- Birthdate -->
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Birthdate:</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="date" formControlName="birthDate" />
+                    </div>
+                </div>
+
+                <!-- Biography -->
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Biography:</label>
+                    <div class="col-lg-8">
+                        <textarea class="form-control" formControlName="bio"></textarea>
+                    </div>
+                </div>
+
+                <!-- Save Button -->
+                <div class="form-group">
+                    <div class="col-lg-3">
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

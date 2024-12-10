@@ -6,6 +6,9 @@ export type AuthorDocument = Author & Document;
 
 @Schema()
 export class Author {
+
+    _id!: string;
+
     @Prop({ 
         required: true 
     })
