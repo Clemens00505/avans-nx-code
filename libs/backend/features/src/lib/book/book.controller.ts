@@ -35,7 +35,7 @@ export class BooksController {
         @Param('id') id: string,
         @Body() updateBookDto: UpdateBookDto
     ): Promise<Book | null> {
-        return this.booksService.update(id, updateBookDto);
+        return this.booksService.updateBook(id, updateBookDto);
     }
 
     @Delete(':id')

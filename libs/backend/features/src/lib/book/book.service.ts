@@ -1,4 +1,4 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { Book, BookDocument } from './books.schema';
@@ -42,6 +42,38 @@ export class BooksService {
         await author.save();
     
         return book;
+    }
+
+    async updateBook(bookId: string, updateBookDto: UpdateBookDto): Promise<Book> {
+        const { author: authorName, ...bookData } = updateBookDto;
+    
+        let author = await this.authorModel.findOne({ name: authorName }).exec();
+        if (!author) {
+            this.logger.log(`Author ${authorName} not found. Creating a new author.`);
+            author = new this.authorModel({ name: authorName, books: [] });
+            await author.save();
+        }
+    
+        const updatedBook = await this.bookModel.findByIdAndUpdate(
+            bookId,
+            { ...bookData, author_id: author.id.toString(), author: author.name },
+            { new: true }
+        ).exec();
+    
+        if (!updatedBook) {
+            throw new NotFoundException('Book not found');
+        }
+    
+        this.logger.log(`Book ${updatedBook.title} updated. Updating author ${author.name}`);
+        const bookIndex = author.books.findIndex(book => book._id.toString() === bookId);
+        if (bookIndex !== -1) {
+            author.books[bookIndex].title = updatedBook.title;
+        } else {
+            author.books.push({ _id: updatedBook._id, title: updatedBook.title });
+        }
+        await author.save();
+    
+        return updatedBook;
     }
 
     async deleteBookFromAuthor(bookId: string, authorId: string): Promise<void> {

@@ -44,8 +44,6 @@ export class CreateBookDto {
 }
 
 export class UpdateBookDto {
-    _id?: string | undefined;
-
     @IsString()
     @IsNotEmpty()
     title!: string;
@@ -53,6 +51,10 @@ export class UpdateBookDto {
     @IsString()
     @IsNotEmpty()
     coverUrl!: string;
+
+    @IsString()
+    @IsOptional()
+    author_id?: string;
 
     @IsString()
     @IsNotEmpty()
