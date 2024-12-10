@@ -14,6 +14,7 @@ export interface IBook extends IEntity {
     title: string;
     genre: genre;
     description: string;
+    author_id: string;
     author: string;
     publicationYear: number;
     language: string;

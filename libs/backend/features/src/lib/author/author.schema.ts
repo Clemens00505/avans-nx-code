@@ -31,13 +31,14 @@ export class Author {
     })
     photo?: string;
 
-    @Prop({ 
+    @Prop({
         type: [{ 
-            type: String, ref: 'Book' 
-        }], 
-        required: true 
+            _id: { type: String, required: true },
+            title: { type: String, required: true }
+        }],
+        required: false
     })
-    bookIds!: string[]; 
+    books!: { _id: string, title: string }[];
 }
 
 export const AuthorSchema = SchemaFactory.createForClass(Author);

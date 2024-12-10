@@ -44,14 +44,13 @@ export class AuthorService {
       
         // Optionally synchronize books if necessary
         if (updateAuthorDto.books) {
-          await this.bookModel.updateMany(
-            { _id: { $in: updateAuthorDto.books.map((b) => b._id) } },
-            { author: authorId }
-          );
+            await this.bookModel.updateMany(
+                { _id: { $in: updateAuthorDto.books.map((b) => b._id) } },
+                { author_id: authorId.toString(), author: author.name }
+            );
         }
-      
         return author;
-      }      
+    }   
 
     async remove(_id: string): Promise<Author | null> {
         this.logger.log(`Remove author with id ${_id}`);

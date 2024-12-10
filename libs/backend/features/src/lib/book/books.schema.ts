@@ -23,6 +23,13 @@ export class Book {
     })
     title!: string;
 
+    // Author id
+    @Prop({
+        required: true,
+        type: String
+    })
+    author_id?: string;
+
     @Prop({
         required: true,
         type: String

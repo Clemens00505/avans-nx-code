@@ -26,22 +26,28 @@ export class BooksService {
 
     async createBook(createBookDto: CreateBookDto): Promise<Book> {
         const { author: authorName, ...bookData } = createBookDto;
-
-        let author = await this.authorModel.findOne({ name: authorName }).exec();
+    
+        let author = await this.authorModel.findOne({ name: authorName }).exec() as AuthorDocument | null;
         if (!author) {
             this.logger.log(`Author ${authorName} not found. Creating a new author.`);
             author = new this.authorModel({ name: authorName, books: [] });
             await author.save();
         }
-
-        const book = new this.bookModel({ ...bookData, author: author._id });
+    
+        const book = new this.bookModel({ ...bookData, author_id: author.id.toString(), author: author.name });
         await book.save();
-
+    
         this.logger.log(`Book ${book.title} created. Updating author ${author.name}`);
-        author.bookIds.push(book._id);
+        author.books.push({ _id: book._id, title: book.title });
         await author.save();
-
+    
         return book;
+    }
+
+    async deleteBookFromAuthor(bookId: string, authorId: string): Promise<void> {
+        this.logger.log(`Deleting book with id ${bookId} from author with id ${authorId}`);
+        await this.authorModel.findByIdAndUpdate
+            (authorId, { $pull: { books: { _id: bookId } } }).exec();
     }
 
     async update(_id: string, updateBookDto: UpdateBookDto): Promise<Book | null> {
