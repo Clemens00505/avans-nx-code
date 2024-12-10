@@ -18,6 +18,12 @@ export class AuthorService {
         return this.authorModel.find().exec();
     }
 
+    async findAllNames(): Promise<string[]> {
+        this.logger.log(`Finding all authors names`);
+        const authors = await this.authorModel.find().exec();
+        return authors.map((author) => author.name);
+    }
+
     async findOne(_id: string): Promise<Author | null> {
         this.logger.log(`Finding author with id ${_id}`);
         return this.authorModel.findById(_id).exec();

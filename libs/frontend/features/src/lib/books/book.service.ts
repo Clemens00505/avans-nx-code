@@ -16,6 +16,13 @@ export class BookService {
                 console.log('Service constructor aanroepen');
         }
 
+        getAuthorNames(): Observable<string[]> {
+                console.log('getAuthorNames() aanroepen');
+                return this.http
+                        .get<ApiResponse<any>>(environment.dataApiUrl + '/author/name')
+                        .pipe(map((response) => response.results));
+        }
+
         getBooksAsync(): Observable<IBook[]> {
                 console.log('getBooksAsync() aanroepen');
                 return this.http

@@ -20,6 +20,13 @@ export class AuthorController {
         return this.authorService.findAll();
     }
 
+    // Get author only name
+    @Get('name')
+    async findAllNames(): Promise<string[]> {
+        const authors = await this.authorService.findAll();
+        return authors.map((author) => author.name);
+    }
+
     @Get(':id')
     async findOne(@Param('id') id: string): Promise<Author | null> {
         return this.authorService.findOne(id);

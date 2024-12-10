@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AboutComponent } from './components/about/about.component';
 import { HeaderComponent } from './components/ui/header/header.component';
@@ -16,7 +17,8 @@ import { AlertService } from '../../../../libs/share-a-meal/ui/src';
         RouterModule.forRoot(appRoutes, {
             initialNavigation: 'enabledBlocking'
         }),
-        FeaturesModule
+        FeaturesModule,
+        NgSelectModule
     ],
     providers: [
         AlertService
