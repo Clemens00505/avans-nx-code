@@ -22,6 +22,7 @@ export class BookEditComponent implements OnInit, OnDestroy {
     bookGenres: string[] = Object.values(genre);
     authorNames: string[] = [];
     selectedAuthor: string = '';
+    selectedGenre: string = '';
 
     constructor(
         private route: ActivatedRoute,
@@ -37,6 +38,7 @@ export class BookEditComponent implements OnInit, OnDestroy {
                     (book: IBook) => {
                         this.book = book;
                         this.selectedAuthor = this.book.author || '';
+                        this.selectedGenre = this.book.genre || '';
                     },
                     error => {
                         console.error('Error loading book:', error);
@@ -62,7 +64,14 @@ export class BookEditComponent implements OnInit, OnDestroy {
             return;
         }
 
+        // Ensure 'genre' is not empty before submitting
+        if (!this.selectedGenre || this.selectedGenre.trim() === '') {
+          console.log('Genre is required');
+          return;
+        }
+
         this.book.author = this.selectedAuthor;
+        this.book.genre = this.selectedGenre as genre;
 
         if (this.bookId) {
             this.bookService.updateBook(this.bookId, this.book).subscribe(() => {

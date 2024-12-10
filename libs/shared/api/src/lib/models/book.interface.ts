@@ -6,6 +6,16 @@ import { IReview } from './review.interface';
 export enum genre {
     Fiction = 'Fiction',
     NonFiction = 'NonFiction',
+    Fantasy = 'Fantasy',
+    Adventure = 'Adventure',
+    Romance = 'Romance',
+    Mystery = 'Mystery',
+    Horror = 'Horror',
+    Thriller = 'Thriller',
+    Paranormal = 'Paranormal',
+    HistoricalFiction = 'HistoricalFiction',
+    ScienceFiction = 'ScienceFiction',
+    Cooking = 'Cooking',
     Unknown = 'Unknown'
 }
 

@@ -81,9 +81,15 @@
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Genre:</label>
                     <div class="col-lg-8">
-                        <select class="form-control" [(ngModel)]="book.genre" name="role">
-                            <option *ngFor="let genre of bookGenres" [value]="genre">{{ genre }}</option>
-                        </select>
+                        <ng-select
+                            [items]="bookGenres"
+                            bindLabel="name"
+                            [addTag]="false"
+                            [(ngModel)]="selectedGenre"
+                            name="genre"
+                            placeholder="Select a genre"
+                        >
+                        </ng-select>
                     </div>
                 </div>
 
