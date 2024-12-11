@@ -6,26 +6,37 @@
         <div class="col-md-3">
             <div class="text-center">
                 <img
-                    [src]="user.profileImgUrl || 'https://bootdey.com/img/Content/avatar/avatar7.png'"
+                    [src]="userForm.get('profileImgUrl')?.value || 'https://bootdey.com/img/Content/avatar/avatar7.png'"
                     class="avatar img-circle img-thumbnail"
                     alt="avatar"
                 />
-                <h6>Upload a different photo...</h6>
-                <input type="text" class="form-control" [(ngModel)]="user.profileImgUrl" name="profileImgUrl" />
             </div>
         </div>
 
         <!-- Right column for form -->
         <div class="col-md-9 personal-info">
-            
             <h3>Personal Info</h3>
 
-            <form class="form-horizontal" role="form" (ngSubmit)="onSave()">
+            <form [formGroup]="userForm" class="form-horizontal" role="form" (ngSubmit)="onSave()">
+                <!-- profileImgUrl -->
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Upload a different photo...</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" formControlName="profileImgUrl" />
+                        <div *ngIf="userForm.get('profileImgUrl')?.invalid && userForm.get('profileImgUrl')?.touched" class="text-danger">
+                            Profile Image URL is required.
+                        </div>
+                    </div>
+                </div>
+                
                 <!-- Name -->
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Name:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="text" [(ngModel)]="user.name" name="name" />
+                        <input class="form-control" type="text" formControlName="name" />
+                        <div *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.touched" class="text-danger">
+                            Name is required.
+                        </div>
                     </div>
                 </div>
 
@@ -33,7 +44,10 @@
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Email:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="email" [(ngModel)]="user.emailAddress" name="emailAddress" />
+                        <input class="form-control" type="email" formControlName="emailAddress" />
+                        <div *ngIf="userForm.get('emailAddress')?.invalid && userForm.get('emailAddress')?.touched" class="text-danger">
+                            Enter a valid email.
+                        </div>
                     </div>
                 </div>
 
@@ -41,7 +55,10 @@
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Password:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="password" [(ngModel)]="user.password" name="password" />
+                        <input class="form-control" type="password" formControlName="password" />
+                        <div *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.touched" class="text-danger">
+                            Password is required.
+                        </div>
                     </div>
                 </div>
 
@@ -49,7 +66,10 @@
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Phone Number:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="text" [(ngModel)]="user.phoneNumber" name="phoneNumber" />
+                        <input class="form-control" type="text" formControlName="phoneNumber" />
+                        <div *ngIf="userForm.get('phoneNumber')?.invalid && userForm.get('phoneNumber')?.touched" class="text-danger">
+                            Phone Number is required.
+                        </div>
                     </div>
                 </div>
 
@@ -57,9 +77,12 @@
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Role:</label>
                     <div class="col-lg-8">
-                        <select class="form-control" [(ngModel)]="user.role" name="role">
+                        <select class="form-control" formControlName="role">
                             <option *ngFor="let role of userRoles" [value]="role">{{ role }}</option>
                         </select>
+                        <div *ngIf="userForm.get('role')?.invalid && userForm.get('role')?.touched" class="text-danger">
+                            Role is required.
+                        </div>
                     </div>
                 </div>
 
@@ -67,7 +90,10 @@
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Address:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="text" [(ngModel)]="user.address" name="address" />
+                        <input class="form-control" type="text" formControlName="address" />
+                        <div *ngIf="userForm.get('address')?.invalid && userForm.get('address')?.touched" class="text-danger">
+                            Address is required.
+                        </div>
                     </div>
                 </div>
 
@@ -75,9 +101,12 @@
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Gender:</label>
                     <div class="col-lg-8">
-                        <select class="form-control" [(ngModel)]="user.gender" name="gender">
+                        <select class="form-control" formControlName="gender">
                             <option *ngFor="let gender of userGenders" [value]="gender">{{ gender }}</option>
                         </select>
+                        <div *ngIf="userForm.get('gender')?.invalid && userForm.get('gender')?.touched" class="text-danger">
+                            Gender is required.
+                        </div>
                     </div>
                 </div>
 
@@ -85,17 +114,21 @@
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Active:</label>
                     <div class="col-lg-8">
-                        <select class="form-control" [(ngModel)]="user.isActive" name="isActive">
+                        <select class="form-control" formControlName="isActive">
                             <option [value]="true">Yes</option>
                             <option [value]="false">No</option>
                         </select>
+                        <div *ngIf="userForm.get('isActive')?.invalid && userForm.get('isActive')?.touched" class="text-danger">
+                            Active status is required.
+                        </div>
                     </div>
                 </div>
 
-                <!-- Save Button -->
+                <!-- Save / Cancel Button -->
                 <div class="form-group">
                     <div class="col-lg-3">
-                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                        <button type="button" class="btn btn-danger" [routerLink]="'/users'">Cancel</button>
+                        <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid">Save Changes</button>
                     </div>
                 </div>
             </form>

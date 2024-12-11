@@ -24,14 +24,13 @@ import { AuthorEditComponent } from './author/author-edit/author-edit.component'
     declarations: [
         UserDetailsComponent, 
         UserListComponent, 
-        UserEditComponent,
         LoginComponent,
         RegisterComponent,
         AuthorListComponent,
         AuthorDetailsComponent,
         AuthorEditComponent
     ],
-    exports: [UserDetailsComponent, UserListComponent, UserEditComponent, LoginComponent, RegisterComponent, AuthorListComponent, AuthorDetailsComponent, AuthorEditComponent],
+    exports: [UserDetailsComponent, UserListComponent, LoginComponent, RegisterComponent, AuthorListComponent, AuthorDetailsComponent, AuthorEditComponent],
     providers: [ UserService, ReviewService, BookService, AuthorService, provideHttpClient() ]
 })
 export class FeaturesModule {}

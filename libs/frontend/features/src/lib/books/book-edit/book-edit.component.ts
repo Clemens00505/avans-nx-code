@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { BookService } from '../book.service';
 import { IBook, genre } from '@avans-nx-workshop/shared/api';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 @Component({
     selector: 'avans-nx-workshop-book-edit',
     standalone: true,
-    imports: [CommonModule, ReactiveFormsModule, NgSelectModule],
+    imports: [CommonModule, ReactiveFormsModule, NgSelectModule, RouterModule],
     templateUrl: './book-edit.component.html',
     styleUrl: './book-edit.component.css'
 })
