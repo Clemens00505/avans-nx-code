@@ -6,26 +6,37 @@
         <div class="col-md-3">
             <div class="text-center">
                 <img
-                    [src]="book.coverUrl || 'https://thumbs.dreamstime.com/b/blank-book-cover-vector-illustration-gradient-mesh-object-design-branding-35564254.jpg'"
+                    [src]="bookForm.get('coverUrl')?.value || 'https://thumbs.dreamstime.com/b/blank-book-cover-vector-illustration-gradient-mesh-object-design-branding-35564254.jpg'"
                     class="avatar img-circle img-thumbnail"
                     alt="avatar"
                 />
-                <h6>Upload a different photo...</h6>
-                <input type="text" class="form-control" [(ngModel)]="book.coverUrl" name="profileImgUrl" />
             </div>
         </div>
 
         <!-- Right column for form -->
         <div class="col-md-9 personal-info">
-            
             <h3>Book Info</h3>
 
-            <form class="form-horizontal" role="form" (ngSubmit)="onSave()">
+            <form [formGroup]="bookForm" class="form-horizontal" role="form" (ngSubmit)="onSave()">
+                <!-- CoverUrl -->
+                <div class="form-group">
+                    <label class="col-lg-3 control-label">Upload a different photo...</label>
+                    <div class="col-lg-8">
+                        <input class="form-control" type="text" formControlName="coverUrl" />
+                        <div *ngIf="bookForm.get('coverUrl')?.invalid && bookForm.get('coverUrl')?.touched" class="text-danger">
+                            Cover URL is required.
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Title -->
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Title:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="text" [(ngModel)]="book.title" name="title" />
+                        <input class="form-control" type="text" formControlName="title" />
+                        <div *ngIf="bookForm.get('title')?.invalid && bookForm.get('title')?.touched" class="text-danger">
+                            Title is required.
+                        </div>
                     </div>
                 </div>
 
@@ -37,11 +48,13 @@
                             [items]="authorNames"
                             bindLabel="name"
                             [addTag]="true"
-                            [(ngModel)]="selectedAuthor"
-                            name="author"
+                            formControlName="author"
                             placeholder="Select or add an author"
                         >
                         </ng-select>
+                        <div *ngIf="bookForm.get('author')?.invalid && bookForm.get('author')?.touched" class="text-danger">
+                            Author is required.
+                        </div>
                     </div>
                 </div>
 
@@ -49,7 +62,10 @@
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Year of publication:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="number" [(ngModel)]="book.publicationYear" name="publicationYear" />
+                        <input class="form-control" type="number" formControlName="publicationYear" />
+                        <div *ngIf="bookForm.get('publicationYear')?.invalid && bookForm.get('publicationYear')?.touched" class="text-danger">
+                            Enter a valid publication year.
+                        </div>
                     </div>
                 </div> 
 
@@ -57,7 +73,10 @@
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Publicator:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="text" [(ngModel)]="book.publicator" name="publicator" />
+                        <input class="form-control" type="text" formControlName="publicator" />
+                        <div *ngIf="bookForm.get('publicator')?.invalid && bookForm.get('publicator')?.touched" class="text-danger">
+                            Publicator is required.
+                        </div>
                     </div>
                 </div> 
 
@@ -65,7 +84,10 @@
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Language:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="text" [(ngModel)]="book.language" name="language" />
+                        <input class="form-control" type="text" formControlName="language" />
+                        <div *ngIf="bookForm.get('language')?.invalid && bookForm.get('language')?.touched" class="text-danger">
+                            Language is required.
+                        </div>
                     </div>
                 </div> 
 
@@ -73,7 +95,10 @@
                 <div class="form-group">
                     <label class="col-lg-3 control-label">Description:</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="text" [(ngModel)]="book.description" name="description" />
+                        <input class="form-control" type="text" formControlName="description" />
+                        <div *ngIf="bookForm.get('description')?.invalid && bookForm.get('description')?.touched" class="text-danger">
+                            Description is required.
+                        </div>
                     </div>
                 </div> 
 
@@ -85,18 +110,21 @@
                             [items]="bookGenres"
                             bindLabel="name"
                             [addTag]="false"
-                            [(ngModel)]="selectedGenre"
-                            name="genre"
+                            formControlName="genre"
                             placeholder="Select a genre"
                         >
                         </ng-select>
+                        <div *ngIf="bookForm.get('genre')?.invalid && bookForm.get('genre')?.touched" class="text-danger">
+                            Genre is required.
+                        </div>
                     </div>
                 </div>
 
-                <!-- Save Button -->
+                <!-- Save / Cancel Button -->
                 <div class="form-group">
                     <div class="col-lg-3">
-                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                        <button type="button" class="btn btn-danger" routerLink="/books">Cancel</button>
+                        <button type="submit" class="btn btn-primary" [disabled]="bookForm.invalid">Save Changes</button>
                     </div>
                 </div>
             </form>
