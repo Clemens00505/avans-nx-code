@@ -6,6 +6,16 @@ import { IReview } from './review.interface';
 export enum genre {
     Fiction = 'Fiction',
     NonFiction = 'NonFiction',
+    Fantasy = 'Fantasy',
+    Adventure = 'Adventure',
+    Romance = 'Romance',
+    Mystery = 'Mystery',
+    Horror = 'Horror',
+    Thriller = 'Thriller',
+    Paranormal = 'Paranormal',
+    HistoricalFiction = 'HistoricalFiction',
+    ScienceFiction = 'ScienceFiction',
+    Cooking = 'Cooking',
     Unknown = 'Unknown'
 }
 
@@ -14,6 +24,7 @@ export interface IBook extends IEntity {
     title: string;
     genre: genre;
     description: string;
+    author_id: string;
     author: string;
     publicationYear: number;
     language: string;

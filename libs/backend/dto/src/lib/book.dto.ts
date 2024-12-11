@@ -6,6 +6,10 @@ export class CreateBookDto {
     title!: string;
 
     @IsString()
+    @IsOptional()
+    author_id?: string;
+
+    @IsString()
     @IsNotEmpty()
     author!: string;
 
@@ -36,11 +40,10 @@ export class CreateBookDto {
     @IsArray()
     @IsOptional()
     reviews?: string[];
+    public _id: any;
 }
 
 export class UpdateBookDto {
-    _id?: string | undefined;
-
     @IsString()
     @IsNotEmpty()
     title!: string;
@@ -48,6 +51,10 @@ export class UpdateBookDto {
     @IsString()
     @IsNotEmpty()
     coverUrl!: string;
+
+    @IsString()
+    @IsOptional()
+    author_id?: string;
 
     @IsString()
     @IsNotEmpty()

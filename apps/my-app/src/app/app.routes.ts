@@ -10,6 +10,9 @@ import { BookEditComponent } from '../../../../libs/frontend/features/src/lib/bo
 import { LoginComponent } from '../../../../libs/frontend/features/src/lib/auth/login/login.component';
 import { RegisterComponent } from '../../../../libs/frontend/features/src/lib/auth/register/register.component';
 import { ReviewEditComponent } from '../../../../libs/frontend/features/src/lib/review/review-edit/review-edit.component';
+import { AuthorListComponent } from '../../../../libs/frontend/features/src/lib/author/author-list/author-list.component';
+import { AuthorEditComponent } from '../../../../libs/frontend/features/src/lib/author/author-edit/author-edit.component';
+import { AuthorDetailsComponent } from '../../../../libs/frontend/features/src/lib/author/author-details/author-details.component';
 
 export const appRoutes: Route[] = [
     // HIer komen onze URL's te staan
@@ -24,6 +27,9 @@ export const appRoutes: Route[] = [
     { path: 'books/:id/review/:id', component: ReviewEditComponent },
     { path: 'books/:id', component: BookDetailsComponent },
     { path: 'books/:id/edit', component: BookEditComponent },
+    { path: 'authors', component: AuthorListComponent },
+    { path: 'authors/:id', component: AuthorDetailsComponent },
+    { path: 'authors/:id/edit', component: AuthorEditComponent },
     { path: 'users', component: UserListComponent },
     { path: 'users/new', component: UserEditComponent },
     { path: 'users/:id', component: UserDetailsComponent },

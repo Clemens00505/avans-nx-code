@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { UsersModule } from '@avans-nx-workshop/backend/user';
-import { BooksModule, ReviewModule } from '../../../../libs/backend/features/src';
+import { AuthorModule, BooksModule, ReviewModule } from '../../../../libs/backend/features/src';
 import { AuthModule } from '@avans-nx-workshop/backend/auth';
 import { MongooseModule } from '@nestjs/mongoose';
 import { environment } from '@avans-nx-workshop/shared/util-env';
@@ -23,7 +23,8 @@ import { Logger } from '@nestjs/common';
             }
         }),
         UsersModule,
-        ReviewModule
+        ReviewModule,
+        AuthorModule
     ],
     controllers: [],
     providers: []
