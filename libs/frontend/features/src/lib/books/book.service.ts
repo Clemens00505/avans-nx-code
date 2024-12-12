@@ -42,6 +42,7 @@ export class BookService {
 
         upsertBook(book: IBook): Observable<IBook> {
                 console.log('upsertBook aanroepen');
+                
                 return this.http
                         .post<ApiResponse<any>>(environment.dataApiUrl + '/book', book)
                         .pipe(map((response) => response.results));

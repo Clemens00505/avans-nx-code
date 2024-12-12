@@ -11,8 +11,7 @@ import { CommonModule } from '@angular/common';
     selector: 'avans-nx-workshop-book-edit',
     standalone: true,
     imports: [CommonModule, ReactiveFormsModule, NgSelectModule, RouterModule],
-    templateUrl: './book-edit.component.html',
-    styleUrl: './book-edit.component.css'
+    templateUrl: './book-edit.component.html'
 })
 export class BookEditComponent implements OnInit, OnDestroy {
     bookId: string | null = null;
@@ -37,7 +36,7 @@ export class BookEditComponent implements OnInit, OnDestroy {
             publicator: ['', Validators.required],
             language: ['', Validators.required],
             description: ['', Validators.required],
-            coverUrl: ['', Validators.required, Validators.pattern('https?://.+')],
+            coverUrl: ['', Validators.required],
             genre: ['', Validators.required]
         });
 
@@ -73,6 +72,14 @@ export class BookEditComponent implements OnInit, OnDestroy {
                     this.router.navigate(['/books']);
                 });
             } else {
+                const currentUser = localStorage.getItem('currentuser');
+                if (currentUser) {
+                    const parsedUser = JSON.parse(currentUser);
+                    bookData.creator_id = parsedUser._id;
+                } else {
+                    console.error('No current user found in local storage');
+                }
+                console.log('Book created:', bookData);
                 this.bookService.upsertBook(bookData).subscribe(() => {
                     this.router.navigate(['/books']);
                 });

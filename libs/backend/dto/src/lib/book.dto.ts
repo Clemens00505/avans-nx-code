@@ -37,6 +37,10 @@ export class CreateBookDto {
     @IsOptional()
     publicator?: string;
 
+    @IsString()
+    @IsNotEmpty()
+    creator_id!: string;
+
     @IsArray()
     @IsOptional()
     reviews?: string[];
@@ -79,6 +83,10 @@ export class UpdateBookDto {
     @IsString()
     @IsOptional()
     publicator?: string;
+
+    @IsString()
+    @IsOptional()
+    creator_id?: string;
 
     @IsArray()
     @IsOptional()

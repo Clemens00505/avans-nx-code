@@ -11,8 +11,7 @@ import { RouterModule } from '@angular/router';
     imports: [
         CommonModule,
         RouterModule
-    ],
-    styleUrls: ['./review-list.component.css'],
+    ]
 })
 export class ReviewListComponent implements OnInit {
     reviews: any[] = [];
@@ -20,8 +19,12 @@ export class ReviewListComponent implements OnInit {
     review: any;
     user: any;
     userId: string | undefined;
+    currentUser = localStorage.getItem('currentuser');
 
-    constructor(private reviewService: ReviewService) {}
+    constructor(private reviewService: ReviewService) {
+        console.log("User: " + this.currentUser);
+    }
+    
 
     ngOnInit(): void {
         console.log('ReviewListComponent ngOnInit called');

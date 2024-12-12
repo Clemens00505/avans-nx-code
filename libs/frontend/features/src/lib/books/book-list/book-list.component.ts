@@ -15,6 +15,8 @@ import { RouterModule } from '@angular/router';
 export class BookListComponent implements OnInit, OnDestroy {
     books: IBook[] | undefined = undefined;
     sub: Subscription = new Subscription();
+    currentUser = JSON.parse(localStorage.getItem('currentuser') || '{}');
+    errorStatus: Number = 0;
 
     constructor(private bookService: BookService) {
         console.log('BookListComponent constructor aanroepen');
@@ -29,6 +31,7 @@ export class BookListComponent implements OnInit, OnDestroy {
                     console.log('Books loaded:', books);
                 },
                 (error) => {
+                    this.errorStatus = error.status;
                     console.error('Error loading books:', error);
                 }
             )
@@ -49,6 +52,7 @@ export class BookListComponent implements OnInit, OnDestroy {
                 this.books = this.books?.filter((book) => book._id !== bookId);
             },
             (error) => {
+                this.errorStatus = error.status;
                 console.error('Boek niet verwijderd', error);
             }
         );   

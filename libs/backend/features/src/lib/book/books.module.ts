@@ -5,9 +5,11 @@ import { BooksService } from './book.service';
 import { Book, BookSchema } from './books.schema';
 import { ReviewModule } from '../review/review.module';
 import { AuthorModule } from '../author/author.module';
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
     imports: [
+        JwtModule,
         AuthorModule,
         MongooseModule.forFeature([
             { name: Book.name, schema: BookSchema }

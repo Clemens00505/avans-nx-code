@@ -5,9 +5,12 @@ import { ReviewService } from './review.service';
 import { Review, ReviewSchema } from './review.schema';
 import { Book } from '../book/books.schema';
 import { BooksModule } from '../book/books.module';
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
-    imports: [
+    imports:
+     [
+        JwtModule,
         MongooseModule.forFeature([
             { name: Review.name, schema: ReviewSchema }
         ]),

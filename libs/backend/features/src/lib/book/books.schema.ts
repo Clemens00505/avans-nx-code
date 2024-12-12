@@ -23,7 +23,6 @@ export class Book {
     })
     title!: string;
 
-    // Author id
     @Prop({
         required: true,
         type: String
@@ -65,6 +64,12 @@ export class Book {
         type: String
     })
     publicator?: string;
+
+    @Prop({
+        required: false,
+        type: String
+    })
+    creator_id?: string;
 
     @Prop({ 
         required: false,

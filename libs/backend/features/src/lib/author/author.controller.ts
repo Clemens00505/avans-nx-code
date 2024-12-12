@@ -10,7 +10,10 @@ import {
 import { AuthorService } from './author.service';
 import { CreateAuthorDto, UpdateAuthorDto } from '../../../../dto/src';
 import { Author } from './author.schema';
+import { UseGuards } from '@nestjs/common';
+import { AuthGuard } from '../../../../auth/src';
 
+@UseGuards(AuthGuard)
 @Controller('author')
 export class AuthorController {
     constructor(private readonly authorService: AuthorService) {}

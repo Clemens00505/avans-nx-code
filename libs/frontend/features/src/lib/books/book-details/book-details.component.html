@@ -1,9 +1,11 @@
 <div class="container">
     <div class="d-flex justify-content-between align-items-center">
         <h1>{{ book?.title }}</h1>
-        <button class="btn btn-primary" [routerLink]="['edit']">
-            Edit
-        </button>
+        @if (book?.creator_id === currentUser?._id) {
+            <button class="btn btn-primary" [routerLink]="['edit']">
+                Edit
+            </button>
+        }
     </div>
     <div class="row">
         <div class="col-md-4">

@@ -10,6 +10,8 @@ import { Subscription } from 'rxjs';
 })
 export class UserListComponent implements OnInit, OnDestroy {
   users: IUserInfo[] | undefined = undefined;
+  // get id from user localstorage under currentuser
+  currentUser = JSON.parse(localStorage.getItem('currentuser') || '{}');
   sub: Subscription = new Subscription();
 
   constructor(private userService: UserService) {

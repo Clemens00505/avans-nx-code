@@ -5,13 +5,16 @@ import {
     Param,
     Post,
     Put,
-    Delete
+    Delete,
+    UseGuards
 } from '@nestjs/common';
 import { ReviewService } from './review.service';
 import { CreateReviewDto, UpdateReviewDto } from '../../../../dto/src';
 import { Review } from './review.schema';
 import { BooksService } from '../book/book.service';
+import { AuthGuard } from '../../../../auth/src';
 
+@UseGuards(AuthGuard)
 @Controller('review')
 export class ReviewController {
     constructor(

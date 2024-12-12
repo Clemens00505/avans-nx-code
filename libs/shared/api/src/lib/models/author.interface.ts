@@ -8,6 +8,7 @@ export interface IAuthor extends IEntity {
     birthDate?: Date;
     bio?: string;
     photo?: string;
+    creator_id: Id;
     books: {
         _id: string;
         title: string;
@@ -20,6 +21,7 @@ export interface IAuthorCreate {
     birthDate?: Date;
     bio?: string;
     photo?: string;
+    creator_id: string;
     books?: {
         _id: string;
         title: string;

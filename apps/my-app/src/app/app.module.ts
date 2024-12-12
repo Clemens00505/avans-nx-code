@@ -10,6 +10,9 @@ import { HeaderComponent } from './components/ui/header/header.component';
 import { FooterComponent } from './components/ui/footer/footer.component';
 import { FeaturesModule } from '../../../../libs/frontend/features/src';
 import { AlertService } from '../../../../libs/share-a-meal/ui/src';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AuthInterceptor } from '../../../../libs/frontend/features/src/lib/auth/auth.interceptor';
+
 
 @NgModule({
     imports: [
@@ -17,10 +20,16 @@ import { AlertService } from '../../../../libs/share-a-meal/ui/src';
         RouterModule.forRoot(appRoutes, {
             initialNavigation: 'enabledBlocking'
         }),
+        HttpClientModule,
         FeaturesModule,
         NgSelectModule
     ],
     providers: [
+        {
+            provide: HTTP_INTERCEPTORS, 
+            useClass: AuthInterceptor, 
+            multi: true
+        },
         AlertService
     ],
     bootstrap: [AppComponent],

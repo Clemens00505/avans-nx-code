@@ -30,7 +30,7 @@ export class BooksService {
         let author = await this.authorModel.findOne({ name: authorName }).exec() as AuthorDocument | null;
         if (!author) {
             this.logger.log(`Author ${authorName} not found. Creating a new author.`);
-            author = new this.authorModel({ name: authorName, books: [] });
+            author = new this.authorModel({ name: authorName, creator_id: bookData.creator_id, books: [] });
             await author.save();
         }
     

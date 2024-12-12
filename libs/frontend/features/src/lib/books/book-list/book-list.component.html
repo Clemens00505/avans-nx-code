@@ -1,4 +1,11 @@
-@if(!books) {
+@if (errorStatus === 401) {
+    <p class="text-white text-center">You are not authorized to view this page.</p>
+    <div class="d-flex justify-content-center">
+        <a class="btn btn-primary m-2" routerLink="/register">Register</a>
+        <a class="btn btn-primary m-2" routerLink="/login">Login</a>
+    </div>
+}
+@else if(!books) {
     <p class="text-white">Loading data...</p>
 } @else if(books && books.length === 0) {
     <p class="text-white">No books were found.</p>
@@ -19,9 +26,11 @@
                         <div class="m-2">
                             <a [routerLink]="[book._id]" class="btn btn-primary me-2">More info</a>
                             
-                            <button class="btn btn-danger" (click)="deleteBook(book._id); $event.stopPropagation()">
-                                Delete
-                            </button>
+                            @if (book.creator_id === currentUser._id) {
+                                <button class="btn btn-danger" (click)="deleteBook(book._id); $event.stopPropagation()">
+                                    Delete
+                                </button>
+                            }
                         </div>
                     </div>
                 </div>

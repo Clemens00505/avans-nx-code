@@ -24,14 +24,14 @@ import { ReviewListComponent } from '../../review/review-list/review-list.compon
     RouterModule,
     ReactiveFormsModule,
     ReviewListComponent
-],
-    styleUrls: ['./book-details.component.css']
+    ]
 })
 
 export class BookDetailsComponent implements OnInit {
     bookId: string | null = null;
     book: IBook | undefined;
     sub: Subscription = new Subscription();
+    currentUser = JSON.parse(localStorage.getItem('currentuser') || '{}');
 
     constructor(
         private route: ActivatedRoute, 

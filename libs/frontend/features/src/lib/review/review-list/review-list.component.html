@@ -1,7 +1,11 @@
 <div class="review-list border rounded" style="height: 100%; overflow-y: auto;">
     <div class="d-flex justify-content-between align-items-center m-3">
         <h2 class="m-3">Reviews</h2>
-        <button class="btn btn-primary m-3" [routerLink]="['review']">Add Review</button>
+        @if (!currentUser) {
+            <button class="btn btn-primary m-3" [routerLink]="['/login']">Add Review</button>
+        } @else {
+            <button class="btn btn-primary m-3" [routerLink]="['review']">Add Review</button>
+        }
     </div>
     <div class="m-3" *ngIf="reviews?.length; else noReviews">
         <div *ngFor="let review of reviews" class="review-item mb-3">

@@ -6,7 +6,12 @@
 <div class="container p-3">
     <div class="d-flex justify-content-between align-items-center">
         <h1 class="text-white">Users</h1>
-        <a class="btn btn-primary" routerLink="new">Create User</a>
+        @if (currentUser.role === 'admin') {
+            <a class="btn btn-primary" routerLink="{{currentUser._id}}">Edit Profile</a>
+            <a class="btn btn-primary" routerLink="new">Create User</a>
+        } @else {
+            <a class="btn btn-primary" routerLink="{{currentUser._id}}">Edit Profile</a>
+        }
     </div>
     <table class="table table-striped table-bordered table-dark">
         <thead class="thead-dark">
@@ -27,9 +32,15 @@
                 <td>{{ user.emailAddress }}</td>
                 <td>{{ user.isActive ? 'Yes' : 'No' }}</td>
                 <td>
-                    <button class="btn btn-danger" (click)="deleteUser(user._id); $event.stopPropagation()">
-                        Delete
-                    </button>
+                    @if (user._id != currentUser._id) {
+                        <button class="btn btn-danger" disabled>
+                            Delete
+                        </button>
+                    } @else {
+                        <button class="btn btn-danger" (click)="deleteUser(user._id); $event.stopPropagation()">
+                            Delete
+                        </button>
+                    }
                 </td>
             </tr>
         </tbody>

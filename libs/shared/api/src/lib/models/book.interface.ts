@@ -29,6 +29,7 @@ export interface IBook extends IEntity {
     publicationYear: number;
     language: string;
     publicator: string;
+    creator_id: string;
     reviews: IReview[];
 }
 

@@ -34,6 +34,11 @@ export class Author {
     })
     photo?: string;
 
+    @Prop({ 
+        required: true 
+    })
+    creator_id!: string;
+
     @Prop({
         type: [{ 
             _id: { type: String, required: true },

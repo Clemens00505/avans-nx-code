@@ -14,6 +14,7 @@ export class UserDetailsComponent implements OnInit {
     userId: string | null = null;
     user: User | undefined;
     sub: Subscription = new Subscription();
+    currentUser = JSON.parse(localStorage.getItem('currentuser') || '{}');
 
     constructor(
         private route: ActivatedRoute,

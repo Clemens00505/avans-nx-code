@@ -5,12 +5,15 @@ import {
     Param,
     Post,
     Put,
-    Delete
+    Delete,
+    UseGuards
 } from '@nestjs/common';
 import { BooksService } from './book.service';
 import { CreateBookDto, UpdateBookDto } from '../../../../dto/src';
 import { Book } from './books.schema';
+import { AuthGuard } from '../../../../auth/src';
 
+@UseGuards(AuthGuard)
 @Controller('book')
 export class BooksController {
     constructor(private readonly booksService: BooksService) {}

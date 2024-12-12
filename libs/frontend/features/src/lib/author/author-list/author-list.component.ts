@@ -12,6 +12,7 @@ export class AuthorListComponent implements OnInit, OnDestroy {
     filteredAuthors: any[] = [];
     sub: Subscription = new Subscription();
     searchTerm: string = '';
+    errorStatus: Number = 0;
 
     constructor(private authorService: AuthorService) {
         console.log('AuthorListComponent.constructor() aangeroepen');
@@ -28,6 +29,7 @@ export class AuthorListComponent implements OnInit, OnDestroy {
                 },
                 error: (error: any) => {
                     console.error('Error loading authors:', error);
+                    this.errorStatus = error.status;
                 }
             })
         );
@@ -48,6 +50,7 @@ export class AuthorListComponent implements OnInit, OnDestroy {
                     },
                     error: (error: any) => {
                         console.error('Error deleting author:', error);
+                        this.errorStatus = error.status;
                         alert('Error deleting author');
                     }
                 })
